@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Seekarte2">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/header_Background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/desc"
+            app:srcCompat="@android:color/holo_blue_light" />
+
+        <ImageView
+            android:id="@+id/header_Holzbrett"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/desc"
+            android:scaleX="2.5"
+            android:scaleY="0.95"
+            android:src="@drawable/holzbrett1" />
+
+
+        <TextView
+            android:id="@+id/header_Seekarte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:text="@string/Seekarte"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="35sp" />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/wasser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/desc"
+        android:visibility="visible"
+        app:srcCompat="@android:color/holo_blue_light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Benutzerinteraktion_Themen"
+            app:layout_constraintTop_toTopOf="@+id/Benutzerinteraktion_Themen">
+
+
+            <ImageButton
+                android:id="@+id/insel_Basics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="39dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/insel_Variablen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.193"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:layout_conversion_absoluteHeight="101dp"
+                tools:layout_conversion_absoluteWidth="107dp" />
+
+            <TextView
+                android:id="@+id/basics_Themen"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="@string/basics"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insel_Basics"
+                app:layout_goneMarginStart="56dp"
+                tools:layout_conversion_absoluteHeight="0dp"
+                tools:layout_conversion_absoluteWidth="0dp" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Basics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginLeft="56dp"
+                android:layout_marginBottom="136dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintBottom_toTopOf="@+id/insel_Ben"
+                app:layout_constraintLeft_toLeftOf="@+id/insel_Basics"
+                tools:layout_conversion_absoluteHeight="68dp"
+                tools:layout_conversion_absoluteWidth="144dp" />
+
+            <ImageButton
+                android:id="@+id/insel_Variablen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintBottom_toTopOf="@+id/variablen_Themen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.857"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+            <TextView
+                android:id="@+id/variablen_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="127dp"
+                android:layout_marginLeft="127dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/variablen"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/insel_Ben"
+                app:layout_constraintTop_toBottomOf="@+id/insel_Variablen"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Variablen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintEnd_toStartOf="@+id/insel_Variablen"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="68dp"
+                tools:layout_conversion_absoluteWidth="144dp"
+                tools:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/insel_Ben"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="104dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/basics_Themen"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+            <TextView
+                android:id="@+id/Benutzerinteraktion_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:text="@string/benutzerinteraktion"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/insel_Verzweigung"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insel_Ben"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Ben"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="156dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.249"
+                app:layout_constraintStart_toStartOf="@+id/insel_Ben"
+                app:layout_constraintTop_toBottomOf="@+id/piratenSchiff_Basics" />
+
+            <ImageButton
+                android:id="@+id/insel_Verzweigung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:layout_marginBottom="92dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintBottom_toTopOf="@+id/insel_Arrays"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.662"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Ben"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Verzweigung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintBottom_toTopOf="@+id/piratenSchiff_Schleifen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.819"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/variablen_Themen"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/Verzweigung_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="89dp"
+                android:layout_marginLeft="89dp"
+                android:layout_marginBottom="97dp"
+                android:text="@string/verzweigungen"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/insel_Arrays"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.565"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Verzweigung"
+                app:layout_constraintVertical_bias="0.689"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+            <ImageButton
+                android:id="@+id/insel_Schleifen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.167"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insel_Ben"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Schleifen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="156dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.337"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Verzweigung" />
+
+            <TextView
+                android:id="@+id/Schleifen_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:text="@string/schleifen"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.147"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Schleifen"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+            <ImageButton
+                android:id="@+id/insel_Arrays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="144dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintBottom_toBottomOf="@+id/insel_Funktionen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.727"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Arrays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginLeft="68dp"
+                android:layout_marginTop="152dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/insel_Arrays"
+                app:layout_constraintTop_toBottomOf="@+id/Verzweigung_Themen" />
+
+            <TextView
+                android:id="@+id/Arrays_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:text="@string/arrays"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.73"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Arrays"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+            <ImageButton
+                android:id="@+id/insel_Funktionen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="256dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.193"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Schleifen"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Funktionen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginLeft="68dp"
+                android:layout_marginTop="276dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.035"
+                app:layout_constraintStart_toStartOf="@+id/insel_Funktionen"
+                app:layout_constraintTop_toTopOf="@+id/insel_Schleifen" />
+
+            <TextView
+                android:id="@+id/Funktionen_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:text="@string/funktionen"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.116"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Funktionen"
+                app:layout_constraintVertical_bias="0.259"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+            <ImageButton
+                android:id="@+id/insel_Zeiger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="128dp"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_inselpalme3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.727"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Funktionen"
+                tools:layout_conversion_absoluteHeight="100dp"
+                tools:layout_conversion_absoluteWidth="100dp" />
+
+            <ImageView
+                android:id="@+id/piratenSchiff_Zeiger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="148dp"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/ic_piratenschiff"
+                app:layout_constraintStart_toStartOf="@+id/insel_Zeiger"
+                app:layout_constraintTop_toTopOf="@+id/insel_Funktionen" />
+
+            <TextView
+                android:id="@+id/Zeiger_Themen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/zeiger"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/piratenSchiff_Zeiger"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/insel_Zeiger"
+                tools:layout_conversion_absoluteHeight="30dp"
+                tools:layout_conversion_absoluteWidth="200dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
