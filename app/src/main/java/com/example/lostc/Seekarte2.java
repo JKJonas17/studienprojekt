@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Seekarte2 extends AppCompatActivity implements View.OnClickListener {
@@ -34,36 +35,37 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         funktionen.setOnClickListener(this);
         zeiger.setOnClickListener(this);
 
+        /** nur das Schiff des aktuellen Levels soll angezeigt werden **/
+        ImageView img_Piratenschiff_basics = findViewById(R.id.piratenSchiff_Basics);
+
+        img_Piratenschiff_basics.setVisibility(View.INVISIBLE);
+
     }
 
     /**
      * onClick Methode aus OnClickListener Interface
      * @param v
-     */
+     **/
 
     @Override
     public void onClick(View v) {
 
         /**
          * Abfrage ob Richtiger Button geklickt wurde
-         */
+         **/
         if(v.getId() == R.id.insel_Basics)
         {
             Toast.makeText(this,"Basics gedückt",Toast.LENGTH_SHORT).show();
             /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
-             */
+             **/
             openQuiz();
 
         }
         if(v.getId() == R.id.insel_Variablen)
         {
             Toast.makeText(this,"Variablen gedückt",Toast.LENGTH_SHORT).show();
-            /**
-             * öffnen der neuen Aktivität "Logbucheintrag_Basics"
-             */
             openQuiz();
-
         }
         if(v.getId() == R.id.insel_Ben)
         {
