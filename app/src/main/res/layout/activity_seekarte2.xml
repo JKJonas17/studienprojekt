@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/desc"
-            app:srcCompat="@android:color/holo_blue_light" />
+            app:srcCompat="@color/seekarte_blau" />
 
         <ImageView
             android:id="@+id/header_Holzbrett"
@@ -57,7 +57,7 @@
         android:layout_marginTop="50dp"
         android:contentDescription="@string/desc"
         android:visibility="visible"
-        app:srcCompat="@android:color/holo_blue_light" />
+        app:srcCompat="@color/seekarte_blau" />
 
     <ScrollView
         android:layout_width="match_parent"

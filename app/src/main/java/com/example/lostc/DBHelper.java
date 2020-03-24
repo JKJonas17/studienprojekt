@@ -15,13 +15,14 @@ import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME ="Database";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
 
 
-    public DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
@@ -29,17 +30,17 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
 
-        final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
+                db.execSQL("CREATE TABLE " +
                 QuestionsTable.TABLE_NAME + "(" +
-                QuestionsTable._ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuestionsTable.COLUMN_QUESTION +"TEXT, " +
-                QuestionsTable.COLUMN_OPTION1+ "TEXT, " +
-                QuestionsTable.COLUMN_OPTION2+ "TEXT, " +
-                QuestionsTable.COLUMN_OPTION3+"TEXT, " +
-                QuestionsTable.COLUMN_OPTION4+ "TEXT, " +
-                QuestionsTable.COLUMN_ANSWER_NR + "INTEGER" +")";
+                QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsTable.COLUMN_QUESTION +" TEXT, " +
+                QuestionsTable.COLUMN_OPTION1+ " TEXT, " +
+                QuestionsTable.COLUMN_OPTION2+ " TEXT, " +
+                QuestionsTable.COLUMN_OPTION3+" TEXT, " +
+                QuestionsTable.COLUMN_OPTION4+ " TEXT, " +
+                QuestionsTable.COLUMN_ANSWER_NR + " INTEGER" +")");
 
-        db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
+        fillQuestionsTable();
 
     }
 
@@ -57,6 +58,8 @@ public class DBHelper extends SQLiteOpenHelper {
         addQuestion(q2);
         Question q3 = new Question("C is correct","A","B","C","D", 3);
         addQuestion(q3);
+        Question q4 = new Question("D is correct","A","B","C","D", 4);
+        addQuestion(q4);
     }
 
     private void addQuestion(Question question)

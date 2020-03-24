@@ -16,29 +16,34 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seekarte2);
 
-        ImageButton basics = findViewById(R.id.insel_Basics);
-        ImageButton ben = findViewById(R.id.insel_Ben);
-        ImageButton variablen = findViewById(R.id.insel_Variablen);
-        ImageButton verzweigung = findViewById(R.id.insel_Verzweigung);
-        ImageButton schleifen = findViewById(R.id.insel_Schleifen);
-        ImageButton arrays = findViewById(R.id.insel_Arrays);
-        ImageButton funktionen = findViewById(R.id.insel_Funktionen);
-        ImageButton zeiger = findViewById(R.id.insel_Zeiger);
+        ImageButton ib_Basics = findViewById(R.id.insel_Basics);
+        ImageButton ib_Benutzerinteraktion = findViewById(R.id.insel_Ben);
+        ImageButton ib_Variablen = findViewById(R.id.insel_Variablen);
+        ImageButton ib_Verzweigung = findViewById(R.id.insel_Verzweigung);
+        ImageButton ib_Schleifen = findViewById(R.id.insel_Schleifen);
+        ImageButton ib_arrays = findViewById(R.id.insel_Arrays);
+        ImageButton ib_funktionen = findViewById(R.id.insel_Funktionen);
+        ImageButton ib_zeiger = findViewById(R.id.insel_Zeiger);
 
 
-        basics.setOnClickListener(this);
-        ben.setOnClickListener(this);
-        variablen.setOnClickListener(this);
-        verzweigung.setOnClickListener(this);
-        schleifen.setOnClickListener(this);
-        arrays.setOnClickListener(this);
-        funktionen.setOnClickListener(this);
-        zeiger.setOnClickListener(this);
+        ib_Basics.setOnClickListener(this);
+        ib_Benutzerinteraktion.setOnClickListener(this);
+        ib_Variablen.setOnClickListener(this);
+        ib_Verzweigung.setOnClickListener(this);
+        ib_Schleifen.setOnClickListener(this);
+        ib_arrays.setOnClickListener(this);
+        ib_funktionen.setOnClickListener(this);
+        ib_zeiger.setOnClickListener(this);
+
+
+        //hier muss eine Funktion zur Levelabfrage rein
+
 
         /** nur das Schiff des aktuellen Levels soll angezeigt werden **/
-        ImageView img_Piratenschiff_basics = findViewById(R.id.piratenSchiff_Basics);
 
-        img_Piratenschiff_basics.setVisibility(View.INVISIBLE);
+        //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
+        ImageView iv_Schiff_Basics = findViewById(R.id.piratenSchiff_Basics);
+        iv_Schiff_Basics.setVisibility(View.INVISIBLE);
 
     }
 
