@@ -2,65 +2,52 @@ package com.example.lostc;
 
 public class Question {
 
-    private String frage;
-    private String antwort1;
-    private String antwort2;
-    private String antwort3;
-    private String antwort4;
+    private String question;
+    private String option1;
+    private String option2;
+    private String option3;
     private int answerNr;
 
-    public Question()
-    {
-    }
+    public Question(){}
 
-    public Question(String frage, String antwort1, String antwort2, String antwort3, String antwort4, int answerNr)
-    {
-        this.frage = frage;
-        this.antwort1 = antwort1;
-        this.antwort2 = antwort2;
-        this.antwort3 = antwort3;
-        this.antwort4 = antwort4;
+    public Question(String question, String option1, String option2, String option3, int answerNr) {
+        this.question = question;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
         this.answerNr = answerNr;
     }
 
-    public String getFrage() {
-        return frage;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setFrage(String frage) {
-        this.frage = frage;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getAntwort1() {
-        return antwort1;
+    public String getOption1() {
+        return option1;
     }
 
-    public void setAntwort1(String antwort1) {
-        this.antwort1 = antwort1;
+    public void setOption1(String option1) {
+        this.option1 = option1;
     }
 
-    public String getAntwort2() {
-        return antwort2;
+    public String getOption2() {
+        return option2;
     }
 
-    public void setAntwort2(String antwort2) {
-        this.antwort2 = antwort2;
+    public void setOption2(String option2) {
+        this.option2 = option2;
     }
 
-    public String getAntwort3() {
-        return antwort3;
+    public String getOption3() {
+        return option3;
     }
 
-    public void setAntwort3(String antwort3) {
-        this.antwort3 = antwort3;
-    }
-
-    public String getAntwort4() {
-        return antwort4;
-    }
-
-    public void setAntwort4(String antwort4) {
-        this.antwort4 = antwort4;
+    public void setOption3(String option3) {
+        this.option3 = option3;
     }
 
     public int getAnswerNr() {

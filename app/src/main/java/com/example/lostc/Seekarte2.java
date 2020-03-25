@@ -21,9 +21,9 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         ImageButton ib_Variablen = findViewById(R.id.insel_Variablen);
         ImageButton ib_Verzweigung = findViewById(R.id.insel_Verzweigung);
         ImageButton ib_Schleifen = findViewById(R.id.insel_Schleifen);
-        ImageButton ib_arrays = findViewById(R.id.insel_Arrays);
-        ImageButton ib_funktionen = findViewById(R.id.insel_Funktionen);
-        ImageButton ib_zeiger = findViewById(R.id.insel_Zeiger);
+        ImageButton ib_Arrays = findViewById(R.id.insel_Arrays);
+        ImageButton ib_Funktionen = findViewById(R.id.insel_Funktionen);
+        ImageButton ib_Zeiger = findViewById(R.id.insel_Zeiger);
 
 
         ib_Basics.setOnClickListener(this);
@@ -31,9 +31,9 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         ib_Variablen.setOnClickListener(this);
         ib_Verzweigung.setOnClickListener(this);
         ib_Schleifen.setOnClickListener(this);
-        ib_arrays.setOnClickListener(this);
-        ib_funktionen.setOnClickListener(this);
-        ib_zeiger.setOnClickListener(this);
+        ib_Arrays.setOnClickListener(this);
+        ib_Funktionen.setOnClickListener(this);
+        ib_Zeiger.setOnClickListener(this);
 
 
         //hier muss eine Funktion zur Levelabfrage rein
