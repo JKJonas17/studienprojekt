@@ -35,7 +35,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         tv_willkommen.setText("Willkommen " + Choose_name.getNickname() + "!!");
         tv_ausgabeuser.setText(Choose_name.username);
     }
-
+//Test
     @Override
     public void onClick(View v){
         //In der onClick Methode, welche hier noch für alle Objekt gilt, wird via Switch_Case Anweisung entschieden, was bei welchen Button geschehen soll
