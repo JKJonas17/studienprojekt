@@ -61,10 +61,10 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         if(v.getId() == R.id.insel_Basics)
         {
             Toast.makeText(this,"Basics gedückt",Toast.LENGTH_SHORT).show();
-            /**
+             /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
              **/
-            openQuiz();
+            openQuiz(); // Value zum Identifizieren der Katogarie
 
         }
         if(v.getId() == R.id.insel_Variablen)
@@ -106,11 +106,10 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
     }
 
     /**
-     * Methode zum öffnen einer bestimmten Aktivität
+     * Öffnet den neuen Intent
      */
     public void openQuiz()
     {
-
         Intent intent = new Intent(this, Quiz.class);
         startActivity(intent);
     }

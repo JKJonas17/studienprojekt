@@ -2,7 +2,7 @@ package com.example.lostc;
 
 
 import android.provider.BaseColumns;
-
+// Klasse wohlmöglich nicht benötigt
 public final class QuizContract {
 
     private QuizContract(){

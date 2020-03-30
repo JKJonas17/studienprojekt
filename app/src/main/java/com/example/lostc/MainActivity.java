@@ -2,9 +2,7 @@ package com.example.lostc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,15 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         start_button = (Button) findViewById(R.id.start_button);
         start_button.setOnClickListener(this);
 
-
-
-
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, Choose_name.class);
         startActivity(intent);
-        this.finish();
     }
+
+
 }
