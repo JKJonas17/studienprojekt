@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
@@ -14,11 +15,15 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -36,8 +41,8 @@ public class Quiz extends AppCompatActivity {
    private static int total = 0;
    private boolean answered = false;
    private static ArrayList <Question> questions = new ArrayList<>();
-   //final String dbname = "datenbank.db";
-    //final String TABLE_NAME = "Fragen";
+   private DatabaseHelper db;
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -56,36 +61,57 @@ public class Quiz extends AppCompatActivity {
         button_Confirm = findViewById(R.id.button_confirm_next);
         csl_DefaultRb = rb_Option1.getTextColors();
 
-        csvToArray();
-        total = questions.size();
-        for(int i=0; i < questions.size();i++)
+
+        db = new DatabaseHelper(this);
+        File database = getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
+
+        if(!database.exists())
         {
-            Log.wtf("questions",questions.get(i).toString());
+            db.getReadableDatabase();
+
+            if(copyDatabase(this))
+            {
+                Toast.makeText(this,"Copy database succes",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Toast.makeText(this,"Copy data error",Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
+        questions = db.getQuestions();
+        total = questions.size();
         showNextQuestion();
-
-        button_Confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(!answered)
-                {
-                    if(rb_Option1.isChecked() || rb_Option2.isChecked() || rb_Option3.isChecked() || rb_Option4.isChecked())
-                    {
-                     checkAnswer();
-                    }
-                    else{
-
-                     showNextQuestion();
-                    }
-                }
-            }
-
-        });
 
     }
 
+    private boolean copyDatabase(Context context)
+    {
+        try
+        {
+            InputStream inputStream = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
+            String File = DatabaseHelper.DBLOCATION + DatabaseHelper.DATABASE_NAME;
+            OutputStream outputStream = new FileOutputStream(File);
+            byte[] buff = new byte[1024];
+            int length = 0;
+
+            while((length = inputStream.read(buff))> 0)
+            {
+                outputStream.write(buff, 0,length);
+            }
+            outputStream.flush();
+            outputStream.close();
+            Log.w("Quiz","DBCopied");
+            return true;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 
 
     /**
@@ -110,8 +136,7 @@ public class Quiz extends AppCompatActivity {
         rb_Option4.setTextColor(csl_DefaultRb);
         rg_Group.clearCheck();
 
-            if (total < questions.size())
-            {
+
                 tv_Frage.setText(questions.get(counter).getQuestion());
                 rb_Option1.setText(questions.get(counter).getOption1());
                 rb_Option2.setText(questions.get(counter).getOption2());
@@ -120,11 +145,20 @@ public class Quiz extends AppCompatActivity {
 
                 counter++;
 
-            }
-            else
-            {
-                this.finishQuiz();
-            }
+        button_Confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                        if (rb_Option1.isChecked() || rb_Option2.isChecked() || rb_Option3.isChecked() || rb_Option4.isChecked()) {
+                            setAnswered(true);
+                            showSolution();
+                        } else {
+                            showNextQuestion();
+                        }
+                    }
+
+
+        });
 
 
         }
@@ -161,140 +195,11 @@ public class Quiz extends AppCompatActivity {
             }
             if (counter < total) {
                 button_Confirm.setText("Next");
+                showNextQuestion();
             } else {
                 button_Confirm.setText("Finish");
             }
     }
-
-    /*
-        public boolean firstStart()
-        {
-            boolean first = false;
-            SharedPreferences sharedPreferences = getSharedPreferences("firstStart",MODE_PRIVATE);
-            SharedPreferences.Editor sp_Editor =sharedPreferences.edit();
-            if(sharedPreferences.getBoolean("firstStart",false) == false)
-            {
-                first = true;
-                sp_Editor.putBoolean("firstStart",true);
-                sp_Editor.commit();
-
-            }
-
-            return first;
-        }
-
-        */
-
-    /**
-     * erstellt die Datenbank schreibt Einträge in eine Liste
-     */
-    /*
-    public void createDb()
-        {
-            try
-            {
-            String line = "";
-            String columns = "FRAGE, A1, A2, A3, A4, A_Nr, K_Nr";
-            String [] col = {"FRAGE", "A1", "A2", "A3", "A4", "A_Nr", "K_Nr"};
-            String str1 = "INSERT INTO "+ TABLE_NAME + " (" + columns + ") VALUES(";
-            SQLiteDatabase db = getBaseContext().openOrCreateDatabase(dbname, MODE_PRIVATE,null);
-            db.execSQL("CREATE TABLE " + TABLE_NAME+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FRAGE TEXT, A1 TEXT, A2 TEXT,A3 TEXT, A4 TEXT, A_Nr INTEGER,K_Nr INTEGER)" );
-            int i = 0;
-
-                db.beginTransaction();
-                InputStream is = getAssets().open("raw/test.csv");
-                BufferedReader csvReader = new BufferedReader(new InputStreamReader(is));
-                while((line = csvReader.readLine()) != null)
-                {
-                    StringBuilder sb = new StringBuilder(str1);
-                    String[] data = line.split(",");
-                    sb.append("'"+data[0] + "', ");
-                    sb.append("'"+data[1] + "', ");
-                    sb.append("'"+data[2] + "', ");
-                    sb.append("'"+data[3] + "', ");
-                    sb.append("'"+data[4] + "', ");
-                    sb.append(data[5] + ", ");
-                    sb.append(data[6]);
-                    sb.append(");");
-
-                    db.execSQL(sb.toString());
-                }
-
-                db.setTransactionSuccessful();
-                db.endTransaction();
-
-                db.beginTransaction();
-
-               Cursor c = db.query("FRAGEN",col,null,null,null,null,null);
-
-                while(c.moveToNext())
-                {
-                    Question q = new Question();
-                    q.setQuestion(c.getString(1));
-                    q.setOption1(c.getString(2));
-                    q.setOption2(c.getString(3));
-                    q.setOption3(c.getString(4));
-                    q.setOption4(c.getString(5));
-                    q.setAnswerNr(c.getString(6));
-                    q.setKategorieNr(c.getString(7));
-
-                    this.questions.add(q);
-                }
-
-                c.close();
-                is.close();
-                csvReader.close();
-                db.close();
-
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-
-        }
-        */
-
-        @SuppressLint("WrongConstant")
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        public void csvToArray () {
-
-
-            try
-            {
-            InputStream is =  getResources().openRawResource(R.raw.test);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            String line;
-
-               while ((line = reader.readLine()) != null)
-               {
-                String [] data = line.split(",");
-                Question q = new Question();
-                q.setQuestion(data[0]);
-                Log.println(1,"daten",data[0]);
-                q.setOption1(data[1]);
-                q.setOption2(data[2]);
-                q.setOption3(data[3]);
-                q.setOption4(data[4]);
-                q.setAnswerNr(data[5]);
-                q.setKategorieNr(data[6]);
-
-                questions.add(q);
-               }
-
-
-                is.close();
-                reader.close();
-
-           }
-           catch(IOException e)
-           {
-               Log.wtf("Quiz","Error beim File Lesen");
-               e.printStackTrace();
-           }
-
-
-        }
 
         public void setAnswered(boolean answered)
         {
