@@ -1,6 +1,7 @@
 package com.example.lostc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
@@ -18,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
    public static final String DBLOCATION = "/data/data/com.example.lostc/databases/";
    private Context context;
 
-    private SQLiteDatabase db;
+   private SQLiteDatabase db;
 
 
 
@@ -54,12 +55,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public ArrayList<Question> getQuestions()
+    public ArrayList<Question> getQuestions(String kategorie)
     {
+
         Question q = null;
         ArrayList<Question> questionList = new ArrayList<>();
         openDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM FRAGEN",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM FRAGEN WHERE KatNr = ?" ,new String[] {kategorie});
         cursor.moveToFirst();
         while(!cursor.isAfterLast())
         {

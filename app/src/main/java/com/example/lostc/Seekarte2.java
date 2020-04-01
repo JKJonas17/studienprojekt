@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class Seekarte2 extends AppCompatActivity implements View.OnClickListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,43 +65,43 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
              /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
              **/
-            openQuiz(); // Value zum Identifizieren der Katogarie
+            openQuiz("1"); // Value zum Identifizieren der Katogarie
 
         }
         if(v.getId() == R.id.insel_Variablen)
         {
             Toast.makeText(this,"Variablen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("2");
         }
         if(v.getId() == R.id.insel_Ben)
         {
             Toast.makeText(this,"Benutzerinteraktion gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("3");
         }
         if(v.getId() == R.id.insel_Verzweigung)
         {
             Toast.makeText(this,"Verzweigung gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("4");
         }
         if(v.getId() == R.id.insel_Schleifen)
         {
             Toast.makeText(this,"Schleifen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("5");
         }
         if(v.getId() == R.id.insel_Arrays)
         {
             Toast.makeText(this,"Arrays gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("6");
         }
         if(v.getId() == R.id.insel_Funktionen)
         {
             Toast.makeText(this,"Funktionen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("7");
         }
         if(v.getId() == R.id.insel_Zeiger)
         {
             Toast.makeText(this,"Zeiger gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz();
+            openQuiz("8");
         }
 
     }
@@ -108,9 +109,10 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
     /**
      * Öffnet den neuen Intent
      */
-    public void openQuiz()
+    public void openQuiz(String kategorie)
     {
         Intent intent = new Intent(this, Quiz.class);
+        intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
     }
 
