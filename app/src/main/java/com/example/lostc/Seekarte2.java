@@ -40,7 +40,10 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         //hier muss eine Funktion zur Levelabfrage rein
 
 
-        /** nur das Schiff des aktuellen Levels soll angezeigt werden **/
+        /**
+         * nur das Schiff des aktuellen Levels soll angezeigt werden
+         *
+         * **/
 
         //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
         ImageView iv_Schiff_Basics = findViewById(R.id.piratenSchiff_Basics);
