@@ -27,6 +27,7 @@ public class Start extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         Intent intent = new Intent(this, Choose_name.class);
         startActivity(intent);
-        this.finish();
     }
+
+
 }

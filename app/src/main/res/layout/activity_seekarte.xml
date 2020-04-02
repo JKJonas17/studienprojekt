@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Seekarte" >
+    tools:context=".Seekarte2">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -18,7 +18,8 @@
             android:id="@+id/header_Background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/desc" />
+            android:contentDescription="@string/desc"
+            app:srcCompat="@color/seekarte_blau" />
 
         <ImageView
             android:id="@+id/header_Holzbrett"
@@ -42,11 +43,10 @@
             android:layout_marginLeft="-2dp"
             android:layout_marginEnd="3dp"
             android:layout_marginRight="3dp"
-            android:text="@string/seekarte"
+            android:text="@string/Seekarte"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="35sp"
-            android:gravity="center_horizontal" />
+            android:textSize="35sp" />
     </RelativeLayout>
 
 
@@ -56,12 +56,14 @@
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/desc"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:srcCompat="@color/seekarte_blau" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:fillViewport="true">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,7 +76,7 @@
 
 
             <ImageButton
-                android:id="@+id/insel_grundlagen"
+                android:id="@+id/insel_Basics"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -96,13 +98,13 @@
                 android:id="@+id/basics_Themen"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:text="@string/grundlagen"
+                android:text="@string/basics"
                 android:textSize="20sp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/insel_grundlagen"
+                app:layout_constraintTop_toBottomOf="@+id/insel_Basics"
                 app:layout_goneMarginStart="56dp"
                 tools:layout_conversion_absoluteHeight="0dp"
                 tools:layout_conversion_absoluteWidth="0dp" />
@@ -117,7 +119,7 @@
                 android:contentDescription="@string/desc"
                 android:src="@drawable/ic_piratenschiff"
                 app:layout_constraintBottom_toTopOf="@+id/insel_Ben"
-                app:layout_constraintLeft_toLeftOf="@+id/insel_grundlagen"
+                app:layout_constraintLeft_toLeftOf="@+id/insel_Basics"
                 tools:layout_conversion_absoluteHeight="68dp"
                 tools:layout_conversion_absoluteWidth="144dp" />
 

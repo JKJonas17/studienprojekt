@@ -4,39 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:padding="16dp"
     tools:context=".Quiz">
 
     <TextView
-        android:id="@+id/tv_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Score: 0"
-        android:textColor="@android:color/black" />
-
-    <TextView
-        android:id="@+id/tv_question_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_score"
-        android:text="Frage: 1/x"
-        android:textColor="@android:color/black" />
-
-    <TextView
-        android:id="@+id/tv_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="00:30"
-        android:textColor="@android:color/black"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/tv_question"
+        android:id="@+id/text_view_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/radio_group"
-        android:text="Hier wird dann der Fragentext stehen \n Hier wird dann der Fragentext stehen\n "
+        android:layout_marginBottom="16dp"
+        android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -50,36 +28,41 @@
 
         <RadioButton
             android:id="@+id/radio_button1"
-            android:layout_width="wrap_content"
+            android:layout_width="385dp"
             android:layout_height="wrap_content"
-            android:text="Option1" />
+            android:text="Option 1" />
 
         <RadioButton
             android:id="@+id/radio_button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option2" />
+            android:text="Option 2" />
 
         <RadioButton
             android:id="@+id/radio_button3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option3" />
+            android:text="Option 3" />
 
         <RadioButton
             android:id="@+id/radio_button4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option4" />
-    </RadioGroup>
+            android:text="Option 4" />
 
-    <Button
-        android:id="@+id/bt_confirm_next"
-        android:layout_width="200dp"
+    </RadioGroup>
+    <ProgressBar
+        android:id="@+id/pb_Quiz"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </ProgressBar>
+        <Button
+        android:id="@+id/button_confirm_next"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/radio_group"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:text="Bestaetigen" />
-
+        android:layout_marginTop="109dp"
+        android:text="Confirm" />
 </RelativeLayout>
