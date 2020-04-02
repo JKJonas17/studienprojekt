@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Main_menue extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,7 +41,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()){
 
             case R.id.bt_leinen_los:
-                Intent intent = new Intent(this, Seekarte2.class);
+                Intent intent = new Intent(this, Seekarte.class);
                 startActivity(intent);
                 this.finish();
 

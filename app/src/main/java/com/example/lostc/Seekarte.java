@@ -3,12 +3,14 @@ package com.example.lostc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
-public class Seekarte2 extends AppCompatActivity {
+public class Seekarte extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seekarte2);
+        setContentView(R.layout.activity_seekarte);
+
     }
 }

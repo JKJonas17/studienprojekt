@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz"></activity>
-        <activity android:name=".Seekarte2" />
-        <activity android:name=".seekarte" />
+        <activity android:name=".Team_kontaktieren" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".Seekarte" />
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
