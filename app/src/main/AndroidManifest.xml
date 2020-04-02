@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz"></activity>
         <activity android:name=".Seekarte2" />
-        <activity android:name=".seekarte" />
+        <activity android:name=".Quiz"></activity>
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />
         <activity android:name=".MainActivity">

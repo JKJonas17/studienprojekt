@@ -33,21 +33,21 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         bt_einstellungen.setOnClickListener(this);
 
         tv_willkommen.setText("Willkommen " + Choose_name.getNickname() + "!!");
-        tv_ausgabeuser.setText(Choose_name.username);
+        tv_ausgabeuser.setText(Choose_name.nickname);
     }
 //Test
     @Override
     public void onClick(View v){
         //In der onClick Methode, welche hier noch für alle Objekt gilt, wird via Switch_Case Anweisung entschieden, was bei welchen Button geschehen soll
         switch (v.getId()){
-
+/* Auskommentiert, damit die App läuft
             case R.id.bt_leinen_los:
                 Intent intent = new Intent(this, Seekarte2.class);
                 startActivity(intent);
                 this.finish();
 
                 break;
-
+*/
             case R.id.bt_statistik:
 
                 break;

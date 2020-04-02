@@ -1,3 +1,4 @@
+
 package com.example.lostc;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Seekarte2 extends AppCompatActivity implements View.OnClickListener {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,66 +53,74 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
      * @param v
      **/
 
+
+
+
     @Override
     public void onClick(View v) {
 
         /**
          * Abfrage ob Richtiger Button geklickt wurde
          **/
+
+
         if(v.getId() == R.id.insel_Basics)
         {
             Toast.makeText(this,"Basics gedückt",Toast.LENGTH_SHORT).show();
-             /**
+            /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
              **/
-            openQuiz("1"); // Value zum Identifizieren der Katogarie
+
+            openQuiz();
 
         }
         if(v.getId() == R.id.insel_Variablen)
         {
             Toast.makeText(this,"Variablen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("2");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Ben)
         {
             Toast.makeText(this,"Benutzerinteraktion gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("3");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Verzweigung)
         {
             Toast.makeText(this,"Verzweigung gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("4");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Schleifen)
         {
             Toast.makeText(this,"Schleifen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("5");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Arrays)
         {
             Toast.makeText(this,"Arrays gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("6");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Funktionen)
         {
             Toast.makeText(this,"Funktionen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("7");
+            openQuiz();
         }
         if(v.getId() == R.id.insel_Zeiger)
         {
             Toast.makeText(this,"Zeiger gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("8");
+            openQuiz();
         }
 
     }
 
     /**
-     * Öffnet den neuen Intent
+     * Methode zum öffnen einer bestimmten Aktivität
      */
-    public void openQuiz(String kategorie)
+
+
+    public void openQuiz()
     {
+
         Intent intent = new Intent(this, Quiz.class);
-        intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
     }
 
