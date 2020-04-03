@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#D81B60</color>
-    <color name ="startbutton_rot">	#FF6347 </color>
-    <color name ="seekarte_blau">	 #0097f1 </color>
-    <color name="colorBackground">#BCAAA4</color>
+    <color name="colorButton">#DC1313</color>
+    <color name ="color_startbutton_rot">#DC1313</color>
+    <color name ="color_seekarte_blau">#61C4B0</color>
+    <color name="colorBackground">#E9DDC5</color>
+    <color name ="color_start_schwarz">#000000</color>
 
     <color name="black_overlay">#66000000</color>
 </resources>

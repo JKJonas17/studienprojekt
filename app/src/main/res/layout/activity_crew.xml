@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground_braun">
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
 
     <TextView
         android:id="@+id/tv_crew"
@@ -13,12 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/headline_Crew"
+        app:fontFamily="@font/geschwungen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:textColor="@color/cardview_dark_background"/>
+        android:textSize="50sp"
+        android:textColor="@color/colorButton"/>
 
 
     <ImageView
@@ -92,6 +93,8 @@
         android:layout_marginRight="149dp"
         android:layout_marginBottom="103dp"
         android:text="@string/txt_name1"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="20sp"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toTopOf="@+id/tv_name3"
         app:layout_constraintEnd_toStartOf="@+id/iv_bild2"
@@ -107,6 +110,8 @@
         android:layout_marginLeft="170dp"
         android:layout_marginTop="180dp"
         android:text="@string/txt_name2"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="20sp"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toTopOf="@+id/tv_name4"
         app:layout_constraintEnd_toStartOf="@+id/iv_bild2"
@@ -121,6 +126,8 @@
         android:layout_marginRight="240dp"
         android:layout_marginBottom="100dp"
         android:text="@string/txt_name3"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="20sp"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toTopOf="@+id/tv_name5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,6 +144,8 @@
         android:layout_marginTop="170dp"
         android:layout_marginBottom="270dp"
         android:text="@string/txt_name4"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="20sp"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_bild4"
@@ -149,6 +158,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
         android:text="@string/txt_name5"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_bild5"
         app:layout_constraintTop_toBottomOf="@+id/tv_name3"
@@ -156,8 +167,8 @@
 
     <ImageView
         android:id="@+id/iv_jack6"
-        android:layout_width="193dp"
-        android:layout_height="190dp"
+        android:layout_width="186dp"
+        android:layout_height="175dp"
         android:layout_marginStart="146dp"
         android:layout_marginLeft="146dp"
         android:layout_marginEnd="146dp"

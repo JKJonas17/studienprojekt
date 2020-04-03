@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Seekarte2">
+    tools:context=".Seekarte2"
+    android:orientation="vertical"
+    android:background="@color/color_seekarte_blau">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -19,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/desc"
-            app:srcCompat="@color/seekarte_blau" />
+            app:srcCompat="@color/color_seekarte_blau" />
 
         <ImageView
             android:id="@+id/header_Holzbrett"
@@ -43,21 +45,13 @@
             android:layout_marginLeft="-2dp"
             android:layout_marginEnd="3dp"
             android:layout_marginRight="3dp"
-            android:text="@string/Seekarte"
+            android:text="@string/seekarte"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="35sp" />
+            android:textSize="35sp"
+            android:gravity="center_horizontal" />
     </RelativeLayout>
 
-
-    <ImageView
-        android:id="@+id/wasser"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/desc"
-        android:visibility="visible"
-        app:srcCompat="@color/seekarte_blau" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -98,7 +92,7 @@
                 android:id="@+id/basics_Themen"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:text="@string/basics"
+                android:text="@string/grundlagen"
                 android:textSize="20sp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"

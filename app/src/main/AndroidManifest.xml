@@ -11,10 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Team_kontaktieren" />
         <activity android:name=".Quiz" />
-        <activity android:name=".Seekarte" />
+        <activity android:name=".Seekarte2" />
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />
-        <activity android:name=".Start">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

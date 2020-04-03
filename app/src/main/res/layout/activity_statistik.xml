@@ -4,16 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#AC9270">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_schatz_des_hollaenders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:text="Schatz des Holländers!"
+        android:textColor="@android:color/background_dark"
+        app:fontFamily="@font/geschwungen"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_gesamtfortschritt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -55,15 +59,20 @@
         app:srcCompat="@drawable/diamant_rot" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:id="@+id/tv_gesamtfortschritt"
+        android:layout_width="400dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="492dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="Hier siehst du deinen Gesamtfortschritt:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_schatz_des_hollaenders" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

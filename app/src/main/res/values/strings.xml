@@ -19,6 +19,7 @@
     <string name="et_name">Name</string>
     <string name="et_thema">Thema</string>
     <string name="et_semester">Semester</string>
+    <string name ="bt_absenden">absenden</string>
 
     /*TextViews Die Crew*/
     <string name="headline_Crew">Die Crew</string>
@@ -27,6 +28,7 @@
     <string name="txt_name3">Will Turner \nRaffael Hertel</string>
     <string name="txt_name4">Jack Sparrow\nJonas Kaschel</string>
     <string name="txt_name5">Elizabeth Swann \nStefanie Strohmayer</string>
+
     /*TextViews Seekarte*/
     <string name="action_settings">Settings</string>
     <string name="seekarte">Seekarte</string>

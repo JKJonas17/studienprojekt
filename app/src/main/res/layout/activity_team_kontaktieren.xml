@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground_braun"
+    android:background="@color/colorBackground"
     tools:context=".Team_kontaktieren">
 
     <TextView
@@ -12,9 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
+        app:fontFamily="@font/geschwungen"
         android:text="@string/tv_ahoi_piraten"
         android:textColor="@android:color/background_dark"
-        android:textSize="25sp"
+        android:textSize="28sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/et_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,8 +25,8 @@
 
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="40dp"
@@ -40,8 +42,8 @@
 
     <EditText
         android:id="@+id/et_thema"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="10dp"
@@ -57,8 +59,8 @@
 
     <EditText
         android:id="@+id/et_Semester"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="10dp"
@@ -81,7 +83,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/tv_flaschenpostnachricht"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -97,17 +99,18 @@
         android:layout_marginLeft="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="50dp"
+        android:background="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/cardview_light_background">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="151dp"
-            android:hint="hint" />
+            android:hint="hint"
+            tools:visibility="invisible" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -121,15 +124,29 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="118dp"
-        android:layout_height="143dp"
+        android:layout_width="113dp"
+        android:layout_height="106dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="125dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
         app:layout_constraintStart_toEndOf="@+id/tv_Flaschenpost"
         app:layout_constraintTop_toBottomOf="@+id/tv_ahoi"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/flasche" />
+
+    <Button
+        android:id="@+id/bt_abschicken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="@string/bt_absenden"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

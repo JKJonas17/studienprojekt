@@ -1,5 +1,4 @@
 package com.example.lostc;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ButtonBarLayout;
 
@@ -46,8 +45,8 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
         //Nickname auslesen
         Context context = this;
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String defaultValue = getResources().getString(R.string.nickname);
-        String nickname = sharedPref.getString(getString(R.string.nickname),defaultValue);
+        String defaultValue =  "";
+        String nickname = sharedPref.getString("",defaultValue);
 
 
 
@@ -82,7 +81,7 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
                 */
                     SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString(getString(R.string.nickname), et_nickname.getText().toString());
+                    editor.putString( "", et_nickname.getText().toString());
                     editor.commit();
 
                     Intent intent = new Intent(this, Main_menue.class);

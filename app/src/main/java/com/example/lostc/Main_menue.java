@@ -41,7 +41,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()){
 
             case R.id.bt_leinen_los:
-                Intent intent = new Intent(this, Seekarte.class);
+                Intent intent = new Intent(this, Seekarte2.class);
                 startActivity(intent);
                 this.finish();
 

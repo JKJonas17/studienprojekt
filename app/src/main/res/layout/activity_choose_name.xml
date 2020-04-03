@@ -4,24 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Choose_name">
+    android:orientation="vertical"
+    tools:context=".Choose_name"
+    android:background="@color/colorBackground">
 
     <EditText
         android:id="@+id/et_Nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bt_bestaetigen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_Wie_heißt_du" />
 
     <TextView
         android:id="@+id/tv_Wie_heißt_du"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_width="246dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="400dp"
+        app:fontFamily="@font/geschwungen"
         android:text="Wie heißt du?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/et_Nickname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +39,7 @@
         android:id="@+id/bt_bestaetigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="97dp"
         android:text="Bestätigen"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,4 +47,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Nickname" />
+
+    <ImageView
+        android:id="@+id/iv_pirat"
+        android:layout_width="155dp"
+        android:layout_height="334dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Wie_heißt_du"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pirat_8bit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
