@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -204,6 +203,7 @@ public class Quiz extends AppCompatActivity {
 
         counterIsRunning = false;
 
+        counter++;
         }
 
 
@@ -246,7 +246,8 @@ public class Quiz extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void showSolution() {
 
-        int antwort_Nr = Integer.parseInt(questions.get(counter).getAnswerNr()); // In DB steht ein String der geparset werden muss
+        int index = counter -1;
+        int antwort_Nr = Integer.parseInt(questions.get(index).getAnswerNr()); // In DB steht ein String der geparset werden muss
 
         if (rb_Option1.isChecked()) {
 
@@ -261,12 +262,12 @@ public class Quiz extends AppCompatActivity {
             }
             if(antwort_Nr == 3)
             {
-                rb_Option2.setBackgroundColor(Color.GREEN);
+                rb_Option3.setBackgroundColor(Color.GREEN);
                 rb_Option1.setBackgroundColor(Color.RED);
             }
             if(antwort_Nr == 4)
             {
-                rb_Option2.setBackgroundColor(Color.GREEN);
+                rb_Option4.setBackgroundColor(Color.GREEN);
                 rb_Option1.setBackgroundColor(Color.RED);
             }
         }
@@ -343,7 +344,7 @@ public class Quiz extends AppCompatActivity {
 
             if (counter < total) {
                             button_Confirm.setText("Next");
-                            counter++;
+
 
             } else {
                             button_Confirm.setText("Finish");
