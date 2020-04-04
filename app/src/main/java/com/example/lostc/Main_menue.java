@@ -44,11 +44,9 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
                 Intent intent = new Intent(this, Seekarte2.class);
                 startActivity(intent);
                 this.finish();
-
                 break;
 
-            case R.id.bt_statistik:
-
+            case R.id.bt_statistik: // Wait for JK
                 break;
 
             case R.id.bt_einstellungen:

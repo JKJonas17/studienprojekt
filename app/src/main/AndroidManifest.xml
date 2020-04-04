@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Team_kontaktieren" />
         <activity android:name=".Quiz" />
+        <activity android:name=".Logbuch"/>
         <activity android:name=".Seekarte2" />
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />

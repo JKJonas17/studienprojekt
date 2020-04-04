@@ -68,43 +68,43 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
              /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
              **/
-            openQuiz("1"); // Value zum Identifizieren der Katogarie
+            openLogbuch("1"); // Value zum Identifizieren der Katogarie
 
         }
         if(v.getId() == R.id.insel_Variablen)
         {
             Toast.makeText(this,"Variablen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("2");
+            openLogbuch("2");
         }
         if(v.getId() == R.id.insel_Ben)
         {
             Toast.makeText(this,"Benutzerinteraktion gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("3");
+            openLogbuch("3");
         }
         if(v.getId() == R.id.insel_Verzweigung)
         {
             Toast.makeText(this,"Verzweigung gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("4");
+            openLogbuch("4");
         }
         if(v.getId() == R.id.insel_Schleifen)
         {
             Toast.makeText(this,"Schleifen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("5");
+            openLogbuch("5");
         }
         if(v.getId() == R.id.insel_Arrays)
         {
             Toast.makeText(this,"Arrays gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("6");
+            openLogbuch("6");
         }
         if(v.getId() == R.id.insel_Funktionen)
         {
             Toast.makeText(this,"Funktionen gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("7");
+            openLogbuch("7");
         }
         if(v.getId() == R.id.insel_Zeiger)
         {
             Toast.makeText(this,"Zeiger gedückt",Toast.LENGTH_SHORT).show();
-            openQuiz("8");
+            openLogbuch("8");
         }
 
     }
@@ -112,9 +112,10 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
     /**
      * Öffnet den neuen Intent
      */
-    public void openQuiz(String kategorie)
+
+    public void openLogbuch(String kategorie)
     {
-        Intent intent = new Intent(this, Quiz.class);
+        Intent intent = new Intent(this, Logbuch.class);
         intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
     }

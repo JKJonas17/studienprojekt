@@ -126,7 +126,7 @@ public class Quiz extends AppCompatActivity {
 
         //String der aus Seekarte übergeben wurde wird in String kategorie übergeben
         Bundle bundle = getIntent().getExtras();
-        String kategorie = bundle.getString("Kategorie");
+        String kategorie = bundle.getString("Kategorie1");
 
         //Übergibt den Pfad der Datenbank an das eine Variable typ File
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
@@ -150,8 +150,6 @@ public class Quiz extends AppCompatActivity {
         questions = db.getQuestions(kategorie);
         total = questions.size();
         showNextQuestion();
-
-
     }
 
     /**
@@ -178,7 +176,6 @@ public class Quiz extends AppCompatActivity {
             e.printStackTrace();
             return false;
         }
-
     }
 
     /**

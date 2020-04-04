@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_menue"
+    tools:context=".Logbuch"
     android:orientation="vertical"
     android:background="@color/colorBackground">
+
 
 
     <TextView
@@ -26,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_Grundlagen"
+        android:id="@+id/tv_Kapitel"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
