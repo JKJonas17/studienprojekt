@@ -12,6 +12,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
 
     Button bt_leinen_los, bt_statistik, bt_einstellungen;
     TextView tv_willkommen, tv_ausgabeuser;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,12 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_main_menue);
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
-        bt_leinen_los = (Button) findViewById(R.id.bt_leinen_los);
-        bt_statistik = (Button) findViewById(R.id.bt_statistik);
-        bt_einstellungen = (Button) findViewById(R.id.bt_einstellungen);
+        bt_leinen_los = findViewById(R.id.bt_leinen_los);
+        bt_statistik = findViewById(R.id.bt_statistik);
+        bt_einstellungen = findViewById(R.id.bt_einstellungen);
 
-        tv_willkommen = (TextView) findViewById(R.id.tv_willkommen);
-        tv_ausgabeuser = (TextView) findViewById(R.id.tv_ausgabeuser);
+        tv_willkommen = findViewById(R.id.tv_willkommen);
+        tv_ausgabeuser = findViewById(R.id.tv_ausgabeuser);
 
         //OnClickListener für jeden Button
         bt_leinen_los.setOnClickListener(this);
@@ -41,17 +42,20 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()){
 
             case R.id.bt_leinen_los:
-                Intent intent = new Intent(this, Seekarte2.class);
+                intent = new Intent(this, Seekarte2.class);
                 startActivity(intent);
                 this.finish();
                 break;
 
-            case R.id.bt_statistik: // Wait for JK
+            case R.id.bt_statistik://JK Hier kannst du noch das Belohnungssystem und den Fortschritt eintragen
+                intent = new Intent(this, Statistik.class);
+                startActivity(intent);
+                this.finish();
                 break;
 
             case R.id.bt_einstellungen:
-                Intent intent1 = new Intent (this, Einstellungen.class);
-                startActivity(intent1);
+                intent = new Intent (this, Einstellungen.class);
+                startActivity(intent);
                 this.finish();
                 break;
         }

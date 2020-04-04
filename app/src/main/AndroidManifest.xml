@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Crew"/>
-        <activity android:name=".Logbuch" />
         <activity android:name=".Bordbuch" />
         <activity android:name=".Team_kontaktieren" />
         <activity android:name=".Einstellungen" />
         <activity android:name=".Quiz" />
-        <activity android:name=".Logbuch"/>
+        <activity android:name=".Logbuch" />
         <activity android:name=".Seekarte2" />
+        <activity android:name=".Statistik" />
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />
         <activity android:name=".MainActivity">

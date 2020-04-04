@@ -32,37 +32,37 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         /**
          * von der gedrückten Kategorie wird der entsprechende Text in die XML Datei geschrieben
          */
-        if(kategorie.equals("1"))
+        if(kategorie.equals("1")) //Kapitel müssen noch erweitert werden, Seekarte ebenfalls erweitern Kapitel 9-12
         {
             tv_Kapitel.setText("Grundlagen");
         }
         if(kategorie.equals("2"))
         {
-            tv_Kapitel.setText("TBD1");
+            tv_Kapitel.setText("Datentypen");
         }
         if(kategorie.equals("3"))
         {
-            tv_Kapitel.setText("TBD2");
+            tv_Kapitel.setText("Entscheidungen");
         }
         if(kategorie.equals("4"))
         {
-            tv_Kapitel.setText("TBD3");
+            tv_Kapitel.setText("Schleifen");
         }
         if(kategorie.equals("5"))
         {
-            tv_Kapitel.setText("TBD4");
+            tv_Kapitel.setText("Funktionen");
         }
         if(kategorie.equals("6"))
         {
-            tv_Kapitel.setText("TBD5");
+            tv_Kapitel.setText("Arrays");
         }
         if(kategorie.equals("7"))
         {
-            tv_Kapitel.setText("TBD6");
+            tv_Kapitel.setText("Variablen");
         }
         if(kategorie.equals("8"))
         {
-            tv_Kapitel.setText("TBD7");
+            tv_Kapitel.setText("Präprozessor");
         }
     }
 

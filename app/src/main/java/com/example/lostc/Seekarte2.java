@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 public class Seekarte2 extends AppCompatActivity implements View.OnClickListener {
 
+    /**
+     * Seekarte noch um die Kapitel 9-11 erweitern
+     * 9 Pointer, 10 Dateiverarbeitung, 11 Komplexe Datentypen
+     */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
