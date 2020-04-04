@@ -1,4 +1,12 @@
 package com.example.lostc;
 
-public class Logbuch {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Logbuch extends AppCompatActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_logbuch_grundlagen);
+    }
 }

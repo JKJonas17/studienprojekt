@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    tools:ignore="ContentDescription"
+    tools:context=".Bordbuch">
 
     <TextView
         android:id="@+id/tv_bordbuch"
@@ -38,7 +41,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="142dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="32dp"
@@ -63,8 +66,6 @@
             android:text="@string/large_text_grundlagen"/>
 
     </ScrollView>
-
-
 
 
 </RelativeLayout>

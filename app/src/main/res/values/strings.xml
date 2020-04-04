@@ -19,7 +19,7 @@
     <string name="et_name">Name</string>
     <string name="et_thema">Thema</string>
     <string name="et_semester">Semester</string>
-    <string name ="bt_absenden">absenden</string>
+    <string name="bt_absenden">absenden</string>
 
     /*TextViews Die Crew*/
     <string name="headline_Crew">Die Crew</string>
@@ -28,6 +28,14 @@
     <string name="txt_name3">Will Turner \nRaffael Hertel</string>
     <string name="txt_name4">Jack Sparrow\nJonas Kaschel</string>
     <string name="txt_name5">Elizabeth Swann \nStefanie Strohmayer</string>
+
+    /*TextViews Einstellungen */
+    <string name="headline_Einstellungen">Einstellungen</string>
+    <string name="namen_aendern">Name ändern:</string>
+    <string name="bt_kaptn_kontaktieren">Käptn kontaktieren</string>
+    <string name="bt_fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
+    <string name="bt_crew">Die Crew</string>
+
 
     /*TextViews Seekarte*/
     <string name="action_settings">Settings</string>
@@ -46,7 +54,8 @@
     <string name="verzweigungen">Verzweigungen</string>
     <string name="desc">desc</string>
 
-    /*Knowledgebase Grundlagen*/ //Cdata sagt das Komandos nicht vom Kompiler ausgeführt werden sollen
+    /*Knowledgebase Grundlagen*/ //Cdata sagt das Komandos nicht vom Kompiler ausgeführt werden
+    sollen
     <string name="large_text_grundlagen"><![CDATA[
         "Grundlagen sind für den Anfang sehr wichtig!\n\nC ist formatfrei und benötigt keine Zeilennummern. Das heißt Sie können das Aussehen Ihres Programms frei bestimmen.\n\nC besteht nur aus Funktionen. Die Funktion main muss in jedem C-Programm genau einmal vorkommen.\n\nJeder Funktionscode beginnt mit { und endet mit }\nJede Anweisung muss mit einem Semikolon (;) abgeschlossen werden.\nKommentare werden im Programm mit /* eingeleitet und mit */ beendet.\n\nEine der wichtigsten Bibliotheksfunktionen ist printf.\n\nDurch sogenannte Escapesequenzen kann bei ihr die Ausgabe von Texten gesteuert werden. Des Weiteren kann printf Berechnungen durchführen und ihre Ergebnisse ausgeben.\n\nAlle Präprozessoranweisungen beginnen mit #.\n"Die Anweisung #include <datei> bewirkt, dass der Inhalt der Datei datei an diese Stelle kopiert wird."\n #include <stdio.h>: stdio.h enthält die Standard Ein- und Ausgabefunktionen wie z.B. printf."
     ]]</string>
@@ -153,5 +162,6 @@
 
 
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>s
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Text">Text</string>s
 </resources>

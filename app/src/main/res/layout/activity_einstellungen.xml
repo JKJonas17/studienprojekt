@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Einstellungen"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/tv_einstellungen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="64dp"
+        app:fontFamily="@font/geschwungen"
+        android:text="@string/headline_Einstellungen"
+        android:textColor="@color/colorButton"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_name_aendern"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name_aendern"
+        android:layout_width="285dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/et_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_aendern" />
+
+    <TextView
+        android:id="@+id/tv_name_aendern"
+        android:layout_width="164dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginRight="277dp"
+        app:fontFamily="@font/geschwungen"
+        android:text="@string/namen_aendern"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen" />
+
+    <Button
+        android:id="@+id/bt_katain_kontaktieren"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="33dp"
+        android:text="@string/bt_kaptn_kontaktieren"
+        app:layout_constraintBottom_toTopOf="@+id/bt_fortschritt_zuruecksetzten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_aendern" />
+
+    <Button
+        android:id="@+id/bt_crew"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="@string/bt_crew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_fortschritt_zuruecksetzten" />
+
+    <Button
+        android:id="@+id/bt_fortschritt_zuruecksetzten"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:text="@string/bt_fortschritt_zuruecksetzten"
+        app:layout_constraintBottom_toTopOf="@+id/bt_crew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_katain_kontaktieren" />
+
+    <ImageView
+        android:id="@+id/iv_schatztruhe"
+        android:layout_width="95dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_name_aendern"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen"
+        app:srcCompat="@drawable/schatz2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription"
     tools:context=".Team_kontaktieren">
 
     <TextView
@@ -17,14 +19,15 @@
         android:textColor="@android:color/background_dark"
         android:textSize="28sp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/et_name"
+        app:layout_constraintBottom_toTopOf="@+id/et_name_aendern"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_name_aendern"
         android:layout_width="240dp"
         android:layout_height="41dp"
         android:layout_marginStart="48dp"
@@ -55,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_name_aendern" />
 
     <EditText
         android:id="@+id/et_Semester"
@@ -109,7 +112,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="151dp"
-            android:hint="hint"
+            android:hint="@string/Text"
             tools:visibility="invisible" />
     </com.google.android.material.textfield.TextInputLayout>
 

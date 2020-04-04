@@ -17,9 +17,5 @@ public class Team_kontaktieren extends AppCompatActivity {
 
         tv_ahoi = findViewById(R.id.tv_ahoi);
 
-
-       Typeface schriftart_geschwungen = Typeface.createFromAsset(getAssets(), "font/geschwungen.ttf");
-        tv_ahoi.setTypeface(schriftart_geschwungen);
-
     }
 }
