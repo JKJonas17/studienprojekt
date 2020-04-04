@@ -9,6 +9,7 @@
     android:background="@color/colorBackground">
 
 
+
     <TextView
         android:id="@+id/tv_Logbucheintrag"
         android:layout_width="250dp"
@@ -26,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_Grundlagen"
+        android:id="@+id/tv_Kapitel"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

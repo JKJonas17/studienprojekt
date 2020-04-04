@@ -46,8 +46,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
                 this.finish();
                 break;
 
-            case R.id.bt_statistik:
-
+            case R.id.bt_statistik: // Wait for JK
                 break;
 
             case R.id.bt_einstellungen:
