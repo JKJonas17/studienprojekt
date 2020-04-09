@@ -7,9 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.Html;
+import android.webkit.WebView;
 
 import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -55,6 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
     public ArrayList<Question> getQuestions(String kategorie)
     {
 
@@ -79,11 +84,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         closeDatabase();
         return questionList;
-
     }
-
-
-
-
 
 }

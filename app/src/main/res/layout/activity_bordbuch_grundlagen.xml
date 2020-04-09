@@ -34,38 +34,31 @@
         android:textSize="25sp"
         app:layout_constraintTop_toTopOf="@id/tv_bordbuch_grundlagen" />
 
-    <ImageView
-        android:id="@+id/iv_Rechenoperatoren"
-        android:layout_width="375dp"
-        android:layout_height="129dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="32dp"
-        app:srcCompat="@drawable/tabelle" />
-
     <ScrollView
-        android:layout_width="371dp"
-        android:layout_height="477dp"
-        android:layout_below="@+id/iv_Rechenoperatoren"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-23dp"
-        android:layout_marginBottom="6dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_headline_bordbuch_grundlagen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="-145dp"
+        android:layout_marginBottom="-1dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_txt_bordbuch_grundlagen"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:ems="20"
-            android:text="@string/large_text_grundlagen"
-            android:textColor="@android:color/background_dark" />
+            <WebView
+                android:id="@+id/wv_infotext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="20dp"/>
 
+        </RelativeLayout>
     </ScrollView>
-
-
 </RelativeLayout>

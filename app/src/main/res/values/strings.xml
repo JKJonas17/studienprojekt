@@ -36,7 +36,7 @@
 
     /*TextViews Einstellungen */
     <string name="headline_Einstellungen">Einstellungen</string>
-    <string name="namen_aendern">Name ändern:</string>
+    <string name="tv_namen_aendern">Name ändern:</string>
     <string name="bt_kaptn_kontaktieren">Käptn kontaktieren</string>
     <string name="bt_fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
     <string name="bt_crew">Die Crew</string>

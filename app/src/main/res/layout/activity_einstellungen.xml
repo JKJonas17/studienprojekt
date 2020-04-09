@@ -33,8 +33,9 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/et_name"
+        app:layout_constraintBottom_toTopOf="@+id/bt_kaptain_kontaktieren"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,17 +50,17 @@
         android:layout_marginTop="148dp"
         android:layout_marginEnd="277dp"
         android:layout_marginRight="277dp"
-        app:fontFamily="@font/geschwungen"
-        android:text="@string/namen_aendern"
-        android:textColor="@color/cardview_dark_background"
+        android:text="@string/tv_namen_aendern"
+        android:textColor="@android:color/background_dark"
         android:textSize="25sp"
+        app:fontFamily="@font/geschwungen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen" />
 
     <Button
-        android:id="@+id/bt_katain_kontaktieren"
+        android:id="@+id/bt_kaptain_kontaktieren"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -92,13 +93,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_katain_kontaktieren" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_kaptain_kontaktieren" />
 
     <ImageView
         android:id="@+id/iv_schatztruhe"
         android:layout_width="95dp"
         android:layout_height="102dp"
         android:layout_marginBottom="47dp"
+        android:contentDescription="@string/desc"
         app:layout_constraintBottom_toTopOf="@+id/tv_name_aendern"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
