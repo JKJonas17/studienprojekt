@@ -48,8 +48,8 @@
 
     /*Knowledgebase Grundlagen*/ //Cdata sagt das Komandos nicht vom Kompiler ausgeführt werden sollen
     <string name="large_text_grundlagen"><![CDATA[
-        "Grundlagen sind für den Anfang sehr wichtig!\n\nC ist formatfrei und benötigt keine Zeilennummern. Das heißt Sie können das Aussehen Ihres Programms frei bestimmen.\n\nC besteht nur aus Funktionen. Die Funktion main muss in jedem C-Programm genau einmal vorkommen.\n\nJeder Funktionscode beginnt mit { und endet mit }\nJede Anweisung muss mit einem Semikolon (;) abgeschlossen werden.\nKommentare werden im Programm mit /* eingeleitet und mit */ beendet.\n\nEine der wichtigsten Bibliotheksfunktionen ist printf.\n\nDurch sogenannte Escapesequenzen kann bei ihr die Ausgabe von Texten gesteuert werden. Des Weiteren kann printf Berechnungen durchführen und ihre Ergebnisse ausgeben.\n\nAlle Präprozessoranweisungen beginnen mit #.\n"Die Anweisung #include <datei> bewirkt, dass der Inhalt der Datei datei an diese Stelle kopiert wird."\n #include <stdio.h>: stdio.h enthält die Standard Ein- und Ausgabefunktionen wie z.B. printf."]]
-    </string>
+        "Grundlagen sind für den Anfang sehr wichtig!\n\nC ist formatfrei und benötigt keine Zeilennummern. Das heißt Sie können das Aussehen Ihres Programms frei bestimmen.\n\nC besteht nur aus Funktionen. Die Funktion main muss in jedem C-Programm genau einmal vorkommen.\n\nJeder Funktionscode beginnt mit { und endet mit }\nJede Anweisung muss mit einem Semikolon (;) abgeschlossen werden.\nKommentare werden im Programm mit /* eingeleitet und mit */ beendet.\n\nEine der wichtigsten Bibliotheksfunktionen ist printf.\n\nDurch sogenannte Escapesequenzen kann bei ihr die Ausgabe von Texten gesteuert werden. Des Weiteren kann printf Berechnungen durchführen und ihre Ergebnisse ausgeben.\n\nAlle Präprozessoranweisungen beginnen mit #.\n"Die Anweisung #include <datei> bewirkt, dass der Inhalt der Datei datei an diese Stelle kopiert wird."\n #include <stdio.h>: stdio.h enthält die Standard Ein- und Ausgabefunktionen wie z.B. printf."
+    ]]</string>
 
     /*Knowledgebase Mit Zahlen arbeiten*/
     <string name="large_Zahlen">
