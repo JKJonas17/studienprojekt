@@ -1,29 +1,89 @@
 package com.example.lostc;
 
-import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
-import android.webkit.WebView;
+import android.view.View;
+import android.content.Intent;
+import android.widget.ImageButton;
 import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Bordbuch extends AppCompatActivity {
+public class Bordbuch extends AppCompatActivity implements View.OnClickListener {
 
- String basePath = "file:///android_asset/Infotexte/";
+    private String kategorie;
 
- protected void onCreate(Bundle savedInstanceState) {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bordbuch_grundlagen);
 
-        WebView webView = findViewById(R.id.wv_infotext);
-        webView.setBackgroundColor(0);              // Macht den Hintergrund Transparent
-        webView.loadUrl(basePath+ "grundlagen.html");
+        Bundle bundle = getIntent().getExtras();
+        kategorie = bundle.getString("Kategorie");
+
+
+
+        TextView tv_BordbuchKapitel = findViewById(R.id.tv_BordbuchKapitel);
+        ImageButton ib_BackBordbuch = findViewById(R.id.ib_backBordbuch);
+
+        ib_BackBordbuch.setOnClickListener(this);
+
+        if(kategorie.equals("1"))
+        {
+            tv_BordbuchKapitel.setText("Grundlagen");
+        }
+        if(kategorie.equals("2"))
+        {
+            tv_BordbuchKapitel.setText("TBD1");
+        }
+        if(kategorie.equals("3"))
+        {
+            tv_BordbuchKapitel.setText("TBD2");
+        }
+        if(kategorie.equals("4"))
+        {
+            tv_BordbuchKapitel.setText("TBD3");
+        }
+        if(kategorie.equals("5"))
+        {
+            tv_BordbuchKapitel.setText("TBD4");
+        }
+        if(kategorie.equals("6"))
+        {
+            tv_BordbuchKapitel.setText("TBD5");
+        }
+        if(kategorie.equals("7"))
+        {
+            tv_BordbuchKapitel.setText("TBD6");
+        }
+        if(kategorie.equals("8"))
+        {
+            tv_BordbuchKapitel.setText("TBD7");
+        }
 
     }
+
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId()== R.id.ib_backBordbuch)
+        {
+            openLogbuch(kategorie);
+        }
+
+    }
+
+    public void openLogbuch(String kategorie)
+    {
+
+        Intent intent = new Intent(this,Logbuch.class);
+        intent.putExtra("Kategorie",kategorie);
+        startActivity(intent);
+
+    }
+
+
 }

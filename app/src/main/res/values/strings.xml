@@ -1,5 +1,5 @@
 <resources>
-    /*Ebenen*/
+    /Ebenen/
     <string name="app_name">lost@C</string>
     <string name="headline_seekarte">Seekarte</string>
     <string name="headline_bordbuch">Bordbuch</string>
@@ -7,18 +7,18 @@
     <string name="headline_logbuch">Logbucheintrag</string>
     <string name="bt_start">Start</string>
 
-    /*TextViews Logbuch - Buttons*/
+    /TextViews Logbuch - Buttons/
     <string name="bt_bordbuch">Bordbuch</string>
     <string name="bt_abfrage">Abfrage</string>
     <string name="bt_prüfung">Prüfung</string>
 
-    /*TextViews Einstellungen -Buttons*/
+    /TextViews Einstellungen -Buttons/
     <string name="bt_einstellungen">Einstellungen</string>
     <string name="bt_statistik">Statistik</string>
     <string name="bt_leinen_los">Leinen Los!</string>
     <string name="tv_willkommen_an_board">Willkommen an Bord XY!</string>
 
-    /*TextViews Team_Kontaktieren*/
+    /TextViews Team_Kontaktieren/
     <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abzuschicken!\nAuf Seemann, Tod und Teufel!</string>
     <string name="tv_flaschenpostnachricht">Flaschenpostnachricht:</string>
     <string name="et_name">Name</string>
@@ -26,7 +26,7 @@
     <string name="et_semester">Semester</string>
     <string name="bt_absenden">absenden</string>
 
-    /*TextViews Die Crew*/
+    /TextViews Die Crew/
     <string name="headline_Crew">Die Crew</string>
     <string name="txt_name1">Guybrush Threewood \nJonas Jackermayer</string>
     <string name="txt_name2">Elaine Marley \nStefanie Hammerschmidth</string>
@@ -46,7 +46,7 @@
     <string name="tv_schatz">Der Schatz des Holländers!</string>
     <string name="tv_gesamtfortschritt">Hier siehst du deinen Gesamtfortschritt:</string>
 
-    /*TextViews Seekarte*/
+    /TextViews Seekarte/
     <string name="action_settings">Settings</string>
     <string name="seekarte">Seekarte</string>
     <string name="grundlagen">Grundlagen</string>
@@ -63,18 +63,18 @@
     <string name="verzweigungen">Verzweigungen</string>
     <string name="desc">desc</string>
 
-    /*Knowledgebase Grundlagen*/ //Cdata sagt das Komandos nicht vom Kompiler ausgeführt werden
+    /Knowledgebase Grundlagen/ //Cdata sagt das Komandos nicht vom Kompiler ausgeführt werden
     sollen
     <string name="large_text_grundlagen"><![CDATA[
         "Grundlagen sind für den Anfang sehr wichtig!\n\nC ist formatfrei und benötigt keine Zeilennummern. Das heißt Sie können das Aussehen Ihres Programms frei bestimmen.\n\nC besteht nur aus Funktionen. Die Funktion main muss in jedem C-Programm genau einmal vorkommen.\n\nJeder Funktionscode beginnt mit { und endet mit }\nJede Anweisung muss mit einem Semikolon (;) abgeschlossen werden.\nKommentare werden im Programm mit /* eingeleitet und mit */ beendet.\n\nEine der wichtigsten Bibliotheksfunktionen ist printf.\n\nDurch sogenannte Escapesequenzen kann bei ihr die Ausgabe von Texten gesteuert werden. Des Weiteren kann printf Berechnungen durchführen und ihre Ergebnisse ausgeben.\n\nAlle Präprozessoranweisungen beginnen mit #.\n"Die Anweisung #include <datei> bewirkt, dass der Inhalt der Datei datei an diese Stelle kopiert wird."\n #include <stdio.h>: stdio.h enthält die Standard Ein- und Ausgabefunktionen wie z.B. printf."
     ]]> </string>
 
-    /*Knowledgebase Mit Zahlen arbeiten*/
+    /Knowledgebase Mit Zahlen arbeiten/
     <string name="large_Zahlen">
         "Mit Zahlen arbeiten!\n\nInclude-Dateien werden beinahe in jedes C-Programm eingefügt. Sie enthalten unteranderem Definitionen für die einzelnen Funktionen.\nDie am häufigsten benötigte Include-Datei ist stdio.h.\n\nC kennt verschiedene Datentypen wie z. B den Typ int für ganze Zahlen und den Typ float für Fließkommazahlen.\n\nVariablennamen können bis zu 31 Zeichen lang sein.\nDie Funktion scanf dient der Eingabe von Daten. Sie ist nur eine von mehreren Funktionen, die diesem Zweck dienen.\n\nPlatzhalter in der Funktion printf können um eine Angabe zur formatierten Ausgabe von Zahlen erweitert werden.\nAls weitere Escapesequenz haben Sie \t \nDiese Sequenz bewirkt einen Tabulatorsprung um acht Stellen.C ist &lt;case-sensitive&gt;, das heißt, es wird zwischen Groß- und Kleinschreibung unterschieden.\n\nAls Zuweisungsoperator verwendet C das Gleichheitszeichen (=)\nBei einer Wertzuweisung darf auf der linken Seite nur eine Variable stehen\n\nVariablen können bei der Deklaration gleichzeitig initialisiert werd n.\n\nDer Typ double ist der bevorzugte Fließkommatyp z.B. 0,80."
     </string>
 
-    /*Knowledgebase Entscheidungen*/
+    /Knowledgebase Entscheidungen/
     <string name="large_text_entscheidungen"><![CDATA[
         "Entscheidungen sind nicht nur auf See wichtig, sondern auch in deinem Programmiercode von großer Bedeutung!\n\nDie if-Anweisung führt einen Programmblock nur dann aus, wenn die zugehörige Bedingung wahr ist, ansonsten wird das Programm hinter dem Ende des Blocks fortgesetzt.\nDas if kann durch einen else-Zweig ergänzt werden.\n\nFür die logischen Operatoren UND, ODER, und NICHT verwendet C die Symbole &&, || und !.\n! hat die stärkste Bindung, || hat die schwächste Bindung.\n\nC interpretiert 0 als falsch und alle anderen Werte als wahr.\n\nDie switch-Anweisung erlaubt die Auswahl aus mehreren Alternativen. Sie wird häufig dann eingesetzt, wenn eine gleichwertige if-Konstruktion mehr als drei if-Anweisungen enthielte und somit unübersichtlich würde.\nSwitch ist auf den Vergleich ganzzahliger Werte mit einer Konstanten beschränkt.\n\nBeim case wird nur auf Gleichheit abgefragt\n\nchar ist der kürzeste Variablentyp. Er belegt im Speicher 1 Byte. Der Platzhalter für diesen Typ ist %c.\nDie Funktion getchar liest ein einzelnes Zeichen von der Tastatur und zeigt es auf dem Bildschirm an.\nDie Platzhalter %0 und %x werden für oktale bzw. hexadezimale Zahlen verwendet."
     ]]></string>
