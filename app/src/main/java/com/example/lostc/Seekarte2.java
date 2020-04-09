@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class Seekarte2 extends AppCompatActivity implements View.OnClickListener {
 
+    private Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         ImageButton ib_Arrays = findViewById(R.id.insel_Arrays);
         ImageButton ib_Funktionen = findViewById(R.id.insel_Funktionen);
         ImageButton ib_Zeiger = findViewById(R.id.insel_Zeiger);
+        ImageButton ib_BackSeekarte = findViewById(R.id.ib_backSeekarte);
 
 
         ib_Basics.setOnClickListener(this);
@@ -35,6 +38,7 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
         ib_Arrays.setOnClickListener(this);
         ib_Funktionen.setOnClickListener(this);
         ib_Zeiger.setOnClickListener(this);
+        ib_BackSeekarte.setOnClickListener(this);
 
 
         //hier muss eine Funktion zur Levelabfrage rein
@@ -106,19 +110,35 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
             Toast.makeText(this,"Zeiger gedückt",Toast.LENGTH_SHORT).show();
             openLogbuch("8");
         }
+        if(v.getId() == R.id.ib_backBordbuch)
+        {
+            Toast.makeText(this,"Back gedrückt",Toast.LENGTH_SHORT).show();
+            openMainMenue();
+        }
+
 
     }
 
     /**
      * Öffnet den neuen Intent
      */
-
     public void openLogbuch(String kategorie)
     {
-        Intent intent = new Intent(this, Logbuch.class);
+        intent = new Intent(this, Logbuch.class);
         intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
     }
+
+    /**
+     * wenn man wieder ins Main-Menue zurück möchte
+     */
+    public void openMainMenue()
+    {
+        intent = new Intent(this, Main_menue.class);
+        startActivity(intent);
+    }
+
+
 
 }
 

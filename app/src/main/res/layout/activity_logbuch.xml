@@ -8,30 +8,46 @@
     android:orientation="vertical"
     android:background="@color/colorBackground">
 
-
+    <ImageButton
+        android:id="@+id/ib_backLogbuch"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="103dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/ic_backbutton_foreground"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/tv_Logbucheintrag"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="13dp"
+        android:gravity="center"
         android:text="Logbucheintrag"
         android:textColor="@android:color/background_dark"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bt_Bordbuch"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Kapitel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 
     <TextView
         android:id="@+id/tv_Kapitel"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Grundlagen"
+        android:text="hier steht das Kapitel"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/bt_Bordbuch"

@@ -7,6 +7,23 @@
     android:background="@color/colorBackground"
     tools:context=".Team_kontaktieren">
 
+    <ImageButton
+        android:id="@+id/ib_backTeamKontaktieren"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:background="@null"
+        android:layout_marginBottom="103dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/ic_backbutton_foreground"
+        android:contentDescription="@string/desc" />
+
     <TextView
         android:id="@+id/tv_ahoi"
         android:layout_width="wrap_content"

@@ -1,26 +1,25 @@
 package com.example.lostc;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.io.File;
 import java.util.ArrayList;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+
    public static final String DATABASE_NAME = "test.sqlite";
-   public static final String DBLOCATION = "/data/data/com.example.lostc/databases/";
+   //public static final String DBLOCATION = "/data/data/com.example.lostc/databases/";
    private Context context;
 
    private SQLiteDatabase db;
-
 
 
     public DatabaseHelper(@Nullable Context context) {

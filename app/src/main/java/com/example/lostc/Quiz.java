@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 
 public class Quiz extends AppCompatActivity {
 
+    private String kategorie;
     private TextView tv_Frage;
     private RadioGroup rg_Group;
     private RadioButton rb_Option1;
@@ -44,6 +47,8 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+
+        ImageButton ib_Button = findViewById(R.id.ib_backQuiz);
         tv_Frage = findViewById(R.id.text_view_question);
         rg_Group = findViewById(R.id.radio_group);
         rb_Option1 = findViewById(R.id.radio_button1);
@@ -52,6 +57,15 @@ public class Quiz extends AppCompatActivity {
         rb_Option4 = findViewById(R.id.radio_button4);
         pb_Quiz = findViewById(R.id.pb_Quiz);
         button_Confirm = findViewById(R.id.button_confirm_next);
+
+
+        ib_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLogbuch(kategorie);
+
+            }
+        });
 
         rb_Option1.setOnClickListener(new View.OnClickListener() {
                                           @Override
@@ -126,9 +140,9 @@ public class Quiz extends AppCompatActivity {
 
         //String der aus Seekarte übergeben wurde wird in String kategorie übergeben
         Bundle bundle = getIntent().getExtras();
-        String kategorie = bundle.getString("Kategorie1");
+        kategorie = bundle.getString("Kategorie");
 
-        //Übergibt den Pfad der Datenbank an das eine Variable typ File
+        //Übergibt den Pfad der Datenbank an eine Variable typ File
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
 
         if (!database.exists()) //wenn File nicht existiert
@@ -160,8 +174,9 @@ public class Quiz extends AppCompatActivity {
     private boolean copyDatabase(Context context) {
         try {
             InputStream inputStream = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
-            String File = DatabaseHelper.DBLOCATION + DatabaseHelper.DATABASE_NAME;
-            OutputStream outputStream = new FileOutputStream(File);
+            String file =  context.getFilesDir().getParentFile().getPath() + "/databases/" + DatabaseHelper.DATABASE_NAME; // Traue dieser Änderung noch nicht doch es scheint zu funktionieren
+            //String File = DatabaseHelper.DBLOCATION + DatabaseHelper.DATABASE_NAME;
+            OutputStream outputStream = new FileOutputStream(file);
             byte[] buff = new byte[1024];
             int length;
 
@@ -190,7 +205,6 @@ public class Quiz extends AppCompatActivity {
         rb_Option3.setBackgroundColor(Color.TRANSPARENT);
         rb_Option4.setBackgroundColor(Color.TRANSPARENT);
         rg_Group.clearCheck();
-
 
         tv_Frage.setText(questions.get(counter).getQuestion());
         rb_Option1.setText(questions.get(counter).getOption1());
@@ -348,6 +362,18 @@ public class Quiz extends AppCompatActivity {
                             finishQuiz();// in dieser Methode soll die nächste Aktivität geöffnet werden
 
                         }
+    }
+
+
+    /**
+     * Methode für das öffnen der vorhergehenden Aktivität
+     * @param kategorie
+     */
+    public void openLogbuch(String kategorie)
+    {
+        Intent intent = new Intent(this,Logbuch.class);
+        intent.putExtra("Kategorie",kategorie);
+        startActivity(intent);
     }
 
 }
