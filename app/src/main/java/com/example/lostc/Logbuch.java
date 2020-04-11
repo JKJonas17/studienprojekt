@@ -20,10 +20,11 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_logbuch);
 
         tv_Kapitel = findViewById(R.id.tv_Kapitel);
+        Button bt_Bordbuch = findViewById(R.id.bt_Bordbuch);
         Button bt_Abfrage = findViewById(R.id.bt_Abfrage);
 
+        bt_Bordbuch.setOnClickListener(this);
         bt_Abfrage.setOnClickListener(this);
-
 
         Bundle bundle = getIntent().getExtras();
         kategorie = bundle.getString("Kategorie");
@@ -70,17 +71,25 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        if(v.getId() == R.id.bt_Abfrage)
-        {
+        if(v.getId() == R.id.bt_Bordbuch) {
+            openBordbuch (kategorie);
+        }
+        if(v.getId() == R.id.bt_Abfrage) {
             openQuiz(kategorie);
         }
 
     }
 
+    public void openBordbuch (String kategorie) {
+        Intent intent = new Intent (this, Bordbuch.class);
+        intent.putExtra("Kategorie", kategorie);
+        startActivity(intent);
+    }
+
     public void openQuiz(String kategorie)
     {
         Intent intent = new Intent(this, Quiz.class);
-        intent.putExtra("Kategorie1",kategorie);
+        intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
 
     }

@@ -1,0 +1,199 @@
+<p style="text-align: justify;">Die Grunddatentypen k&ouml;nnen durch die Schl&uuml;sselw&ouml;rter <em><strong>signed</strong></em>, <em><strong>unsigned</strong></em>, <em><strong>long</strong></em> und <em><strong>short</strong></em> modifiziert werden.</p>
+<p style="text-align: justify;">Lokale Variablen k&ouml;nnen wahlweise durch das Schl&uuml;sselwort <em><strong>auto</strong></em> kenntlich gemacht werden.</p>
+<p style="text-align: justify;">Globale Variablen werden dadurch deklariert, dass sie au&szlig;erhalb jeglicher Funktion stehen. &Uuml;blicherweise werden sie am Anfang des Programms zusammengefasst.</p>
+<p style="text-align: justify;">C besitzt vier Schl&uuml;sselw&ouml;rter, um die Speicherklasse einer Variablen zu definieren: <em><strong>auto</strong></em>, <em><strong>register</strong></em>, <em><strong>static</strong></em> und <em><strong>extern</strong></em>.</p>
+<p style="text-align: justify;">Der <em><strong>Cast</strong></em>-Operator erzwingt die Umwandlung in einen gew&uuml;nschten Datentyp.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Datentypen</strong></span></p>
+<table style="height: 329px; border-color: black; width: 446px;" border="black">
+    <tbody>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;"><em><strong>Type</strong></em></td>
+        <td style="width: 48px; height: 17px;"><em><strong>Bytes</strong></em></td>
+        <td style="width: 112px; height: 17px;"><em><strong>Minimalwert</strong></em></td>
+        <td style="width: 115.2px; height: 17px;"><em><strong>Maximalwert</strong></em></td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">char</td>
+        <td style="width: 48px; height: 17px;">1</td>
+        <td style="width: 112px; height: 17px;">-128</td>
+        <td style="width: 115.2px; height: 17px;">127</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">unsigned char</td>
+        <td style="width: 48px; height: 17px;">1</td>
+        <td style="width: 112px; height: 17px;">0</td>
+        <td style="width: 115.2px; height: 17px;">255</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">signed char</td>
+        <td style="width: 48px; height: 17px;">1</td>
+        <td style="width: 112px; height: 17px;">-128</td>
+        <td style="width: 115.2px; height: 17px;">127</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">-2147483648</td>
+        <td style="width: 115.2px; height: 17px;">2147483647</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">unsigned int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">0</td>
+        <td style="width: 115.2px; height: 17px;">4293967295</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">signed int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">-2147483648</td>
+        <td style="width: 115.2px; height: 17px;">2147483647</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">short int</td>
+        <td style="width: 48px; height: 17px;">2</td>
+        <td style="width: 112px; height: 17px;">-32768</td>
+        <td style="width: 115.2px; height: 17px;">32767</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">unsigned short int</td>
+        <td style="width: 48px; height: 17px;">2</td>
+        <td style="width: 112px; height: 17px;">0</td>
+        <td style="width: 115.2px; height: 17px;">65535</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">signed short int</td>
+        <td style="width: 48px; height: 17px;">2</td>
+        <td style="width: 112px; height: 17px;">-32768</td>
+        <td style="width: 115.2px; height: 17px;">32767</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">long int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">-2147483648</td>
+        <td style="width: 115.2px; height: 17px;">2147483647</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">unsigned long int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">0</td>
+        <td style="width: 115.2px; height: 17px;">4293967295</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">signed long int</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">-2147483648</td>
+        <td style="width: 115.2px; height: 17px;">2147483647</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">float</td>
+        <td style="width: 48px; height: 17px;">4</td>
+        <td style="width: 112px; height: 17px;">1.17549E-038</td>
+        <td style="width: 115.2px; height: 17px;">3.40282E+038</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">double</td>
+        <td style="width: 48px; height: 17px;">8</td>
+        <td style="width: 112px; height: 17px;">2.22507E-208</td>
+        <td style="width: 115.2px; height: 17px;">1.79769E+308</td>
+    </tr>
+    <tr style="height: 17px;">
+        <td style="width: 144.8px; height: 17px;">long double</td>
+        <td style="width: 48px; height: 17px;">8</td>
+        <td style="width: 112px; height: 17px;">2.22507E-308</td>
+        <td style="width: 115.2px; height: 17px;">1.79769E+308</td>
+    </tr>
+    <tr>
+        <td style="width: 144.8px;">float</td>
+        <td style="width: 48px;">0</td>
+        <td style="width: 112px;">0</td>
+        <td style="width: 115.2px;">0</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Flie&szlig;kommakonstanten</strong></span></p>
+<table style="height: 149px; border-color: black; width: 176.4px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 103px;"><em><strong>Darstellung</strong></em></td>
+        <td style="width: 63.4px;"><em><strong>Wert</strong></em></td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">3.</td>
+        <td style="width: 63.4px;">3,0</td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">-.4</td>
+        <td style="width: 63.4px;">-0,4</td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">-24.0e-1</td>
+        <td style="width: 63.4px;">-2,4</td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">-04.E+2</td>
+        <td style="width: 63.4px;">-400,0</td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">18E-2</td>
+        <td style="width: 63.4px;">0,18</td>
+    </tr>
+    <tr>
+        <td style="width: 103px;">1.434E1</td>
+        <td style="width: 63.4px;">14,34</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Zeichenkonstanen</strong></span></p>
+<table style="height: 227px; width: 342.8px; border-color: black;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 78px;">'\n'</td>
+        <td style="width: 257.8px;">Neue Zeile</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\r'</td>
+        <td style="width: 257.8px;">Wagenr&uuml;cklauf (carriage return)</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\t'</td>
+        <td style="width: 257.8px;">Horizonatler Tabulator</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\v'</td>
+        <td style="width: 257.8px;">Vertikaler Tabulator</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\b'</td>
+        <td style="width: 257.8px;">Backspace</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\f'</td>
+        <td style="width: 257.8px;">Neue Seite (formfeed)</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\\'</td>
+        <td style="width: 257.8px;">Backslash</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\a'</td>
+        <td style="width: 257.8px;">Alarm</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\?'</td>
+        <td style="width: 257.8px;">Fragezeichen</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\nnn'</td>
+        <td style="width: 257.8px;">Beliebiges Zeichen (nnn muss eine Oktalzahl sein z.B. \0)</td>
+    </tr>
+    <tr>
+        <td style="width: 78px;">'\xhh'</td>
+        <td style="width: 257.8px;">Beliebiges Zeichen (hh ist eine Hexadezimalzahl z.B. '\x1B')</td>
+    </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>

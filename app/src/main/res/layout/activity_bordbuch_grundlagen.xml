@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/ic_backbutton_foreground"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/desc" />
 
     <TextView
         android:id="@+id/tv_bordbuch"
@@ -50,55 +50,25 @@
         android:textSize="25sp"
         app:layout_constraintTop_toTopOf="@id/tv_bordbuch" />
 
-
     <ScrollView
-        android:id="@+id/sv_Bordbuch_Grundlagen"
+        android:id="@+id/sv_bordbuch"
         android:layout_width="match_parent"
-        android:layout_height="610dp"
-        android:layout_below="@+id/tv_BordbuchKapitel"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="0dp">
+        android:layout_height="608dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="123dp">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="375dp"
-                android:layout_height="129dp"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/tabelle" />
-
-
-            <EditText
-                android:id="@+id/et_grundlagen"
+            <WebView
+                android:id="@+id/wv_infotext"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="20dp"
+                android:layout_height="fill_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:ems="10"
-                android:text="@string/large_text_grundlagen"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+                android:layout_marginRight="20dp" />
+        </RelativeLayout>
     </ScrollView>
-
-
-
 
 </RelativeLayout>

@@ -68,7 +68,7 @@ public class Seekarte2 extends AppCompatActivity implements View.OnClickListener
          **/
         if(v.getId() == R.id.insel_Basics)
         {
-            Toast.makeText(this,"Basics gedückt",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Grundlagen gedückt",Toast.LENGTH_SHORT).show();
              /**
              * öffnen der neuen Aktivität "Logbucheintrag_Basics"
              **/
