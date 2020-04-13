@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Logbuch"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    android:background="@color/colorBackground">
+    tools:context=".Logbuch">
 
     <ImageButton
         android:id="@+id/ib_backLogbuch"
         android:layout_width="59dp"
         android:layout_height="58dp"
         android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
+        android:layout_marginRight="43dp"
         android:layout_marginBottom="103dp"
         android:background="@null"
         android:contentDescription="@string/desc"
@@ -29,8 +29,8 @@
         android:id="@+id/tv_Logbucheintrag"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="@string/headline_logbuch"
         android:textColor="@android:color/background_dark"
@@ -47,13 +47,15 @@
         android:id="@+id/tv_Kapitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/tv_kapitelüberschrift"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/iv_piratenboot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ib_backLogbuch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

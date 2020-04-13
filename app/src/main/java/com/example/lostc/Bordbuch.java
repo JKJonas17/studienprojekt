@@ -19,7 +19,7 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bordbuch_grundlagen);
+        setContentView(R.layout.activity_bordbuch);
 
         TextView tv_BordbuchKapitel = findViewById(R.id.tv_BordbuchKapitel);
         ImageButton ib_BackBordbuch = findViewById(R.id.ib_backBordbuch);
@@ -70,7 +70,7 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
         if(kategorie.equals("8"))
         {
             tv_BordbuchKapitel.setText("Präprozessor");
-            webView.loadUrl(basePath+ "pröprozessor.html");
+            webView.loadUrl(basePath+ "praeprozessor.html");
         }
     }
 

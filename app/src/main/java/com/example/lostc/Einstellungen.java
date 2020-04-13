@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Einstellungen extends AppCompatActivity implements View.OnClickListener{
 
-    Button bt_kaptn_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
+    Button bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +17,12 @@ public class Einstellungen extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_einstellungen);
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
-        bt_kaptn_kontaktieren = findViewById(R.id.bt_kaptain_kontaktieren);
-        bt_fortschritt_zuruecksetzten = findViewById(R.id.bt_kaptain_kontaktieren);
+        bt_kaptain_kontaktieren = findViewById(R.id.bt_kaptain_kontaktieren);
+        bt_fortschritt_zuruecksetzten = findViewById(R.id.bt_fortschritt_zuruecksetzten);
         bt_crew = findViewById(R.id.bt_crew);
 
         //OnClickListener für jeden Button
-        bt_kaptn_kontaktieren.setOnClickListener(this);
+        bt_kaptain_kontaktieren.setOnClickListener(this);
         bt_fortschritt_zuruecksetzten.setOnClickListener(this);
         bt_crew.setOnClickListener(this);
     }
@@ -46,7 +46,6 @@ public class Einstellungen extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(this, Team_kontaktieren.class);
         startActivity(intent);
         this.finish();
-
     }
 
     public void openCrew()
