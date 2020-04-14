@@ -1,13 +1,10 @@
 package com.example.lostc;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
-
-
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,55 +30,64 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
 
         bt_bestaetigen.setOnClickListener(this);
         et_nickname.setOnClickListener(this);
+        et_nickname.setOnEditorActionListener(editorListner);
 
-
+        /**
+         * Überprüfen ob bereits ein Username angelegt wurde
+         */
         if(User.retriveUsername(this).isEmpty() || User.retriveUsername(this).equals("default_value")){
 
         }else{
             Intent intent = new Intent(this, Main_menue.class);
             startActivity(intent);
         }
-/*
-        if(username != "")
-        {
-            username = username;
-            Intent intent = new Intent(this, Main_menue.class);
-            startActivity(intent);
-        }
-
- */
-
     }
 
+    /**
+     * Bestätigen und weiter durch klicken des Häckchens auf der Tastatur.
+     */
+    private TextView.OnEditorActionListener editorListner = new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            switch (actionId){
+                case EditorInfo.IME_ACTION_DONE:
+                    check_and_next();
+                    break;
+            }
+            return false;
+        }
+    };
 
 
+    /**
+     * Bestätigen und weiter durch klicken des Buttons.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 
         switch (v.getId()){
             case R.id.bt_bestaetigen:
-                //Überprüfen on name eingegben wurde
-                if(String.valueOf(et_nickname.getText()).equals("Nickname hier eingeben")||String.valueOf(et_nickname.getText()).equals("") ){
-
-                    //Hier muss eine Fehlermeldung erscheinen, dass man zuerst einen gültigen Nicknamen eingeben muss
-                    Toast.makeText(this,"kein gültiger Benutzername angegeben",Toast.LENGTH_SHORT).show();
-                }else{
-
-
-                    User.insertUsername(this, et_nickname.getText().toString());
-
-                    Intent intent = new Intent(this, Main_menue.class);
-                    startActivity(intent);
-                    this.finish();
+                check_and_next();
+                break;
                 }
-                break;
-
-            case R.id.et_Nickname:
-
-                break;
         }
 
+    /**
+     * Wird aufgerufen um die Gültigkeit des Usernamen zu überprüfen und um zur nächsten Ebene zu wechseln.
+     * Eigene Methode, da der Schritt sowohl beim OnClick auf den Button als auch beim Klicken auf den hacken der Tastatur durchgeführt werden soll.
+     */
+        public void check_and_next() {
+            //Überprüfen on name eingegben wurde
+            if(String.valueOf(et_nickname.getText()).equals("Nickname hier eingeben")||String.valueOf(et_nickname.getText()).equals("") ){
+                Toast.makeText(this,"kein gültiger Benutzername angegeben",Toast.LENGTH_SHORT).show();
+            }else{
+                User.insertUsername(this, et_nickname.getText().toString());
+                Toast.makeText(Choose_name.this, "Registrierung erfolgreich", Toast.LENGTH_SHORT).show();
 
-
+                Intent intent = new Intent(this, Main_menue.class);
+                startActivity(intent);
+                this.finish();
+        }
     }
 }
