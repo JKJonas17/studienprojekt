@@ -34,8 +34,9 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         bt_einstellungen.setOnClickListener(this);
         bt_beenden.setOnClickListener(this);
 
-        tv_willkommen.setText("Willkommen " + Choose_name.getNickname() + "!!");
-        tv_ausgabeuser.setText(Choose_name.username);
+
+        tv_willkommen.setText("Willkommen " + User.retriveUsername(this) + "!!");
+        tv_ausgabeuser.setText(User.retriveUsername(this));
     }
 
     @Override

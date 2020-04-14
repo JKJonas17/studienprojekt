@@ -1,46 +1,60 @@
 package com.example.lostc;
 
-import androidx.annotation.NonNull;
+import android.content.Context;
+import android.content.SharedPreferences;
+
+
 
 public class User {
 
-    private static int userID = 999;
-    private String nickname;
-    private int punktekonto;
-
-
-    public User(String n){
-        this.setNickname(n);
-        this.setUserID(userID + 1);
+    public static SharedPreferences getPrefs(Context context){
+        return context.getSharedPreferences("user_configuration",Context.MODE_PRIVATE);
     }
-    public static int getUserID() {
-        return userID;
+    //Öffnen bzw Erstellen der Shared Preferences Datei, Editor wird gebraucht zum verändern
+
+    public static void insertUserData(Context context,String key, String value){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putString(key, value);
+        editor.commit();
     }
 
-    public String getNickname() {
-        return nickname;
+    //Schreibt den übergebenen String in die Shared Pref Datei in die Spalte "username"
+    public static void insertUsername(Context context, String username_value){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putString("username", username_value);
+        editor.commit();
+    }
+
+    public static void insertScore(Context context, int score_value){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putInt("score", score_value);
+        editor.commit();
     }
 
 
-    public static void setUserID(int userID) {
-        User.userID = userID;
+    //Gibt "Spalte" username aus
+    public static String retriveUsername(Context context){
+        return getPrefs(context).getString("username", "default_value");
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public static int retriveScore(Context context){
+        return getPrefs(context).getInt("score", 0);
     }
 
-    public int getPunktekonto() {
-        return punktekonto;
+    //Setzt den gesamten user (username und score) zurück
+    public static void resetUser(Context context){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.remove("username");
+        editor.remove("score");
+        editor.commit();
     }
 
-    public void setPunktekonto(int punktekonto) {
-        this.punktekonto = punktekonto;
-    }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return "Name: " + this.getNickname() + ", UserID: " + this.getUserID();
-    }
+
+    /*Gibt true zurück, wenn es bereits einen eintrag bei user_config gibt
+    public boolean checkUser(){
+        return mySPR.contains("user_config");
+    }*/
+
+
 }

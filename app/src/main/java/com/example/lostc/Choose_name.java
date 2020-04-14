@@ -20,14 +20,6 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
     Button bt_bestaetigen;
     EditText et_nickname;
     TextView tv_wie_heißt_du;
-    public User activeUser;
-
-    //Hier muss sowohl bei der Variable "static" angegeben werden, sonst funktionierts nicht. Aber ist das nicht falsch?
-    static String nickname;
-    static String username;
-    public static String getNickname(){
-        return nickname;
-    }
 
 
     @Override
@@ -42,20 +34,22 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
         bt_bestaetigen.setOnClickListener(this);
         et_nickname.setOnClickListener(this);
 
-        //Nickname auslesen
-        Context context = this;
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String defaultValue =  "";
-        String nickname = sharedPref.getString("",defaultValue);
 
+        if(User.retriveUsername(this).isEmpty() || User.retriveUsername(this).equals("default_value")){
 
-
-        if(nickname != "")
-        {
-            nickname = nickname;
+        }else{
             Intent intent = new Intent(this, Main_menue.class);
             startActivity(intent);
         }
+/*
+        if(username != "")
+        {
+            username = username;
+            Intent intent = new Intent(this, Main_menue.class);
+            startActivity(intent);
+        }
+
+ */
 
     }
 
@@ -66,23 +60,15 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
 
         switch (v.getId()){
             case R.id.bt_bestaetigen:
+                //Überprüfen on name eingegben wurde
                 if(String.valueOf(et_nickname.getText()).equals("Nickname hier eingeben")||String.valueOf(et_nickname.getText()).equals("") ){
 
                     //Hier muss eine Fehlermeldung erscheinen, dass man zuerst einen gültigen Nicknamen eingeben muss
-                    Toast.makeText(this,"kein Benutzername angegeben",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"kein gültiger Benutzername angegeben",Toast.LENGTH_SHORT).show();
                 }else{
 
-                    nickname = String.valueOf(et_nickname.getText());
-                 /*  User activeUser = new User(nickname);
-                    tv_wie_heißt_du.setText(activeUser.toString());
-                    username = activeUser.toString();
 
-                    SharedPreferences sharedPreferences
-                */
-                    SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString( "", et_nickname.getText().toString());
-                    editor.commit();
+                    User.insertUsername(this, et_nickname.getText().toString());
 
                     Intent intent = new Intent(this, Main_menue.class);
                     startActivity(intent);
