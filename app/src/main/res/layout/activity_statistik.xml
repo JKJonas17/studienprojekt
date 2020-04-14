@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".Statistik">
+
+
+    <ImageButton
+        android:id="@+id/ib_backStatistik"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:background="@null"
+        android:layout_marginBottom="103dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/ic_backbutton_foreground"
+        android:contentDescription="@string/desc" />
+
+    <ImageView
+        android:id="@+id/iv_schatzkiste"
+        android:layout_width="155dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toTopOf="@+id/tv_schatz_des_hollaenders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/schatz3" />
+
+    <TextView
+        android:id="@+id/tv_schatz_des_hollaenders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/tv_schatz"
+        android:textColor="@android:color/background_dark"
+        android:textSize="40sp"
+        app:fontFamily="@font/geschwungen"
+        app:layout_constraintBottom_toTopOf="@+id/tv_gesamtfortschritt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_gesamtfortschritt"
+        android:layout_width="400dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/tv_gesamtfortschritt"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_schatz_des_hollaenders" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

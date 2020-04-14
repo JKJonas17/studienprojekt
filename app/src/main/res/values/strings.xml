@@ -1,6 +1,73 @@
 <resources>
+    /Ebenen/
     <string name="app_name">lost@C</string>
-    <string name="title_activity_seekarte">seekarte</string>
+    <string name="headline_seekarte">Seekarte</string>
+    <string name="headline_bordbuch">Bordbuch</string>
+    <string name="underheadline_bordbuch_grundlagen">Grundlagen</string>
+    <string name="headline_logbuch">Logbucheintrag</string>
+    <string name="bt_start">Start</string>
+
+    /TextViews Logbuch - Buttons/
+    <string name="tv_kapitelüberschrift">Kapitelüberschrift</string>
+    <string name="bt_bordbuch">Bordbuch</string>
+    <string name="bt_abfrage">Abfrage</string>
+    <string name="bt_prüfung">Prüfung</string>
+
+    /TextViews Einstellungen -Buttons/
+    <string name="bt_einstellungen">Einstellungen</string>
+    <string name="bt_statistik">Statistik</string>
+    <string name="bt_leinen_los">Leinen Los!</string>
+    <string name="bt_beenden">Beenden</string>
+    <string name="tv_willkommen">Willkommen XY!</string>
+
+    /TextViews Team_Kontaktieren/
+    <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abzuschicken!\nAuf Seemann, Tod und Teufel!</string>
+    <string name="tv_flaschenpostnachricht">Flaschenpostnachricht:</string>
+    <string name="et_name">Name</string>
+    <string name="et_thema">Thema</string>
+    <string name="et_semester">Semester</string>
+    <string name="bt_absenden">absenden</string>
+
+    /TextViews Die Crew/
+    <string name="headline_Crew">Die Crew</string>
+    <string name="txt_name1">Guybrush Threewood \nJonas Jackermayer</string>
+    <string name="txt_name2">Elaine Marley \nStefanie Hammerschmidth</string>
+    <string name="txt_name3">Will Turner \nRaffael Hertel</string>
+    <string name="txt_name4">Jack Sparrow\nJonas Kaschel</string>
+    <string name="txt_name5">Elizabeth Swann \nStefanie Strohmayer</string>
+
+    /*TextViews Einstellungen */
+    <string name="headline_Einstellungen">Einstellungen</string>
+    <string name="tv_namen_aendern">Name ändern:</string>
+    <string name="bt_kaptn_kontaktieren">Käptn kontaktieren</string>
+    <string name="bt_fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
+    <string name="bt_crew">Die Crew</string>
+
+    /*TextViews Statistik */
+    <string name="headline_Statistik">Einstellungen</string>
+    <string name="tv_schatz">Der Schatz des Holländers!</string>
+    <string name="tv_gesamtfortschritt">Hier siehst du deinen Gesamtfortschritt:</string>
+
+    /TextViews Seekarte/
+    <string name="action_settings">Settings</string>
+    <string name="seekarte">Seekarte</string>
+    <string name="grundlagen">Grundlagen</string>
+    <string name="datentypen">Datentypen</string>
+    <string name="entscheidungen">Entscheidungen</string>
+    <string name="schleifen">Schleifen</string>
+    <string name="funktionen">Funktionen</string>
+    <string name="arrays">Arrays</string>
+    <string name="variablen">Variablen</string>
+    <string name="präprozessor">Präprozessor</string>
+
+    <string name="zeiger">Zeiger</string>
+    <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
+    <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
+    <string name="crew">Crew</string>
+
+    <string name="verzweigungen">Verzweigungen</string>
+    <string name="desc">desc</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -90,23 +157,9 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
-    <string name="Seekarte">Seekarte</string>
-    <string name="basics">Basics</string>
-    <string name="variablen">Variablen</string>
-    <string name="benutzerinteraktion">Benutzerinteraktion</string>
-    <string name="schleifen">Schleifen</string>
-    <string name="arrays">Arrays</string>
-    <string name="funktionen">Funktionen</string>
-    <string name="zeiger">Zeiger</string>
-    <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
-    <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
-    <string name="crew">Crew</string>
-    <string name="einstellungen">Einstellungen</string>
-    <string name="verzweigungen">Verzweigungen</string>
-    <string name="desc">desc</string>
-    <string name="nickname"></string>
-    <string name="title_activity_seekarte1">Seekarte1</string>
+
+
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>s
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Text">Text</string>s
 </resources>
