@@ -30,7 +30,7 @@ public class Statistik extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.ib_backLogbuch) {
+        if(v.getId() == R.id.ib_backStatistik) {
             openMainMenue();
         }
     }

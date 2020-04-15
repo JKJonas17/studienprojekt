@@ -40,6 +40,7 @@ public class Choose_name extends AppCompatActivity implements View.OnClickListen
         }else{
             Intent intent = new Intent(this, Main_menue.class);
             startActivity(intent);
+            this.finish();
         }
     }
 

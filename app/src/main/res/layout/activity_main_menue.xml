@@ -36,25 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_ausgabeuser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="304dp"
-        android:layout_marginLeft="304dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="140dp"
-        android:text="TextView"
-        android:textColor="@android:color/background_dark"
-        app:layout_constraintBottom_toTopOf="@+id/bt_leinen_los"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_willkommen"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/bt_leinen_los"
         android:layout_width="200dp"
