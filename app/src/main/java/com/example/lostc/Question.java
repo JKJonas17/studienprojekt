@@ -12,11 +12,13 @@ public class Question {
     private String option4;
     private String answerNr;
     private String kategorieNr;
-
+    private String id;
+    private String answered;
     public Question(){}
 
 
-    public Question(String question, String option1, String option2, String option3,String option4, String answerNr, String kat_Nr) {
+    public Question(String id,String question, String option1, String option2, String option3,String option4, String answerNr, String kat_Nr, String answered) {
+        this.id = id;
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -24,6 +26,7 @@ public class Question {
         this.option4 = option4;
         this.answerNr = answerNr;
         this.kategorieNr = kat_Nr;
+        this.answered = answered;
     }
 
     public String getQuestion()
@@ -93,6 +96,24 @@ public class Question {
     public void setKategorieNr(String kategorieNr)
     {
         this.kategorieNr = kategorieNr;
+    }
+
+    public String getAnswered()
+    {
+        return answered;
+    }
+    public void setAnswered(String answered)
+    {
+        this.answered = answered;
+    }
+
+    public String getId()
+    {
+        return id;
+    }
+    public void setId(String id)
+    {
+        this.id = id;
     }
 
 }

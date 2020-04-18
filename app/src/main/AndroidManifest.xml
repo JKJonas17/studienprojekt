@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Seekarte" />
+        <activity android:name=".Verloren"></activity>
+        <activity android:name=".Gewonnen" />
         <activity android:name=".Team_kontaktieren" />
-        <activity android:name=".Quiz" />
         <activity android:name=".Bordbuch" />
+        <activity android:name=".Quiz" />
         <activity android:name=".Logbuch" />
         <activity android:name=".Einstellungen" />
         <activity android:name=".Statistik" />
+        <activity android:name=".Seekarte" />
         <activity android:name=".Main_menue" />
         <activity android:name=".Choose_name" />
         <activity android:name=".MainActivity">

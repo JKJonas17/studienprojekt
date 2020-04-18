@@ -27,6 +27,7 @@
         android:background="@null"
         app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
+
     <TextView
         android:id="@+id/text_view_question"
         android:layout_width="match_parent"
@@ -88,4 +89,14 @@
         android:layout_below="@id/radio_group"
         android:layout_marginTop="109dp"
         android:text="Confirm" />
+
+    <TextView
+        android:id="@+id/tv_Score"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="TextView" />
 </RelativeLayout>
