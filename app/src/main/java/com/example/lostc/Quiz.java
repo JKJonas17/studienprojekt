@@ -247,13 +247,16 @@ public class Quiz extends AppCompatActivity {
         counter++;
     }
 
-
+    /**
+     * Öffnet Aktivität Gewonnen wenn User mehr als 80% der Fragen richtig hat
+     * Verloren sonst
+     */
     private void finishQuiz() {
 
         if (db.levelup(kategorie) > 0.8) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
             openGewonnen();
         } else {
-            openVerloren();
+            openVerloren(kategorie);
         }
 
         button_Confirm.setOnClickListener(new View.OnClickListener() {
@@ -421,8 +424,9 @@ public class Quiz extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openVerloren() {
+    public void openVerloren(String kategorie) {
         intent = new Intent(this, Verloren.class);
+        intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
     }
 

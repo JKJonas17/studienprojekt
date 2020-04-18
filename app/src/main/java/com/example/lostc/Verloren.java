@@ -9,25 +9,30 @@ import android.widget.Button;
 
 public class Verloren extends AppCompatActivity implements View.OnClickListener{
 
-    private Button bt_nochmalQuiz;
+    private String kategorie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verloren);
 
-        bt_nochmalQuiz = findViewById(R.id.bt_nochmalQuiz);
+        Button bt_nochmalQuiz = findViewById(R.id.bt_nochmalQuiz);
         bt_nochmalQuiz.setOnClickListener(this);
+
+        Bundle bundle = getIntent().getExtras();
+        kategorie = bundle.getString("Kategorie");
+
     }
 
     @Override
     public void onClick(View v) {
-        openQuiz();
+        openQuiz(kategorie);
     }
 
-    public void openQuiz()
+    public void openQuiz(String kategorie)
     {
         Intent intent = new Intent(this,Quiz.class);
+        intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
     }
 }
