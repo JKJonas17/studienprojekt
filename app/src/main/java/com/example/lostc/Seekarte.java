@@ -15,17 +15,12 @@ import org.w3c.dom.Text;
 public class Seekarte extends AppCompatActivity implements View.OnClickListener{
 
     private Intent intent;
-    ImageView iv_totenschaedel, iv_, iv_hintergrund_ueberschrift;
-    TextView tv_seekarte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seekarte);
 
-        ImageView iv_hingergrund_ueberschrift = findViewById(R.id.iv_hintergrund_ueberschrift);
-        ImageView iv_totenschaedel = findViewById(R.id.iv_totenschaedel);
-        TextView tv_seekarte = findViewById(R.id.tv_seekarte);
 
         ImageButton ib_Grundlagen = findViewById(R.id.ib_insel_grundlagen);
         ImageButton ib_Datentypen = findViewById(R.id.ib_insel_datentypen);
@@ -58,8 +53,8 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener{
          * **/
 
         //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
-        ImageView iv_boot1 = findViewById(R.id.iv_boot1);
-        iv_boot1.setVisibility(View.INVISIBLE);
+       // ImageView iv_boot1 = findViewById(R.id.iv_boot1);
+      //  iv_boot1.setVisibility(View.INVISIBLE);
     }
 
     /**

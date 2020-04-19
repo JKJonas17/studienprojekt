@@ -12,6 +12,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
     TextView tv_username;
+    private DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
             openKaptnKontaktieren();
         }
         if(v.getId() == R.id.bt_fortschritt_zuruecksetzten) {
-            opendialog2();
+            openDialog2();
         }
         if (v.getId() == R.id.bt_crew) {
             openCrew();
@@ -52,7 +53,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         }
     }
 
-    private void opendialog2() {
+    private void openDialog2() {
         ExampleDialog2 exampleDialog2 = new ExampleDialog2();
         exampleDialog2.show(getSupportFragmentManager(), "example dialog");
     }
@@ -60,7 +61,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
     @Override
     public void onYesClicked() {
         User.insertScore(this,0);
-        //Braucht ein DB Update
+        db.resetAnswered();
     }
 
     public void openDialog() {

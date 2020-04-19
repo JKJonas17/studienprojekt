@@ -97,7 +97,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="150dp"
         android:background="@color/colorButton"
-        android:text="@string/bt_prüfung"
+        android:text="@string/bt_programmieren"
         android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

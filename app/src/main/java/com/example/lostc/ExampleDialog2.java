@@ -26,7 +26,7 @@ public class ExampleDialog2 extends AppCompatDialogFragment {
                 .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        listener2.onYesClicked();
                     }
                 });
         return builder.create();

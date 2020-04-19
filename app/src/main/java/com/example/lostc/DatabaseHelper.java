@@ -135,9 +135,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor1.close();
         double avg = ((double)correctRows / (double)answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
         return avg;
-
-
     }
 
+    /**
+     * Setzt bei allen Fragen den Wert der Spalte Answered auf den default-Wert 0 zurück um ein erneutes Scoren zu ermöglichen
+     */
+    public void resetAnswered()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.beginTransaction();
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put("Answered", "0");
+            db.update("Fragen", cv, "Answered = 1 OR Answered = 2", null);
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
+        db.close();
+    }
 
 }

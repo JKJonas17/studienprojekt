@@ -8,76 +8,86 @@
     android:orientation="vertical"
     tools:context=".Seekarte">
 
-    <ImageView
-        android:id="@+id/iv_totenschaedel"
-        android:layout_width="105dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/desc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/skull" />
 
-    <ImageButton
-        android:id="@+id/ib_backSeekarte"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="110dp"
-        android:background="@null"
-        android:contentDescription="@string/desc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/ic_backbutton_foreground" />
-
-
-    <ImageView
-        android:id="@+id/iv_hintergrund_ueberschrift"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginTop="90dp"
-        android:contentDescription="@string/desc"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="183dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/banner" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tv_seekarte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="17dp"
-        android:text="@string/seekarte"
-        android:textColor="@android:color/background_dark"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_totenschaedel"
-        app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iv_totenschaedel"
+            android:layout_width="164dp"
+            android:layout_height="113dp"
+            android:contentDescription="@string/desc"
+            app:layout_constraintBottom_toTopOf="@+id/iv_hintergrund_ueberschrift"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@mipmap/ic_skull_foreground"/>
+
+        <ImageView
+            android:id="@+id/iv_hintergrund_ueberschrift"
+            android:layout_width="355dp"
+            android:layout_height="86dp"
+            android:contentDescription="@string/desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@drawable/banner" />
+
+        <TextView
+            android:id="@+id/tv_seekarte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="17dp"
+            android:text="@string/seekarte"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_totenschaedel"
+            app:layout_constraintVertical_bias="0.315" />
+
+        <ImageButton
+            android:id="@+id/ib_backSeekarte"
+            android:layout_width="59dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginRight="43dp"
+            android:layout_marginBottom="110dp"
+            android:background="@null"
+            android:contentDescription="@string/desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@mipmap/ic_backbutton_foreground" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="536dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="412dp"
+        android:layout_height="1089dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_hintergrund_ueberschrift">
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -276,14 +286,13 @@
                 android:layout_height="81dp"
                 android:layout_marginStart="200dp"
                 android:layout_marginLeft="200dp"
-                android:layout_marginTop="168dp"
                 android:layout_marginBottom="1dp"
                 android:contentDescription="@string/desc"
                 app:layout_constraintBottom_toTopOf="@+id/tv_datentypen"
                 app:layout_constraintEnd_toStartOf="@+id/ib_insel_datentypen"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_datentypen"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/schiff2" />
 

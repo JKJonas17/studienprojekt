@@ -20,9 +20,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
 
-        LayoutInflater inflater1 = getActivity().getLayoutInflater();
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog, null);
         builder.setView(view)
@@ -30,7 +28,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 .setNegativeButton("Zurück", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-
+                        User.insertScore(getContext(),0);
                     }
                 })
                 .setPositiveButton("Bestätigen", new DialogInterface.OnClickListener() {

@@ -140,6 +140,7 @@ public class Quiz extends AppCompatActivity {
                 if (total > counter) {
                     showNextQuestion();
                 } else {
+                    counter = 0;
                     finishQuiz();// in dieser Methode soll die nächste Aktivität geöffnet werden
                 }
 
@@ -184,8 +185,7 @@ public class Quiz extends AppCompatActivity {
     private boolean copyDatabase(Context context) {
         try {
             InputStream inputStream = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
-            String file = context.getFilesDir().getParentFile().getPath() + "/databases/" + DatabaseHelper.DATABASE_NAME; // Traue dieser Änderung noch nicht doch es scheint zu funktionieren
-            //   String file = DatabaseHelper.DBLOCATION + DatabaseHelper.DATABASE_NAME;
+            String file = context.getFilesDir().getParentFile().getPath() + "/databases/" + DatabaseHelper.DATABASE_NAME;
             OutputStream outputStream = new FileOutputStream(file);
             byte[] buff = new byte[1024];
             int length;
@@ -258,16 +258,6 @@ public class Quiz extends AppCompatActivity {
         } else {
             openVerloren(kategorie);
         }
-
-        button_Confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-
-
-        });
     }
 
     /**
@@ -416,23 +406,33 @@ public class Quiz extends AppCompatActivity {
     /**
      * Methode für das öffnen der vorhergehenden Aktivität
      *
-     * @param kategorie
+     * @param kategorie übergibt die aktuelle Kategorie aus Seekarte
      */
     public void openLogbuch(String kategorie) {
         intent = new Intent(this, Logbuch.class);
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
+        this.finish();
     }
 
+    /**
+     * wird geöffnet falls User weniger als 80% der Fragen richtig beantwortet hat
+     * @param kategorie übergibt die aktuelle Kategorie aus Seekarte
+     */
     public void openVerloren(String kategorie) {
         intent = new Intent(this, Verloren.class);
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
+        this.finish();
     }
 
+    /**
+     * wird geöffnet falls der User über 80% der Fragen richtig beantwortet hat
+     */
     public void openGewonnen() {
         intent = new Intent(this, Gewonnen.class);
         startActivity(intent);
+        this.finish();
     }
 
 

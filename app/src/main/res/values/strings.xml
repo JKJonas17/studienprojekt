@@ -162,5 +162,6 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="Text">Text</string>s
+    <string name="Text">Text</string>
+    <string name="username">Username</string>s
 </resources>
