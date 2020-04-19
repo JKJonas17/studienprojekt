@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Verloren"></activity>
+        <activity android:name=".Verloren" />
         <activity android:name=".Gewonnen" />
-        <activity android:name=".Team_kontaktieren" />
         <activity android:name=".Bordbuch" />
         <activity android:name=".Quiz" />
         <activity android:name=".Logbuch" />
+        <activity android:name=".Crew" />
+        <activity android:name=".Team_kontaktieren" />
+        <activity android:name=".ExampleDialog" />
+        <activity android:name=".ExampleDialog2" />
         <activity android:name=".Einstellungen" />
         <activity android:name=".Statistik" />
         <activity android:name=".Seekarte" />

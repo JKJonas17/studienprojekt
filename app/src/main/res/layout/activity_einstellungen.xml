@@ -4,82 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".Einstellungen"
-    android:background="@color/colorBackground">
+    tools:context=".Einstellungen">
+
 
     <TextView
         android:id="@+id/tv_einstellungen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="64dp"
-        app:fontFamily="@font/geschwungen"
         android:text="@string/headline_Einstellungen"
         android:textColor="@color/colorButton"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_name_aendern"
+        app:fontFamily="@font/geschwungen"
+        app:layout_constraintBottom_toTopOf="@+id/iv_schatztruhe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/et_name_aendern"
-        android:layout_width="285dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/bt_kaptain_kontaktieren"
+    <ImageView
+        android:id="@+id/iv_schatztruhe"
+        android:layout_width="95dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toTopOf="@+id/bt_name_aendern"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_aendern" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/schatz2" />
 
     <TextView
-        android:id="@+id/tv_name_aendern"
-        android:layout_width="164dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="277dp"
-        android:layout_marginRight="277dp"
-        android:text="@string/tv_namen_aendern"
-        android:textColor="@android:color/background_dark"
-        android:textSize="25sp"
-        app:fontFamily="@font/geschwungen"
+        android:id="@+id/tv_username"
+        android:layout_width="198dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="38dp"
+        android:gravity="center_vertical"
+        android:text="@string/tv_aktueller_username"
+        app:layout_constraintBottom_toTopOf="@+id/bt_name_aendern"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_schatztruhe" />
+
+    <Button
+        android:id="@+id/bt_name_aendern"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorButton"
+        android:text="@string/bt_namen_aendern"
+        app:layout_constraintBottom_toTopOf="@+id/bt_kaptain_kontaktieren"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_schatztruhe" />
 
     <Button
         android:id="@+id/bt_kaptain_kontaktieren"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="33dp"
+        android:background="@color/colorButton"
         android:text="@string/bt_kaptn_kontaktieren"
         app:layout_constraintBottom_toTopOf="@+id/bt_fortschritt_zuruecksetzten"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_aendern" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_name_aendern" />
 
     <Button
         android:id="@+id/bt_crew"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorButton"
         android:text="@string/bt_crew"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_fortschritt_zuruecksetzten" />
 
@@ -87,24 +91,12 @@
         android:id="@+id/bt_fortschritt_zuruecksetzten"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
+        android:background="@color/colorButton"
         android:text="@string/bt_fortschritt_zuruecksetzten"
         app:layout_constraintBottom_toTopOf="@+id/bt_crew"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_kaptain_kontaktieren" />
-
-    <ImageView
-        android:id="@+id/iv_schatztruhe"
-        android:layout_width="95dp"
-        android:layout_height="102dp"
-        android:layout_marginBottom="47dp"
-        android:contentDescription="@string/desc"
-        app:layout_constraintBottom_toTopOf="@+id/tv_name_aendern"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen"
-        app:srcCompat="@drawable/schatz2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

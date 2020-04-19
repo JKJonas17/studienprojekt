@@ -11,7 +11,7 @@
     <string name="tv_kapitelüberschrift">Kapitelüberschrift</string>
     <string name="bt_bordbuch">Bordbuch</string>
     <string name="bt_abfrage">Abfrage</string>
-    <string name="bt_prüfung">Prüfung</string>
+    <string name="bt_programmieren">Programmieren</string>
 
     /TextViews Einstellungen -Buttons/
     <string name="bt_einstellungen">Einstellungen</string>
@@ -38,8 +38,9 @@
 
     /*TextViews Einstellungen */
     <string name="headline_Einstellungen">Einstellungen</string>
-    <string name="tv_namen_aendern">Name ändern:</string>
-    <string name="bt_kaptn_kontaktieren">Käptn kontaktieren</string>
+    <string name="tv_aktueller_username">Username</string>
+    <string name="bt_namen_aendern">Name ändern</string>
+    <string name="bt_kaptn_kontaktieren">Kaptn kontaktieren</string>
     <string name="bt_fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
     <string name="bt_crew">Die Crew</string>
 
