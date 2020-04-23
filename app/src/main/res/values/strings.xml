@@ -61,6 +61,11 @@
     <string name="variablen">Variablen</string>
     <string name="präprozessor">Präprozessor</string>
 
+    <string name="tv_gewonnen">Anker lichten XY.\n Wir stechen in See!</string>
+    <string name="bt_gewonnen">In See stechen</string>
+    <string name="tv_verloren">Arrrrrrrrr!\n Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!</string>
+    <string name="bt_verloren">Probiers nochmal</string>
+
     <string name="zeiger">Zeiger</string>
     <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
     <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>

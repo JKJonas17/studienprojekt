@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Gewonnen extends AppCompatActivity implements View.OnClickListener {
 
-    private Button bt_WeiterSeekarte;
+    Button bt_WeiterSeekarte;
+    TextView tv_gewonnen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +19,11 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_gewonnen);
 
         bt_WeiterSeekarte = findViewById(R.id.bt_weiterSeekarte);
+        tv_gewonnen = findViewById(R.id.tv_gewonnen);
+
         bt_WeiterSeekarte.setOnClickListener(this);
 
+        tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!!");
     }
 
     @Override

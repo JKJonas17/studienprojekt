@@ -52,34 +52,17 @@
         android:layout_height="41dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
-
         android:hint="Name"
+
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/et_thema"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_ahoi" />
-
-    <EditText
-        android:id="@+id/et_thema"
-        android:layout_width="240dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Thema"
-        app:layout_constraintBottom_toTopOf="@+id/et_Semester"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_aendern" />
 
     <EditText
         android:id="@+id/et_Semester"
@@ -90,14 +73,31 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="80dp"
         android:ems="10"
-        android:inputType="textPersonName"
-
         android:hint="Semester"
+
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_thema" />
+
+    <EditText
+        android:id="@+id/et_thema"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Thema"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/et_Semester"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_aendern" />
 
     <TextView
         android:id="@+id/tv_Flaschenpost"
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tv_flaschenpostnachricht"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
@@ -118,31 +118,34 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_width="347dp"
+        android:layout_height="142dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="76dp"
         android:background="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Flaschenpost">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tied_Inhalt"
             android:layout_width="match_parent"
-            android:layout_height="151dp"
+            android:layout_height="129dp"
             android:hint="@string/Text"
             tools:visibility="invisible" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/iv_karte"
-        android:layout_width="151dp"
-        android:layout_height="102dp"
+        android:layout_width="156dp"
+        android:layout_height="92dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ahoi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -154,10 +157,10 @@
         android:layout_height="106dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="115dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toEndOf="@+id/tv_Flaschenpost"
         app:layout_constraintTop_toBottomOf="@+id/tv_ahoi"
         app:layout_constraintVertical_bias="1.0"
@@ -165,14 +168,15 @@
 
     <Button
         android:id="@+id/bt_absenden"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="42dp"
         android:layout_marginBottom="1dp"
+        android:background="@color/colorButton"
         android:text="@string/bt_absenden"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.545" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

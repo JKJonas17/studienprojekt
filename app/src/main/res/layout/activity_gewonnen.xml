@@ -4,17 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".Gewonnen">
 
     <Button
         android:id="@+id/bt_weiterSeekarte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wir stechen in See"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:background="@color/colorButton"
+        android:text="@string/bt_gewonnen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_schiff"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <TextView
+        android:id="@+id/tv_gewonnen"
+        android:layout_width="406dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/tv_gewonnen"
+        android:textColor="@android:color/background_dark"
+        android:textSize="45sp"
+        app:fontFamily="@font/geschwungen"
+        app:layout_constraintBottom_toTopOf="@+id/iv_schiff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_schiff"
+        android:layout_width="354dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="180dp"
+        android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toTopOf="@+id/bt_weiterSeekarte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/piratenschiff" />
 </androidx.constraintlayout.widget.ConstraintLayout>
