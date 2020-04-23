@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -50,7 +49,6 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-
         ImageButton ib_Button = findViewById(R.id.ib_backQuiz);
         tv_Frage = findViewById(R.id.text_view_question);
         rg_Group = findViewById(R.id.radio_group);
@@ -61,7 +59,6 @@ public class Quiz extends AppCompatActivity {
         pb_Quiz = findViewById(R.id.pb_Quiz);
         button_Confirm = findViewById(R.id.button_confirm_next);
         tv_Score = findViewById(R.id.tv_Score);
-
         tv_Score.setText("Score " + User.retriveScore(this));
 
         ib_Button.setOnClickListener(new View.OnClickListener() {

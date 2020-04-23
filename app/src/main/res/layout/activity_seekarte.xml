@@ -1,70 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_seekarte_blau"
-    android:orientation="vertical"
     tools:context=".Seekarte">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="410dp"
-        android:layout_height="183dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:id="@+id/cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
 
 
         <ImageView
-            android:id="@+id/iv_totenschaedel"
-            android:layout_width="164dp"
-            android:layout_height="113dp"
-            android:contentDescription="@string/desc"
-            app:layout_constraintBottom_toTopOf="@+id/iv_hintergrund_ueberschrift"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@mipmap/ic_skull_foreground"/>
-
-        <ImageView
-            android:id="@+id/iv_hintergrund_ueberschrift"
-            android:layout_width="355dp"
-            android:layout_height="86dp"
+            android:id="@+id/header_Background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@drawable/banner" />
-
-        <TextView
-            android:id="@+id/tv_seekarte"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="17dp"
-            android:text="@string/seekarte"
-            android:textColor="@android:color/background_dark"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_totenschaedel"
-            app:layout_constraintVertical_bias="0.315" />
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@color/color_seekarte_blau" />
 
         <ImageButton
             android:id="@+id/ib_backSeekarte"
             android:layout_width="59dp"
             android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
             android:layout_marginEnd="43dp"
             android:layout_marginRight="43dp"
-            android:layout_marginBottom="110dp"
+            android:layout_marginBottom="103dp"
             android:background="@null"
             android:contentDescription="@string/desc"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -75,23 +44,74 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="282dp"
+            android:layout_height="85dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/banner1" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="138dp"
+            android:layout_height="104dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/skullnew" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="119dp"
+            android:layout_height="35dp"
+            android:text="SEEKARTE"
+            android:textColor="@android:color/background_dark"
+            android:textSize="17dp"
+            app:fontFamily="@font/geschwungen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.717" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ImageView
+        android:id="@+id/wasser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cl_header"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/desc"
+        android:visibility="visible"
+        app:srcCompat="@color/color_seekarte_blau" />
+
+
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="412dp"
-        android:layout_height="1089dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cl_header"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/Benutzerinteraktion_Themen"
+            app:layout_constraintTop_toTopOf="@+id/Benutzerinteraktion_Themen">
+
 
 
             <ImageButton
@@ -104,7 +124,7 @@
                 android:layout_marginRight="252dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -113,7 +133,7 @@
                 app:layout_constraintHorizontal_bias="0.444"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/insel" />
+                app:srcCompat="@drawable/insel3" />
 
             <ImageButton
                 android:id="@+id/ib_insel_datentypen"
@@ -126,7 +146,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -134,7 +154,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/insel2" />
+                app:srcCompat="@drawable/insel4" />
 
             <ImageButton
                 android:id="@+id/ib_insel_entscheidungen"
@@ -147,14 +167,14 @@
                 android:layout_marginRight="252dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_grundlagen"
-                app:srcCompat="@drawable/insel" />
+                app:srcCompat="@drawable/insel3" />
 
             <ImageButton
                 android:id="@+id/ib_insel_schleifen"
@@ -167,7 +187,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -175,7 +195,7 @@
                 app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_datentypen"
-                app:srcCompat="@drawable/insel2" />
+                app:srcCompat="@drawable/insel4" />
 
 
             <ImageButton
@@ -189,7 +209,7 @@
                 android:layout_marginRight="252dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -197,7 +217,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_entscheidungen"
-                app:srcCompat="@drawable/insel" />
+                app:srcCompat="@drawable/insel3" />
 
             <ImageButton
                 android:id="@+id/ib_insel_arrays"
@@ -210,7 +230,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -218,7 +238,7 @@
                 app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_schleifen"
-                app:srcCompat="@drawable/insel2" />
+                app:srcCompat="@drawable/insel4" />
 
             <ImageButton
                 android:id="@+id/ib_insel_variablen"
@@ -231,7 +251,7 @@
                 android:layout_marginRight="252dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -239,7 +259,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_funktionen"
-                app:srcCompat="@drawable/insel" />
+                app:srcCompat="@drawable/insel3" />
 
 
             <ImageButton
@@ -253,7 +273,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@color/color_seekarte_blau"
+                android:background="@null"
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
@@ -262,7 +282,7 @@
                 app:layout_constraintHorizontal_bias="0.555"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_arrays"
-                app:srcCompat="@drawable/insel2" />
+                app:srcCompat="@drawable/insel4" />
 
             <ImageView
                 android:id="@+id/iv_boot1"
@@ -278,7 +298,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/schiff" />
+                app:srcCompat="@drawable/schiff3" />
 
             <ImageView
                 android:id="@+id/iv_boot2"
@@ -294,7 +314,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_datentypen"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/schiff2" />
+                app:srcCompat="@drawable/schiff4" />
 
             <ImageView
                 android:id="@+id/iv_boot3"
@@ -310,7 +330,7 @@
                 app:layout_constraintHorizontal_bias="0.439"
                 app:layout_constraintStart_toEndOf="@+id/ib_insel_grundlagen"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot1"
-                app:srcCompat="@drawable/schiff" />
+                app:srcCompat="@drawable/schiff3" />
 
             <ImageView
                 android:id="@+id/iv_boot4"
@@ -325,7 +345,7 @@
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot2"
-                app:srcCompat="@drawable/schiff2" />
+                app:srcCompat="@drawable/schiff4" />
 
             <ImageView
                 android:id="@+id/iv_boot5"
@@ -340,7 +360,7 @@
                 app:layout_constraintHorizontal_bias="0.481"
                 app:layout_constraintStart_toEndOf="@+id/ib_insel_grundlagen"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot3"
-                app:srcCompat="@drawable/schiff" />
+                app:srcCompat="@drawable/schiff3" />
 
             <ImageView
                 android:id="@+id/iv_boot6"
@@ -358,7 +378,7 @@
                 app:layout_constraintHorizontal_bias="0.458"
                 app:layout_constraintStart_toEndOf="@+id/ib_insel_variablen"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot5"
-                app:srcCompat="@drawable/schiff" />
+                app:srcCompat="@drawable/schiff3" />
 
             <ImageView
                 android:id="@+id/iv_boot7"
@@ -374,7 +394,7 @@
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot4"
-                app:srcCompat="@drawable/schiff2" />
+                app:srcCompat="@drawable/schiff4" />
 
             <ImageView
                 android:id="@+id/iv_boot8"
@@ -391,7 +411,7 @@
                 app:layout_constraintHorizontal_bias="0.108"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot7"
-                app:srcCompat="@drawable/schiff2" />
+                app:srcCompat="@drawable/schiff4" />
 
             <TextView
                 android:id="@+id/tv_grundlagen"
@@ -519,9 +539,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_variablen" />
 
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="224dp"
+                android:layout_height="123dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_variablen"
+                app:layout_constraintVertical_bias="0.843"
+                app:srcCompat="@drawable/oktopus" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
 
