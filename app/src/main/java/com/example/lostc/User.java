@@ -74,10 +74,9 @@ public class User {
      * Löscht username und score aus der SharedPreferences-Datei
      * @param context
      */
-    //Setzt den gesamten user (username und score) zurück
-    public static void resetUser(Context context){
+    //Setzt den score zurück
+    public static void resetScore(Context context){
         SharedPreferences.Editor editor = getPrefs(context).edit();
-        editor.remove("username");
         editor.remove("score");
         editor.commit();
     }
