@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".Einstellungen">
 
-
     <ImageButton
         android:id="@+id/ib_back_einstellungen"
         android:layout_width="59dp"
@@ -127,18 +126,5 @@
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/iv_schatztruhe"
         app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen" />
-
-    <ImageButton
-        android:id="@+id/ib_back_einstellungen"
-        android:layout_width="69dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@null"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

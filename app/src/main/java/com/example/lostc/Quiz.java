@@ -144,7 +144,7 @@ public class Quiz extends AppCompatActivity {
                                       }
         );
 
-        /**
+        /*
          * Confirm-Button um Frage zu überspringen, nächste Frage anzeigen zu lassen oder Quiz zu beenden
          * wenn counter die Größe des Array nicht überschritten
          * und wenn die Frage noch nicht beantwortet wurde
@@ -297,9 +297,11 @@ public class Quiz extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished) {
                 pb_Quiz.setProgress((int) millisUntilFinished);
+                button_Confirm.setVisibility(View.GONE);
             }
-
             public void onFinish() {
+                button_Confirm.setVisibility(View.VISIBLE);
+                pb_Quiz.setProgress(0);
                 showSolution();
             }
         }.start();

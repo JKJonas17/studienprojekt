@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_quiz_header"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_height="140dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -21,6 +21,40 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:minHeight="180dp">
+
+        <TextView
+            android:id="@+id/tv_Quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="@string/Quiz"
+            android:textColor="@android:color/background_dark"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.172" />
+
+        <TextView
+            android:id="@+id/tv_QuizKapitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/tv_kapitelüberschrift"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/ib_backQuiz"
@@ -53,7 +87,7 @@
             app:layout_constraintHorizontal_bias="0.929"
             app:layout_constraintStart_toEndOf="@+id/ib_backSeekarte"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.428" />
+            app:layout_constraintVertical_bias="0.07" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -73,13 +107,13 @@
 
     <RadioGroup
         android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">
 
         <RadioButton
             android:id="@+id/radio_button1"
-            android:layout_width="385dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Option 1" />
 
@@ -105,20 +139,40 @@
 
     <ProgressBar
         android:id="@+id/pb_Quiz"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_above="@+id/text_view_question"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="133dp">
+        android:layout_marginTop="133dp"
+        android:layout_marginBottom="18dp">
 
     </ProgressBar>
 
-    <Button
-        android:id="@+id/button_confirm_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/radio_group"
-        android:layout_marginTop="109dp"
-        android:text="Confirm" />
 
- </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="469dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/radio_group"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp">
+
+        <Button
+            android:id="@+id/button_confirm_next"
+            android:layout_width="187dp"
+            android:layout_height="62dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.046" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

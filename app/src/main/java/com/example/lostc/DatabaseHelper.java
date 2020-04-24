@@ -4,9 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 
 
@@ -49,15 +51,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Liest alle relevanten Fragen der übergebenen Kategorie ein und übergibt sie an einen Array
+     *
      * @param kategorie Kategorie aus Seekarte
      * @return ql ArrayList mit Fragen für Quiz
      */
 
     public ArrayList<Question> getQuestions(String kategorie) {
-        Question q = null;
+        Question q;
+        Cursor cursor;
         ArrayList<Question> questionList = new ArrayList<>();
         openDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM FRAGEN WHERE KatNr = ?", new String[]{kategorie});
+
+        cursor = db.rawQuery("SELECT * FROM FRAGEN WHERE KatNr = ?", new String[]{kategorie});
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             q = new Question();
@@ -81,11 +86,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Updatet die Spalte "Answered" in der Tabelle: Fragen
+     *
      * @param id      Primary Key als Referenz in der Datenbank
      * @param correct aus Klasse Quiz zur Überprüfung ob
      */
 
-   public void setAnswered(String id, boolean correct) {
+    public void setAnswered(String id, boolean correct) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         //ist die Antwort richtig wird der Wert in Answered auf 2 gesetzt die Frage kann somit nicht mehr bepunktet werden
@@ -118,14 +124,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Hat der Spieler mehr als 80% der Fragen beantwortet kann er ein Level-fortfahren
+     *
      * @param kategorie wird benötigt um alle Zeilen einer bestimmten Kategorie zu finden
      * @return avg double Wert der bestimmt ob ein Spieler genügend Fragen beantwortet hat um ein Level aufzusteigen
      */
 
     public double levelup(String kategorie) {
 
+        double avg;
         openDatabase();
-        Cursor cursor = db.rawQuery("SELECT COUNT(Answered) FROM Fragen WHERE Answered = ? AND KatNr = ?", new String[]{"2",kategorie});
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(Answered) FROM Fragen WHERE Answered = ? AND KatNr = ?", new String[]{"2", kategorie});
         Cursor cursor1 = db.rawQuery("SELECT COUNT(Answered) FROM Fragen WHERE KatNr = ?", new String[]{kategorie});
         cursor.moveToFirst();
         cursor1.moveToFirst();
@@ -134,15 +143,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         closeDatabase();
         cursor.close();
         cursor1.close();
-        double avg = ((double)correctRows / (double)answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
+
+        avg = ((double) correctRows / (double) answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
         return avg;
     }
 
     /**
      * Setzt bei allen Fragen den Wert der Spalte Answered auf den default-Wert 0 zurück um ein erneutes Scoren zu ermöglichen
      */
-    public void resetAnswered()
-    {
+    public void resetAnswered() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.beginTransaction();
         try {

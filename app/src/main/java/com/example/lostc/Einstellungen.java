@@ -70,9 +70,17 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         if(User.retriveScore(this)!=0) {
             db.resetAnswered();
             User.insertScore(this, 0);
+            for(int i=1; i<=9; i++) {
+                Quiz.setArrayPosition(this, 0, String.valueOf(i));
+            }
         }
         return;
 
+    }
+    @Override
+    public void applyText(String username) {
+        User.insertUsername(this, username);
+        tv_username.setText("Aktueller Name: " + username);
     }
 
     public void openDialog() {
@@ -86,18 +94,10 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         this.finish();
     }
 
-
     private void openCrew() {
         intent = new Intent(this, Crew.class);
         startActivity(intent);
         this.finish();
-    }
-
-
-    @Override
-    public void applyText(String username) {
-        User.insertUsername(this, username);
-        tv_username.setText("Aktueller Name: " + username);
     }
 
     private void openMainMenue () {

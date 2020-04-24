@@ -61,6 +61,7 @@
     <string name="variablen">Variablen</string>
     <string name="präprozessor">Präprozessor</string>
 
+
     <string name="tv_gewonnen">Anker lichten XY.\n Wir stechen in See!</string>
     <string name="bt_gewonnen">In See stechen</string>
     <string name="tv_verloren">Arrrrrrrrr!\n Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!</string>
@@ -168,5 +169,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="Text">Text</string>
-    <string name="username">Username</string>s
+    <string name="username">Username</string>
+    <string name="Quiz">Quiz</string>s
 </resources>
