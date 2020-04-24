@@ -14,13 +14,14 @@ import android.widget.Toast;
 public class Main_menue extends AppCompatActivity implements View.OnClickListener {
 
     Button bt_leinen_los, bt_statistik, bt_einstellungen, bt_beenden;
-    TextView tv_willkommen;
+    TextView tv_willkommen, tv_score;
     private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menue);
+
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
         bt_leinen_los = findViewById(R.id.bt_leinen_los);
@@ -29,6 +30,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         bt_beenden = findViewById(R.id.bt_beenden);
 
         tv_willkommen = findViewById(R.id.tv_willkommen);
+        tv_score = findViewById(R.id.tv_score);
 
         //OnClickListener für jeden Button
         bt_leinen_los.setOnClickListener(this);
@@ -38,6 +40,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
 
 
         tv_willkommen.setText("Willkommen " + User.retriveUsername(this) + "!!");
+        tv_score.setText("Score: " + User.retriveScore(this));
     }
 
     @Override
