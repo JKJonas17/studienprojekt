@@ -117,18 +117,20 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         /**
          * Öffnet den neuen Intent
          */
-        public void openLogbuch (String kategorie){
+        private void openLogbuch (String kategorie){
             intent = new Intent(this, Logbuch.class);
             intent.putExtra("Kategorie", kategorie);
             startActivity(intent);
+            this.finish();
         }
 
         /**
          * wenn man wieder ins Main-Menue zurück möchte
          */
-        public void openMainMenue () {
+        private void openMainMenue () {
             intent = new Intent(this, Main_menue.class);
             startActivity(intent);
+            this.finish();
         }
 
 

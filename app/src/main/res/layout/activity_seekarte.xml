@@ -7,13 +7,16 @@
     tools:context=".Seekarte">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_header"
-        android:layout_width="match_parent"
-        android:layout_height="180dp">
+    android:id="@+id/cl_seekarte_header"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="0dp"
+    android:minHeight="180dp">
 
 
         <ImageView
-            android:id="@+id/header_Background"
+            android:id="@+id/iv_seekarteHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/desc"
@@ -29,8 +32,8 @@
             android:id="@+id/ib_backSeekarte"
             android:layout_width="59dp"
             android:layout_height="58dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
             android:layout_marginEnd="43dp"
             android:layout_marginRight="43dp"
             android:layout_marginBottom="103dp"
@@ -45,9 +48,10 @@
             app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iv_banner"
             android:layout_width="282dp"
             android:layout_height="85dp"
+            android:contentDescription="@string/desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.475"
@@ -57,9 +61,10 @@
             app:srcCompat="@drawable/banner1" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/iv_skull"
             android:layout_width="138dp"
             android:layout_height="104dp"
+            android:contentDescription="@string/desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -69,27 +74,30 @@
             app:srcCompat="@drawable/skullnew" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="119dp"
-            android:layout_height="35dp"
-            android:text="SEEKARTE"
+            android:id="@+id/tv_seekarte"
+            android:layout_width="122dp"
+            android:layout_height="37dp"
+            android:gravity="center_horizontal"
+            android:text="@string/seekarte"
+            android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="17dp"
+            android:textSize="35sp"
             app:fontFamily="@font/geschwungen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.717" />
+            app:layout_constraintVertical_bias="0.664" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/wasser"
+        android:id="@+id/iv_wasser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/cl_header"
+        android:layout_below="@id/cl_seekarte_header"
         android:layout_marginTop="0dp"
         android:contentDescription="@string/desc"
         android:visibility="visible"
@@ -97,22 +105,20 @@
 
 
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/sv_seekarte"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/cl_header"
+        android:layout_below="@+id/cl_seekarte_header"
         android:layout_marginTop="0dp"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/ll_seekarte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/Benutzerinteraktion_Themen"
             app:layout_constraintTop_toTopOf="@+id/Benutzerinteraktion_Themen">
-
-
 
             <ImageButton
                 android:id="@+id/ib_insel_grundlagen"
@@ -543,6 +549,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="224dp"
                 android:layout_height="123dp"
+                android:contentDescription="@string/desc"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

@@ -32,6 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
+
     public void openDatabase() {
         String dbPath = context.getDatabasePath(DATABASE_NAME).getPath();
         if (db != null && db.isOpen()) {

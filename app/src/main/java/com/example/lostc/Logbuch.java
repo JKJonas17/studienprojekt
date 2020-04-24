@@ -86,20 +86,23 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    public void openBordbuch (String kategorie) {
+    private void openBordbuch (String kategorie) {
         Intent intent = new Intent (this, Bordbuch.class);
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
+        this.finish();
     }
 
-    public void openQuiz(String kategorie) {
+    private void openQuiz(String kategorie) {
         Intent intent = new Intent(this, Quiz.class);
         intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
+        this.finish();
     }
 
-    public void openSeekarte () {
+    private void openSeekarte () {
         Intent intent = new Intent(this, Seekarte.class);
         startActivity(intent);
+        this.finish();
     }
 }

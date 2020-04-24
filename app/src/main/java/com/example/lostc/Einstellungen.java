@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Einstellungen extends AppCompatActivity implements ExampleDialog.ExampleDialogListener,ExampleDialog2.ExampleDialogListener2, View.OnClickListener {
+public class Einstellungen extends AppCompatActivity implements ExampleDialog.ExampleDialogListener, ExampleDialog2.ExampleDialogListener2, View.OnClickListener {
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
     TextView tv_username;
+    private Intent intent;
     private DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
@@ -25,13 +27,14 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         bt_kaptain_kontaktieren = findViewById(R.id.bt_kaptain_kontaktieren);
         bt_fortschritt_zuruecksetzten = findViewById(R.id.bt_fortschritt_zuruecksetzten);
         bt_crew = findViewById(R.id.bt_crew);
+        ImageButton ib_back_einstellungen = findViewById(R.id.ib_back_einstellungen);
 
         //OnClickListener für jeden Button
         bt_namen_aendern.setOnClickListener(this);
         bt_kaptain_kontaktieren.setOnClickListener(this);
         bt_fortschritt_zuruecksetzten.setOnClickListener(this);
         bt_crew.setOnClickListener(this);
-
+        ib_back_einstellungen.setOnClickListener(this);
         tv_username.setText("Aktueller Name: " + User.retriveUsername(this));
     }
 
@@ -44,12 +47,15 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         if (v.getId() == R.id.bt_kaptain_kontaktieren) {
             openKaptnKontaktieren();
         }
-        if(v.getId() == R.id.bt_fortschritt_zuruecksetzten) {
+        if (v.getId() == R.id.bt_fortschritt_zuruecksetzten) {
             openDialog2();
         }
         if (v.getId() == R.id.bt_crew) {
             openCrew();
-            this.finish();
+        }
+        if(v.getId()== R.id.ib_back_einstellungen)
+        {
+            openMainMenue();
         }
     }
 
@@ -60,8 +66,13 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
 
     @Override
     public void onYesClicked() {
-        User.insertScore(this,0);
-        db.resetAnswered();
+
+        if(User.retriveScore(this)!=0) {
+            db.resetAnswered();
+            User.insertScore(this, 0);
+        }
+        return;
+
     }
 
     public void openDialog() {
@@ -69,15 +80,15 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
-    public void openKaptnKontaktieren() {
+    private void openKaptnKontaktieren() {
         Intent intent = new Intent(this, Team_kontaktieren.class);
         startActivity(intent);
         this.finish();
     }
 
 
-    public void openCrew() {
-        Intent intent = new Intent(this, Crew.class);
+    private void openCrew() {
+        intent = new Intent(this, Crew.class);
         startActivity(intent);
         this.finish();
     }
@@ -88,6 +99,13 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         User.insertUsername(this, username);
         tv_username.setText("Aktueller Name: " + username);
     }
+
+    private void openMainMenue () {
+        intent = new Intent(this, Main_menue.class);
+        startActivity(intent);
+        this.finish();
+    }
+
 
 
 }

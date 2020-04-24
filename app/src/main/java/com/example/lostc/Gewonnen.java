@@ -26,10 +26,11 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
              openSeekarte();
     }
 
-    public void openSeekarte()
+    private void openSeekarte()
     {
         Intent intent = new Intent(this,Seekarte.class);
         startActivity(intent);
+        this.finish();
     }
 
 }

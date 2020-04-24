@@ -29,10 +29,11 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
         openQuiz(kategorie);
     }
 
-    public void openQuiz(String kategorie)
+    private void openQuiz(String kategorie)
     {
         Intent intent = new Intent(this,Quiz.class);
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
+        this.finish();
     }
 }

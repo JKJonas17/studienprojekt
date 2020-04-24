@@ -76,7 +76,7 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
 
 
     @Override
-    public void onClick(View v) {
+   public void onClick(View v) {
 
         if(v.getId()== R.id.ib_backBordbuch)
         {
@@ -85,7 +85,7 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    public void openLogbuch(String kategorie)
+    private void openLogbuch(String kategorie)
     {
 
         Intent intent = new Intent(this,Logbuch.class);

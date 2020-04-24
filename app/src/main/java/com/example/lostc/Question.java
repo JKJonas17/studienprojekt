@@ -14,6 +14,8 @@ public class Question {
     private String kategorieNr;
     private String id;
     private String answered;
+
+
     public Question(){}
 
 
