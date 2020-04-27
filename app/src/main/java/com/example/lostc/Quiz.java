@@ -281,6 +281,7 @@ public class Quiz extends AppCompatActivity {
 
         if (db.levelup(kategorie) > 0.8) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
             openGewonnen();
+            //level von shared pref erhöhen um 1s
         } else {
             openVerloren(kategorie);
         }
