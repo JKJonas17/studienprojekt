@@ -281,6 +281,7 @@ public class Quiz extends AppCompatActivity {
 
         if (db.levelup(kategorie) > 0.8) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
             openGewonnen();
+            //level von shared pref erhöhen um 1s
         } else {
             openVerloren(kategorie);
         }
@@ -517,6 +518,7 @@ public class Quiz extends AppCompatActivity {
      * wird geöffnet falls der User über 80% der Fragen richtig beantwortet hat
      */
     private void openGewonnen() {
+        User.insertLevel(this, User.retriveLevel(this) + 1);
         intent = new Intent(this, Gewonnen.class);
         startActivity(intent);
         this.finish();

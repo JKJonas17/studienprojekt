@@ -31,6 +31,24 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ImageButton ib_Praeprozessor = findViewById(R.id.ib_insel_praeprozessor);
         ImageButton ib_BackSeekarte = findViewById(R.id.ib_backSeekarte);
 
+        ImageView iv_boot1 = findViewById(R.id.iv_boot1);
+        ImageView iv_boot2 = findViewById(R.id.iv_boot2);
+        ImageView iv_boot3 = findViewById(R.id.iv_boot3);
+        ImageView iv_boot4 = findViewById(R.id.iv_boot4);
+        ImageView iv_boot5 = findViewById(R.id.iv_boot5);
+        ImageView iv_boot6 = findViewById(R.id.iv_boot6);
+        ImageView iv_boot7 = findViewById(R.id.iv_boot7);
+        ImageView iv_boot8 = findViewById(R.id.iv_boot8);
+
+        ImageButton ib_Datentypen_grau = findViewById(R.id.ib_insel_datentypen_grau);
+        ImageButton ib_Entscheidungen_grau = findViewById(R.id.ib_insel_entscheidungen_grau);
+        ImageButton ib_Schleifen_grau = findViewById(R.id.ib_insel_schleifen_grau);
+        ImageButton ib_Funktionen_grau = findViewById(R.id.ib_insel_funktionen_grau);
+        ImageButton ib_Arrays_grau = findViewById(R.id.ib_insel_arrays_grau);
+        ImageButton ib_Variablen_grau = findViewById(R.id.ib_insel_variablen_grau);
+        ImageButton ib_Praeprozessor_grau = findViewById(R.id.ib_insel_praeprozessor_grau);
+
+
         ib_Grundlagen.setOnClickListener(this);
         ib_Datentypen.setOnClickListener(this);
         ib_Entscheidungen.setOnClickListener(this);
@@ -40,6 +58,107 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ib_Variablen.setOnClickListener(this);
         ib_Praeprozessor.setOnClickListener(this);
         ib_BackSeekarte.setOnClickListener(this);
+
+
+
+        //Level abfrage durch if
+
+        int level;
+        level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
+        //bei gewonnen um 1s erhöhen
+
+        switch(level){
+            case(1):
+                //alle weg bis auf level 1
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(2):
+                ib_Datentypen_grau.setVisibility(View.GONE);
+                //alle weg bis auf level 2
+                iv_boot1.setVisibility(View.GONE);
+
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+            break;
+            case(3):
+                ib_Entscheidungen_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(4):
+                ib_Schleifen_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(5):
+                ib_Funktionen_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(6):
+                ib_Arrays_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(7):
+                ib_Variablen_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+
+                iv_boot8.setVisibility(View.GONE);
+                break;
+            case(8):
+                ib_Praeprozessor_grau.setVisibility(View.GONE);
+                iv_boot1.setVisibility(View.GONE);
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+
+                break;
+            default:
+        }
+
 
 
         //hier muss eine Funktion zur Levelabfrage rein

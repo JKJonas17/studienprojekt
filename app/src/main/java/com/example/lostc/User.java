@@ -51,6 +51,13 @@ public class User {
         editor.commit();
     }
 
+    public static void insertLevel(Context context, int level_value){
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putInt("current_level", level_value);
+        editor.commit();
+    }
+
+
 
     /**
      * Gibt den Wert der "Spalte" username aus.
@@ -68,6 +75,10 @@ public class User {
      */
     public static int retriveScore(Context context){
         return getPrefs(context).getInt("score", 0);
+    }
+
+    public static int retriveLevel(Context context){
+        return getPrefs(context).getInt("current_level", 1);
     }
 
     /**
