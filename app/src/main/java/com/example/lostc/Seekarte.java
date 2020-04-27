@@ -64,10 +64,20 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         //Level abfrage durch if
 
         int level;
-        level = 2;//müssen wir per shared preferenc speichern und abrufen
+        level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
         //bei gewonnen um 1s erhöhen
 
         switch(level){
+            case(1):
+                //alle weg bis auf level 1
+                iv_boot2.setVisibility(View.GONE);
+                iv_boot3.setVisibility(View.GONE);
+                iv_boot4.setVisibility(View.GONE);
+                iv_boot5.setVisibility(View.GONE);
+                iv_boot6.setVisibility(View.GONE);
+                iv_boot7.setVisibility(View.GONE);
+                iv_boot8.setVisibility(View.GONE);
+                break;
             case(2):
                 ib_Datentypen_grau.setVisibility(View.GONE);
                 //alle weg bis auf level 2

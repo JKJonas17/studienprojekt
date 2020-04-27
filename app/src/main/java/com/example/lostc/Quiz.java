@@ -518,6 +518,7 @@ public class Quiz extends AppCompatActivity {
      * wird geöffnet falls der User über 80% der Fragen richtig beantwortet hat
      */
     private void openGewonnen() {
+        User.insertLevel(this, User.retriveLevel(this) + 1);
         intent = new Intent(this, Gewonnen.class);
         startActivity(intent);
         this.finish();

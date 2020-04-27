@@ -70,6 +70,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         if(User.retriveScore(this)!=0) {
             db.resetAnswered();
             User.insertScore(this, 0);
+            User.insertLevel(this, 1);
             for(int i=1; i<=9; i++) {
                 Quiz.setArrayPosition(this, 0, String.valueOf(i));
             }
