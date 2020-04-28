@@ -59,6 +59,14 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ib_Praeprozessor.setOnClickListener(this);
         ib_BackSeekarte.setOnClickListener(this);
 
+        ib_Datentypen_grau.setVisibility(View.GONE);
+        ib_Entscheidungen_grau.setVisibility(View.GONE);
+        ib_Schleifen_grau.setVisibility(View.GONE);
+        ib_Funktionen_grau.setVisibility(View.GONE);
+        ib_Arrays_grau.setVisibility(View.GONE);
+        ib_Variablen_grau.setVisibility(View.GONE);
+        ib_Praeprozessor_grau.setVisibility(View.GONE);
+
 
 
         //Level abfrage durch if
@@ -66,7 +74,7 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         int level;
         level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
         //bei gewonnen um 1s erhöhen
-
+/*
         switch(level){
             case(1):
                 //alle weg bis auf level 1

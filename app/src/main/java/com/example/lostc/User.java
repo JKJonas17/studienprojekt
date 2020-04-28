@@ -100,4 +100,6 @@ public class User {
     }*/
 
 
+    public static class Lösung {
+    }
 }

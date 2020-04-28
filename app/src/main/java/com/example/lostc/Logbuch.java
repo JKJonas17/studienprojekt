@@ -23,11 +23,13 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         tv_Kapitel = findViewById(R.id.tv_Kapitel);
         Button bt_Bordbuch = findViewById(R.id.bt_Bordbuch);
         Button bt_Abfrage = findViewById(R.id.bt_Abfrage);
+        Button bt_Programmieren = findViewById(R.id.bt_Programmieren);
         ImageButton ib_BackLogbuch = findViewById(R.id.ib_backLogbuch);
 
         ib_BackLogbuch.setOnClickListener(this);
         bt_Bordbuch.setOnClickListener(this);
         bt_Abfrage.setOnClickListener(this);
+        bt_Programmieren.setOnClickListener(this);
 
         Bundle bundle = getIntent().getExtras();
         kategorie = bundle.getString("Kategorie");
@@ -80,9 +82,13 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         if(v.getId() == R.id.bt_Abfrage) {
             openQuiz(kategorie);
         }
+        if(v.getId() == R.id.bt_Programmieren) {
+            openProgrammieren(kategorie);
+        }
         if(v.getId() == R.id.ib_backLogbuch) {
             openSeekarte();
         }
+
 
     }
 
@@ -95,6 +101,12 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
 
     private void openQuiz(String kategorie) {
         Intent intent = new Intent(this, Quiz.class);
+        intent.putExtra("Kategorie",kategorie);
+        startActivity(intent);
+        this.finish();
+    }
+    private void openProgrammieren(String kategorie) {
+        Intent intent = new Intent (this, Programmieren.class);
         intent.putExtra("Kategorie",kategorie);
         startActivity(intent);
         this.finish();

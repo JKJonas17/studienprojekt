@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Loesung"/>
+        <activity android:name=".Programmieren"/>
         <activity android:name=".Verloren" />
         <activity android:name=".Gewonnen" />
-        <activity android:name=".Bordbuch" />
         <activity android:name=".Quiz" />
         <activity android:name=".Logbuch" />
         <activity android:name=".Crew" />
