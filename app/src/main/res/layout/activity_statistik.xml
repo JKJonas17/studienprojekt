@@ -28,16 +28,16 @@
 
     <ImageView
         android:id="@+id/iv_schatzkiste"
-        android:layout_width="155dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="147dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/desc"
         app:layout_constraintBottom_toTopOf="@+id/tv_schatz_des_hollaenders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/schatz3" />
+        app:srcCompat="@drawable/truheoffen" />
 
     <TextView
         android:id="@+id/tv_schatz_des_hollaenders"
@@ -69,5 +69,23 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_schatz_des_hollaenders" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:layout_marginBottom="42dp"
+        android:contentDescription="desc"
+        app:layout_constraintBottom_toTopOf="@+id/tv_schatz_des_hollaenders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_schatzkiste"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/muenze" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
