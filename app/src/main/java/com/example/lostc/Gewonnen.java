@@ -23,7 +23,7 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
 
         bt_WeiterSeekarte.setOnClickListener(this);
 
-        tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!!");
+        tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!");
     }
 
     @Override

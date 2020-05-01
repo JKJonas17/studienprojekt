@@ -27,7 +27,7 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
         Bundle bundle = getIntent().getExtras();
         kategorie = bundle.getString("Kategorie");
 
-        tv_verloren.setText("Arrrrrr " + User.retriveUsername(this) + "!\n" + "Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!");
+        tv_verloren.setText("Arrrrrr " + User.retriveUsername(this) + "!\n" + "Beim heiligen Klabautermann!\nMan sollte dich auf dieser Insel aussetzen!");
     }
 
     @Override

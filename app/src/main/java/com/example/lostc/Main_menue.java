@@ -38,7 +38,6 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         bt_einstellungen.setOnClickListener(this);
         bt_beenden.setOnClickListener(this);
 
-
         tv_willkommen.setText("Willkommen " + User.retriveUsername(this) + "!!");
         tv_score.setText("Score: " + User.retriveScore(this));
     }

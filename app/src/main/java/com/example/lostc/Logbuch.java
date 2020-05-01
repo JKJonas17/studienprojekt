@@ -76,12 +76,15 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
 
         if(v.getId() == R.id.bt_Bordbuch) {
             openBordbuch (kategorie);
+            this.finish();
         }
         if(v.getId() == R.id.bt_Abfrage) {
             openQuiz(kategorie);
+            this.finish();
         }
         if(v.getId() == R.id.ib_backLogbuch) {
             openSeekarte();
+            this.finish();
         }
 
     }
