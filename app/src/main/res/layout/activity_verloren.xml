@@ -28,7 +28,7 @@
         android:layout_width="162dp"
         android:layout_height="45dp"
         android:layout_marginBottom="68dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/roundbutton"
         android:text="@string/bt_verloren"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

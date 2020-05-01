@@ -11,8 +11,9 @@
         android:id="@+id/bt_weiterSeekarte"
         android:layout_width="135dp"
         android:layout_height="45dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/roundbutton"
         android:text="@string/bt_gewonnen"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
