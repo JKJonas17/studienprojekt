@@ -19,12 +19,20 @@ public class Statistik extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistik);
+        double fortschritt, prozent_fortschritt;
 
         ImageButton ib_backStatistik = findViewById(R.id.ib_backStatistik);
         TextView tv_schatz_des_hollaenders = findViewById(R.id.tv_schatz_des_hollaenders);
         TextView tv_gesamtfortschritt = findViewById(R.id.tv_gesamtfortschritt);
+        TextView tv_gesamt = findViewById(R.id.tv_gesamt);
+        TextView tv_level = findViewById(R.id.tv_level);
         ImageView iv_schatzkiste = findViewById(R.id.iv_schatzkiste);
+        fortschritt = User.retriveScore(this);
+        prozent_fortschritt = fortschritt/250*100;
 
+        //Für die prozentuale Angabe wird noch der Wert für 100% aus der Datenbank benötigt.
+        tv_gesamt.setText("Gesamtfortschritt: " + prozent_fortschritt + "%");
+        tv_level.setText("Aktuelles Level: " + User.retriveLevel(this));
         ib_backStatistik.setOnClickListener(this);
     }
 

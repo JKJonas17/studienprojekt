@@ -2,14 +2,19 @@ package com.example.lostc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main_menue extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,7 +44,9 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         bt_beenden.setOnClickListener(this);
 
         tv_willkommen.setText("Willkommen " + User.retriveUsername(this) + "!!");
-        tv_score.setText("Score: " + User.retriveScore(this));
+
+        tv_score.setText(User.retriveScore(this) + "");
+
     }
 
     @Override
