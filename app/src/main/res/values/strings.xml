@@ -176,5 +176,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="Text">Text</string>
     <string name="username">Username</string>
-    <string name="Quiz">Quiz</string>s
+    <string name="Quiz">Abfrage</string>
+    <string name="weiter">Weiter</string>s
 </resources>

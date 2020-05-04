@@ -9,47 +9,58 @@
 
     <TextView
         android:id="@+id/tv_verloren"
-        android:layout_width="400dp"
-        android:layout_height="288dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="386dp"
+        android:layout_height="287dp"
         android:gravity="center"
         android:text="@string/tv_verloren"
         android:textColor="@android:color/background_dark"
         android:textSize="45sp"
         app:fontFamily="@font/geschwungen"
-        app:layout_constraintBottom_toTopOf="@+id/iv_klabautermann"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.031" />
 
     <Button
         android:id="@+id/bt_nochmalQuiz"
         android:layout_width="162dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="68dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/roundbutton"
         android:text="@string/bt_verloren"
+        android:textColor="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_klabautermann"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
 
     <ImageView
         android:id="@+id/iv_klabautermann"
-        android:layout_width="361dp"
-        android:layout_height="308dp"
-        android:layout_marginTop="320dp"
+        android:layout_width="292dp"
+        android:layout_height="197dp"
         android:layout_marginBottom="38dp"
         android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_verloren"
+        app:layout_constraintVertical_bias="0.135"
+        app:srcCompat="@drawable/fliegenderhollaender" />
+
+    <TextView
+        android:id="@+id/tv_avgLost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Avarage"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/bt_nochmalQuiz"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fliegenderhollaender" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_klabautermann"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

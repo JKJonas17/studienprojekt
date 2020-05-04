@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -145,6 +147,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor1.close();
 
         avg = ((double) correctRows / (double) answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
+        Log.i("correct","rows "+correctRows);
+        Log.i("answered","answered "+answeredRows);
+        Log.i("avg","avg "+avg);
         return avg;
     }
 
