@@ -37,6 +37,7 @@
     <string name="txt_name3">Will Turner \nRaffael Hertel</string>
     <string name="txt_name4">Jack Sparrow\nJonas Kaschel</string>
     <string name="txt_name5">Elizabeth Swann \nStefanie Strohmayer</string>
+    <string name="bt_quellen">Quellen</string>
 
     /*TextViews Quellen*/
     <string name="tv_buchquellen">Buchquellen für Bordbuch, Abfrage und Programmieraufgaben</string>
