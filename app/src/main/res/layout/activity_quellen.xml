@@ -4,19 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ContentDescription"
     android:orientation="vertical"
-    tools:context=".Quellen">
-
-    <ImageView
-        android:id="@+id/iv_hintergrund"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".Quellen"
+    android:background="@color/colorBackground"
+    tools:ignore="ContentDescription">
 
     <ImageButton
         android:id="@+id/ib_backQuellen"
@@ -50,29 +41,20 @@
     <LinearLayout
         android:id="@+id/ll_layout"
         android:layout_width="match_parent"
-        android:layout_height="633dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="11dp"
         android:layout_marginRight="10dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_crew">
-
-        <ImageView
-            android:id="@+id/iv_image"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="?android:attr/actionModeFindDrawable" />
 
         <TextView
             android:id="@+id/tv_buchquellen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
             android:text="@string/tv_buchquellen"
@@ -84,21 +66,69 @@
             android:id="@+id/tv_quelle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:text="@string/tv_quelle1"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="italic" />
 
         <TextView
+            android:id="@+id/tv_isbn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/tv_isbn1" />
+
+        <TextView
             android:id="@+id/tv_quelle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tv_quelle1"
+            android:text="@string/tv_quelle2"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="italic" />
 
+        <TextView
+            android:id="@+id/tv_isbn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_isbn2" />
+
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="408dp"
+        android:layout_height="285dp"
+        android:layout_marginTop="21dp"
+        app:layout_constrainedHeight="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_layout">
+
+        <ImageView
+            android:id="@+id/iv_buch1"
+            android:layout_width="176dp"
+            android:layout_height="216dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_buch2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/c_buch1" />
+
+        <ImageView
+            android:id="@+id/iv_buch2"
+            android:layout_width="161dp"
+            android:layout_height="216dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_buch1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/c_buch2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

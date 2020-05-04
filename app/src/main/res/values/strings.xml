@@ -41,7 +41,9 @@
     /*TextViews Quellen*/
     <string name="tv_buchquellen">Buchquellen für Bordbuch, Abfrage und Programmieraufgaben</string>
     <string name="tv_quelle1">Prinz, Peter, C - Das Übungsbuch: Testfragen und Aufgaben mit Lösungen, mitp, (2018)</string>
-    <string name="tv_quelle2">Prinz, Peter, C - Das Übungsbuch: Testfragen und Aufgaben mit Lösungen, mitp, (2018)</string>
+    <string name="tv_isbn1">ISBN-13: 978-3958458963</string>
+    <string name="tv_quelle2">Erlenkötter, Helmut, C - Grundkurs: Computerpraxis, Programmieren von Anfang an, Rowohlt Taschenbuch, (1999)</string>
+    <string name="tv_isbn2">ISBN-13: 978-3499600746</string>
 
     /*TextViews Einstellungen */
     <string name="tv_aktueller_username">Username</string>
