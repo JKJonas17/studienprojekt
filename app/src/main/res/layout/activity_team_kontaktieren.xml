@@ -172,6 +172,7 @@
         android:layout_marginBottom="1dp"
         android:background="@drawable/roundbutton"
         android:text="@string/bt_absenden"
+        android:textColor="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
