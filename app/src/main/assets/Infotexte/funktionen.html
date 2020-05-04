@@ -1,8 +1,50 @@
-<p>Eine Funktionsdefinition besteht aus <em><strong>R&uuml;ckgabetyp</strong></em>, <em><strong>Funktionsname</strong></em>, <em><strong>Parameterliste</strong></em> und <em><strong>Anweisungsblock</strong></em>.</p>
-<p><em><strong>R&uuml;ckgabetyp</strong></em> kann jeder g&uuml;ltige Typ sein.</p>
-<p>Ist kein Typ angegeben, wird standardm&auml;&szlig;ig <em><strong>int </strong></em>angenommen.</p>
-<p>Funktionen, die keinen Wert liefern, enthalten den R&uuml;ckgabetyp <em><strong>void</strong>.</em></p>
-<p>In der Parameterliste werden <em><strong>Typ</strong></em> und <em><strong>Name</strong></em> der &Uuml;bergebenen Werte aufgef&uuml;hrt.</p>
-<p>Die Anweisung <strong><em>return</em></strong> dient zur R&uuml;ckgabe eines Wertes und beendet die Funktion.</p>
-<p>Ein <strong><em>return</em></strong> ohne folgenden Ausdruck verl&auml;sst die Funktion, ohne einen Wert zur&uuml;ckzugeben.</p>
-<p><em><strong>Funktionsprototypen</strong></em> erm&ouml;glichen es dem Compiler, das Programm genauer auf m&ouml;gliche Fehler zu untersuchen.</p>
+<p style="text-align: justify;">Funktionen sind die &raquo;Bausteine&laquo;, aus denen jedes C-Programm besteht. Sie enthalten die Anweisungen des Programms. Die Funktion mit dem vorgegebenen Namen <em><strong>main</strong> </em>wird direkt nach dem Laden des Programms aufgerufen. Sie bildet das<br /><em><strong>&raquo;Hauptprogramm&laquo;</strong></em> und muss in jedem C-Programm definiert sein. Alle anderen Funktionen sind<em><strong> &raquo;Unterprogramme&laquo;</strong> </em>und k&ouml;nnen einen beliebigen Namen haben.</p>
+<p style="text-align: justify;">Jede Funktion wird genau einmal definiert und kann beliebig oft deklariert und aufgerufen werden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Deklaration einer Funktion</span></p>
+<p style="text-align: justify;">Bevor eine Funktion aufgerufen werden kann, muss sie deklariert werden. Die <em><strong>Deklaration</strong></em> liefert dem Compiler Informationen &uuml;ber die Aufrufschnittstelle, d.h. &uuml;ber den Typ jedes Parameters und den Typ des Return-Wertes. Man nennt dies auch den Prototyp der Funktion. Beispielsweise besitzt die Standardfunktion <em><strong>sqrt()</strong></em>, die die Wurzel einer Zahl berechnet, folgenden Prototyp:</p>
+<table style="height: 25px;" border="black" width="200">
+    <tbody>
+    <tr>
+        <td style="width: 190px;">double sqrt( double x);</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Die Funktion <em><strong>sqrt()</strong></em> hat also einen Parameter vom Typ <em><strong>double</strong> </em>und gibt einen Wert vom Typ <em><strong>double</strong> </em>zur&uuml;ck. In Prototypen haben die Parameternamen &ndash; in unserem Beispiel x &ndash; nur die Bedeutung eines Kommentars und k&ouml;nnen auch fehlen. Eine Funktion, die keinen Wert zur&uuml;ckgibt, hat den Typ <em><strong>void</strong></em>. Wenn eine Funktion keine Parameter besitzt, werden die Parameter als <em><strong>void</strong> </em>deklariert.</p>
+<p style="text-align: justify;">Die Prototypen der Standardfunktionen sind bereits in Standard-Header-Dateien enthalten. So befindet sich der Prototyp von <em><strong>sqrt()</strong></em> in der Header-Datei <em><strong>math.h</strong></em>. Es gen&uuml;gt also, die entsprechende Header-Datei zu inkludieren.</p>
+<p style="text-align: justify;">Auch wenn es in C zul&auml;ssig ist, eine Funktion ohne die zugeh&ouml;rigen Parameter zu deklarieren, sollte von dieser M&ouml;glichkeit kein Gebrauch gemacht werden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Aufruf einer Funktion</span></p>
+<p style="text-align: justify;">Beim Aufruf einer Funktion wird f&uuml;r jeden Parameter ein entsprechendes Argument &uuml;bergeben. Eine Funktion, die keinen Parameter besitzt, wird ohne ein Argument aufgerufen. Der Funktionsaufruf selbst ist ein Ausdruck, der den Typ und den Wert des Return-Wertes der Funktion hat. Sofern die Deklaration der Funktion ein Prototyp ist, d.h. die Deklaration der Parameter beinhaltet, &uuml;berpr&uuml;ft der Compiler den Funktionsaufruf anhand des Prototyps und gibt bei einem falschen Aufruf eine Fehlermeldung aus.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Inkludieren einer Header-Datei</span></p>
+<p style="text-align: justify;">Header-Dateien sind Textdateien, die typischerweise Prototypen von Funktionen und Typ-Definitionen enthalten. Wenn in der <em><strong>#include</strong></em>-Direktive der Name der Header-Datei in spitzen Klammern <em><strong>&lt;...&gt;</strong></em> angegeben ist, wird die Datei nur in den Verzeichnissen mit den Standard-Header-Dateien gesucht. Ist der Name in Hochkommas <strong><em>"..."</em></strong> angegeben, wird zus&auml;tzlich zuerst im aktuellen Verzeichnis gesucht.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Eigene Funktionen definieren</span></p>
+<p style="text-align: justify;">Die Definition einer Funktion besteht aus dem Funktionskopf und dem Funktionsblock:</p>
+<table border="black">
+    <tbody>
+    <tr>
+        <td>typ name( Parameterdekl. ) // Funktionskopf<br />{ /* Dekl. und Anweisungen */} // Funktionsblock</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Der Funktionskopf legt den Typ des <em><strong>Return-Wertes</strong></em>, den <em><strong>Namen der Funktion</strong></em> und den <em><strong>Typ und Namen der Parameter</strong></em> fest. Dagegen bestimmen die Anweisungen im Funktionsblock, was die Funktion tut. Wenn die Funktion keine Parameter besitzt, gibt es keine Parameterdeklarationen oder diese besteht nur aus dem Wort <em><strong>void</strong></em>.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Inline-Funktionen einsetzen</span></p>
+<p style="text-align: justify;">Der Compiler f&uuml;gt den Maschinencode einer <em><strong>inline</strong></em>-Funktion bei jedem Aufruf direkt an die Stelle des Aufrufs ein. Damit wird die Ausf&uuml;hrung der Funktion beschleunigt, da kein Unterprogrammsprung stattfindet, aber die ausf&uuml;hrbare Datei kann gr&ouml;&szlig;er werden.<br />Um eine Funktion als <em><strong>inline</strong> </em>zu definieren, gen&uuml;gt es, dem Funktionskopf das Schl&uuml;sselwort <em><strong>inline</strong> </em>voranzustellen.</p>
+<p style="text-align: justify;">Zu beachten ist, dass die Definition beim Aufruf sichtbar ist, da der Compiler &ndash; im Gegensatz zu einer &raquo;normalen&laquo;<br />Funktion &ndash; ja auch den Funktionsblock kennen muss. <em><strong>inline</strong></em>-Funktionen sind eine Alternative zu Makros.</p>
+<p style="text-align: justify;">Ein Vorteil von inline-Funktionen ist, dass der Compiler den korrekten Aufruf &uuml;berpr&uuml;ft und keine Seiteneffekte entstehen.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Rekursive Funktionen definieren</span></p>
+<p style="text-align: justify;">Eine Funktion hei&szlig;t <em><strong>rekursiv</strong></em>, wenn sie sich direkt oder indirekt selbst aufruft. Eine Funktion darf sich aber nicht endlos selbst aufrufen, das hei&szlig;t, es ist immer ein Abbruchkriterium notwendig. Mit <em><strong>rekursiven</strong> </em>Funktionen k&ouml;nnen<br />einfach und elegant Probleme gel&ouml;st werden, die selbst rekursiv formuliert sind, wie z.B. das Durchlaufen von Baumstrukturen.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zusammenfassung:</strong></p>
+<p style="text-align: justify;">Eine Funktionsdefinition besteht aus <em><strong>R&uuml;ckgabetyp</strong></em>, <em><strong>Funktionsname</strong></em>, <em><strong>Parameterliste</strong></em> und <em><strong>Anweisungsblock</strong></em>.</p>
+<p style="text-align: justify;"><em><strong>R&uuml;ckgabetyp</strong></em> kann jeder g&uuml;ltige Typ sein.</p>
+<p style="text-align: justify;">Ist kein Typ angegeben, wird standardm&auml;&szlig;ig <em><strong>int </strong></em>angenommen.</p>
+<p style="text-align: justify;">Funktionen, die keinen Wert liefern, enthalten den R&uuml;ckgabetyp <em><strong>void</strong>.</em></p>
+<p style="text-align: justify;">In der Parameterliste werden <em><strong>Typ</strong></em> und <em><strong>Name</strong></em> der &Uuml;bergebenen Werte aufgef&uuml;hrt.</p>
+<p style="text-align: justify;">Die Anweisung <strong><em>return</em></strong> dient zur R&uuml;ckgabe eines Wertes und beendet die Funktion.</p>
+<p style="text-align: justify;">Ein <strong><em>return</em></strong> ohne folgenden Ausdruck verl&auml;sst die Funktion, ohne einen Wert zur&uuml;ckzugeben.</p>
+<p style="text-align: justify;"><em><strong>Funktionsprototypen</strong></em> erm&ouml;glichen es dem Compiler, das Programm genauer auf m&ouml;gliche Fehler zu untersuchen.</p>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:ignore="ContentDescription"
-    tools:context=".Crew">
+    tools:context=".Crew"
+    tools:ignore="ContentDescription">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,31 +24,33 @@
         android:layout_width="59dp"
         android:layout_height="58dp"
         android:layout_marginEnd="43dp"
-        android:background="@null"
         android:layout_marginRight="43dp"
         android:layout_marginBottom="103dp"
+        android:background="@null"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/ic_backbutton_foreground"
-        android:contentDescription="TODO" />
+        app:srcCompat="@mipmap/ic_backbutton_foreground" />
+
 
     <TextView
-        android:id="@+id/tv_einstellungen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/tv_crew"
+        android:layout_width="175dp"
+        android:layout_height="65dp"
         android:text="@string/headline_Crew"
+        android:textColor="@color/colorButton"
+        android:textSize="50sp"
         app:fontFamily="@font/geschwungen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="50sp"
-        android:textColor="@color/colorButton"/>
-
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
         android:id="@+id/iv_bild1"
@@ -147,7 +148,7 @@
         app:layout_constraintEnd_toStartOf="@+id/iv_bild2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_einstellungen" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_crew" />
 
     <TextView
         android:id="@+id/tv_name3"
@@ -215,5 +216,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/glasvollhirn" />
+
+    <Button
+        android:id="@+id/bt_quellen"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorButton"
+        android:text="Quellen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/iv_jack6"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bild4"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

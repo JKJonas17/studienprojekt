@@ -1,7 +1,73 @@
-<p style="text-align: justify;">Zur Deklaration von Feldern benutzt C die eckigen Klammern (<strong>[]</strong>). In diesen Klammern wird die Anzahl der Elemente angegeben.<br />Alle Felder beginnen mit dem Index 0.</p>
+<p style="text-align: justify;">Array speichert eine Menge von Daten eines bestimmten Typs in einem zusammenh&auml;ngenden Speicherbereich. Die Notwendigkeit daf&uuml;r besteht sehr oft, z.B. wenn ein Programm eine F&uuml;lle von Messwerten oder viele Datens&auml;tze &uuml;ber Personen verarbeiten muss. Wie eine gew&ouml;hnliche Variable muss auch ein Array definiert werden, entweder global, d.h. au&szlig;erhalb von Funktionen, oder lokal innerhalb eines Blocks.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Eindimensionale Arrays definieren und verwenden</span></p>
+<p style="text-align: justify;">Die Definition eines eindimensionalen Arrays legt seinen Namen sowie den Typ und die Anzahl der Arrayelemente fest. Beispielsweise definiert</p>
+<table style="height: 22px;" border="black" width="330">
+    <tbody>
+    <tr>
+        <td style="width: 325px;">int arr[20];</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">ein <em><strong>Array arr</strong></em> mit 20 Elementen vom Typ <em><strong>int</strong></em>. Das Objekt <em><strong>arr</strong> </em>selbst hat den Typ <em><strong>&raquo;Array von int-Elementen&laquo;</strong></em> oder kurz <em><strong>&raquo;int-Array&laquo;</strong></em>. Die Anzahl der Arrayelemente hei&szlig;t auch L&auml;nge des Arrays. Der Zugriff auf die einzelnen Elemente erfolgt &uuml;ber eine Nummer, den sog. Index, der stets bei <em><strong>0</strong></em> beginnt.</p>
+<p style="text-align: justify;">Die Elemente von arr sind also <em><strong>arr[0]</strong></em>, <em><strong>arr[1]</strong></em>, ... , <em><strong>arr[19]</strong></em>. Die Initialisierung eines Arrays erfolgt durch eine Liste mit Werten f&uuml;r die einzelnen Elemente. Dabei kann die explizite Angabe der Arrayl&auml;nge entfallen:</p>
+<table style="height: 30px; width: 330px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 319px;">double num[] = { -1.0, -0.5, 0.0, 0.5, 1.0};</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Das Array <em><strong>num</strong> </em>besteht also aus 5 Elementen vom Typ <em><strong>double</strong></em>, die die Werte der Liste enthalten. Ist die L&auml;nge des Arrays angegeben und gr&ouml;&szlig;er als die Anzahl der Listenelemente, werden die &uuml;berz&auml;hligen Elemente mit 0 initialisiert.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Mit Strings arbeiten</span></p>
+<p style="text-align: justify;">In C ist ein String eine Folge von Zeichen, die zusammen mit dem Stringende-Zeichen <em><strong>'\0'</strong></em> in einem Array mit Elementen vom Typ <em><strong>char</strong> </em>oder <em><strong>wchar_t</strong> </em>gespeichert ist. Die L&auml;nge eines Strings ist die Anzahl der Zeichen ohne das abschlie&szlig;ende Null-Zeichen. Bei der Definition kann zur Initialisierung ein String-Literal angegeben werden. Ein Beispiel:</p>
+<table style="height: 30px; width: 240px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 221px;">char str[40] = "Come on!";&nbsp; &nbsp; &nbsp; &nbsp; //Stringl&auml;nge 8, Arrayl&auml;nge 40</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">F&uuml;r die Verarbeitung von Strings gibt es zahlreiche Standardfunktionen, z.B. <em><strong>strlen()</strong></em> zur Bestimmung der Stringl&auml;nge und <em><strong>strcpy()</strong></em> zum Kopieren von Strings. Diese Funktionen sind in der Header-Datei string.h deklariert.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Mehrdimensionale Arrays einsetzen</span></p>
+<p style="text-align: justify;">In der Definition ist f&uuml;r jede Dimension ein Paar eckiger Klammern anzugeben. Zum Beispiel definiert int <em><strong>mat[4][3]</strong></em>; ein 2-dimensionales Array, auch Matrix genannt, mit 4 Zeilen und 3 Spalten. In C ist ein n-dimensionales Array&nbsp;nichts anderes als ein eindimensionales Array, dessen Elemente (n-1)-dimensionale Arrays sind. So besteht <em><strong>mat</strong> </em>aus den 4 Zeilen der Matrix.<br />int <em><strong>arr[20]</strong></em>;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Arrays als Argumente &uuml;bergeben</span></p>
+<p style="text-align: justify;">Der Name eines Arrays wird in Ausdr&uuml;cken automatisch in einen Zeiger auf das erste Arrayelement konvertiert, also in die Adresse des ersten Arrayelementes. Eine Ausnahme bilden nur die Arraynamen, die ein Operand des <em><strong>sizeof</strong></em>-Operators oder des Adressoperators sind. Im folgenden Beispiel erh&auml;lt die Standardfunktion <em><strong>puts()</strong></em> als Argument also nur die Anfangsadresse des Strings <em><strong>str</strong></em>:</p>
+<table style="height: 27px;" border="black" width="240">
+    <tbody>
+    <tr>
+        <td style="width: 285px;">puts(str);</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Die Funktion <em><strong>puts()</strong></em> schreibt ab der Adresse str Zeichen f&uuml;r Zeichen des Strings auf die Standardausgabe stdout bis das Stringende <em><strong>'\0'</strong></em> erreicht ist. Statt <em><strong>'\0'</strong></em> gibt <em><strong>puts()</strong></em> das Newline-Zeichen <em><strong>'\n'</strong></em> aus.</p>
+<p style="text-align: justify;">Auch traditionelle Funktionen wie <em><strong>strcpy()</strong></em> oder <em><strong>strcat()</strong></em>, die Zeichenfolgen in einen char-Array schreiben, erhalten als Argument nur die Anfangsadresse des Zielarrays. Diese Funktionen k&ouml;nnen daher keine Bereichs&uuml;berpr&uuml;fung vornehmen. Wenn mehr Zeichen geschrieben werden, als das Zielarray speichern kann, werden nachfolgende Daten &uuml;berschrieben. Das kann zu schwerwiegenden Fehlern f&uuml;hren, bis hin zum Absturz des Programms.</p>
+<p style="text-align: justify;">Ein Beispiel:</p>
+<table style="height: 76px; width: 350px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 340px;">char str1[10], str2[] = "Hello world!";<br />strcpy(str1, str2);&nbsp; // str2 nach str1 kopieren.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Fehler! Array str1 zu klein.</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Die mit dem C11-Standard neu eingef&uuml;hrten secure-Funktionen wie <em><strong>strcpy_s()</strong></em> und <em><strong>strcat_s()</strong></em> stellen eine sichere Alternative zu den traditionellen Funktionen dar. Diese Funktionen nehmen eine Bereichs&uuml;berpr&uuml;fung vor und erhalten zu diesem Zweck als zus&auml;tzliches Argument die L&auml;nge des Zielarrays. Beispielsweise lautet der alternative Aufruf zum obigen<br />strcpy-Aufruf:</p>
+<table style="width: 250px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 272px;">strcpy_s(str1, sizeof(str1), str2);</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Wenn kein Fehler auftrat, ist der ganzzahlige Return-Wert 0, andernfalls ungleich 0.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zusammenfassung:</strong></p>
+<p style="text-align: justify;">Zur Deklaration von Feldern benutzt C die eckigen Klammern (<strong>[]</strong>). In diesen Klammern wird die Anzahl der Elemente angegeben. Alle Felder beginnen mit dem Index 0.</p>
 <p style="text-align: justify;">Eine Zeichenkette (engl. String) ist ein <em><strong>char</strong></em>-Feld, das durch eine bin&auml;re Null begrenzt ist.</p>
 <p style="text-align: justify;">Der Platzhalter <em><strong>%s</strong></em> dient der Funktion <em><strong>printf</strong></em> zur Ausgabe von Zeichenketten.</p>
 <p style="text-align: justify;">Die Feldgrenzen werden von C nicht gepr&uuml;ft. Sie sind als Programmierer daf&uuml;r verantwortlich, dass jedes Feld gro&szlig; genug f&uuml;r die Aufnahme aller Elemente ist.<br />Durch das &Uuml;berschreiten der Feldgrenzen k&ouml;nnen andere Variablen <span style="text-decoration: underline;">zerst&ouml;rt</span> werden.</p>
 <p style="text-align: justify;"><em><strong>strlen</strong></em>, <em><strong>strcpy</strong></em>, <em><strong>strcat</strong> </em>und <em><strong>strcmp</strong> </em>geh&ouml;ren zur Gruppe der Zeichenkettenfunktionen.</p>
-<p style="text-align: justify;">Die Funktion <em><strong>atoi</strong></em> wandelt einen String in eine ganze Zahl um.</p>
+<p style="text-align: justify;">Die Funktion <em><strong>atoi</strong></em>&nbsp;(nicht ahoi) wandelt einen String in eine ganze Zahl um.</p>
 <p style="text-align: justify;">Mit <em><strong>sprintf</strong></em> k&ouml;nnen Zahlen in Texte umgewandelt werden. <em><strong>sprintf</strong></em> arbeitet wie printf, druckt jedoch in ein Feld, das als erster Parameter anzugeben ist.<br />Bei mehrdimensionalen Feldern wird die Gr&ouml;&szlig;e jeder weiteren Dimension in separaten eckigen Klammern angegeben.</p>

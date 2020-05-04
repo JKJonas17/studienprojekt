@@ -120,6 +120,24 @@
             app:layout_constraintBottom_toTopOf="@+id/Benutzerinteraktion_Themen"
             app:layout_constraintTop_toTopOf="@+id/Benutzerinteraktion_Themen">
 
+            <ImageView
+                android:id="@+id/iv_boot"
+                android:layout_width="85dp"
+                android:layout_height="81dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:contentDescription="@string/desc"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ib_insel_variablen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.458"
+                app:layout_constraintStart_toEndOf="@+id/ib_insel_variablen"
+                app:layout_constraintTop_toBottomOf="@+id/iv_boot5"
+                app:srcCompat="@drawable/schiff3" />
+
             <ImageButton
                 android:id="@+id/ib_insel_grundlagen"
                 android:layout_width="140dp"
@@ -244,6 +262,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_datentypen"
                 app:srcCompat="@drawable/insel4" />
+
             <ImageButton
                 android:id="@+id/ib_insel_schleifen_grau"
                 android:layout_width="140dp"
@@ -259,6 +278,7 @@
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_schleifen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
@@ -286,6 +306,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_entscheidungen"
                 app:srcCompat="@drawable/insel3" />
+
             <ImageButton
                 android:id="@+id/ib_insel_funktionen_grau"
                 android:layout_width="140dp"
@@ -301,6 +322,7 @@
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_funktionen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -327,6 +349,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_schleifen"
                 app:srcCompat="@drawable/insel4" />
+
             <ImageButton
                 android:id="@+id/ib_insel_arrays_grau"
                 android:layout_width="140dp"
@@ -342,6 +365,7 @@
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_array"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
@@ -369,6 +393,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_funktionen"
                 app:srcCompat="@drawable/insel3" />
+
             <ImageButton
                 android:id="@+id/ib_insel_variablen_grau"
                 android:layout_width="140dp"
@@ -384,6 +409,7 @@
                 android:contentDescription="@string/desc"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_variablen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -408,10 +434,11 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/tv_praeprozessor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_arrays"
                 app:srcCompat="@drawable/insel4" />
+
             <ImageButton
                 android:id="@+id/ib_insel_praeprozessor_grau"
                 android:layout_width="140dp"
@@ -429,9 +456,98 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/tv_praeprozessor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_arrays"
+                app:layout_constraintVertical_bias="0.259"
+                app:srcCompat="@drawable/inselgrau_links" />
+
+            <ImageButton
+                android:id="@+id/ib_insel_pointer"
+                android:layout_width="140dp"
+                android:layout_height="119dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="252dp"
+                android:layout_marginRight="252dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_variablen"
+                app:srcCompat="@drawable/insel3" />
+
+            <ImageButton
+                android:id="@+id/ib_insel_pointer_grau"
+                android:layout_width="140dp"
+                android:layout_height="119dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="252dp"
+                android:layout_marginRight="252dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_pointer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_variablen"
+                app:srcCompat="@drawable/inselgrau_rechts" />
+
+            <ImageButton
+                android:id="@+id/ib_insel_dateizugriff"
+                android:layout_width="140dp"
+                android:layout_height="119dp"
+                android:layout_marginStart="252dp"
+                android:layout_marginLeft="252dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dateizugriff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.53"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_praeprozessor"
+                app:srcCompat="@drawable/insel4" />
+
+            <ImageButton
+                android:id="@+id/ib_insel_dateizugriff_grau"
+                android:layout_width="140dp"
+                android:layout_height="119dp"
+                android:layout_marginStart="252dp"
+                android:layout_marginLeft="252dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:contentDescription="@string/desc"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dateizugriff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_praeprozessor"
+                app:layout_constraintVertical_bias="0.259"
                 app:srcCompat="@drawable/inselgrau_links" />
 
             <ImageView
@@ -439,12 +555,12 @@
                 android:layout_width="85dp"
                 android:layout_height="81dp"
                 android:layout_marginTop="52dp"
-                android:layout_marginBottom="55dp"
+                android:layout_marginBottom="20dp"
                 android:contentDescription="@string/desc"
                 android:visibility="visible"
-                app:layout_constraintBottom_toTopOf="@+id/iv_boot2"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_grundlagen"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.34"
+                app:layout_constraintHorizontal_bias="0.352"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
@@ -471,15 +587,13 @@
                 android:layout_width="85dp"
                 android:layout_height="81dp"
                 android:layout_marginTop="200dp"
-                android:layout_marginEnd="250dp"
-                android:layout_marginRight="250dp"
-                android:layout_marginBottom="9dp"
                 android:contentDescription="@string/desc"
                 app:layout_constraintBottom_toTopOf="@+id/tv_entscheidungen"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.439"
-                app:layout_constraintStart_toEndOf="@+id/ib_insel_grundlagen"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_boot1"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/schiff3" />
 
             <ImageView
@@ -513,7 +627,7 @@
                 app:srcCompat="@drawable/schiff3" />
 
             <ImageView
-                android:id="@+id/iv_boot6"
+                android:id="@+id/iv_boot7"
                 android:layout_width="85dp"
                 android:layout_height="81dp"
                 android:layout_marginStart="2dp"
@@ -531,13 +645,30 @@
                 app:srcCompat="@drawable/schiff3" />
 
             <ImageView
-                android:id="@+id/iv_boot7"
+                android:id="@+id/iv_boot9"
+                android:layout_width="85dp"
+                android:layout_height="81dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:layout_marginBottom="61dp"
+                android:contentDescription="@string/desc"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/iv_oktopus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ib_insel_pointer"
+                app:layout_constraintTop_toBottomOf="@+id/iv_boot7"
+                app:layout_constraintVertical_bias="0.083"
+                app:srcCompat="@drawable/schiff3" />
+
+            <ImageView
+                android:id="@+id/iv_boot6"
                 android:layout_width="85dp"
                 android:layout_height="81dp"
                 android:layout_marginStart="216dp"
                 android:layout_marginLeft="216dp"
                 android:layout_marginTop="200dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="5dp"
                 android:contentDescription="@string/desc"
                 app:layout_constraintBottom_toBottomOf="@+id/ib_insel_arrays"
                 app:layout_constraintEnd_toStartOf="@+id/ib_insel_schleifen"
@@ -553,14 +684,30 @@
                 android:layout_marginStart="216dp"
                 android:layout_marginLeft="216dp"
                 android:layout_marginTop="212dp"
-                android:layout_marginBottom="7dp"
                 android:contentDescription="@string/desc"
                 app:layout_constraintBottom_toTopOf="@+id/tv_praeprozessor"
                 app:layout_constraintEnd_toEndOf="@+id/ib_insel_praeprozessor"
                 app:layout_constraintEnd_toStartOf="@+id/ib_insel_schleifen"
                 app:layout_constraintHorizontal_bias="0.108"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_boot7"
+                app:layout_constraintTop_toBottomOf="@+id/iv_boot6"
+                app:srcCompat="@drawable/schiff4" />
+
+
+            <ImageView
+                android:id="@+id/iv_boot10"
+                android:layout_width="85dp"
+                android:layout_height="81dp"
+                android:layout_marginStart="216dp"
+                android:layout_marginLeft="216dp"
+                android:layout_marginTop="212dp"
+                android:contentDescription="@string/desc"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dateizugriff"
+                app:layout_constraintEnd_toEndOf="@+id/ib_insel_dateizugriff"
+                app:layout_constraintEnd_toStartOf="@+id/ib_insel_praeprozessor"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_boot8"
                 app:srcCompat="@drawable/schiff4" />
 
             <TextView
@@ -640,8 +787,8 @@
 
             <TextView
                 android:id="@+id/tv_array"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="31dp"
                 android:layout_marginStart="273dp"
                 android:layout_marginLeft="273dp"
                 android:layout_marginEnd="40dp"
@@ -660,15 +807,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="273dp"
                 android:layout_marginLeft="273dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:fadeScrollbars="true"
                 android:fitsSystemWindows="false"
                 android:text="@string/präprozessor"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -689,17 +834,51 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ib_insel_variablen" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="224dp"
-                android:layout_height="123dp"
-                android:contentDescription="@string/desc"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/tv_pointer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="292dp"
+                android:layout_marginRight="292dp"
+                android:text="@string/pointer"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_pointer" />
+
+            <TextView
+                android:id="@+id/tv_dateizugriff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="272dp"
+                android:layout_marginLeft="272dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/dateizugriff"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_variablen"
-                app:layout_constraintVertical_bias="0.843"
+                app:layout_constraintTop_toBottomOf="@+id/ib_insel_dateizugriff" />
+
+            <ImageView
+                android:id="@+id/iv_oktopus"
+                android:layout_width="152dp"
+                android:layout_height="173dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="160dp"
+                android:layout_marginRight="160dp"
+                android:contentDescription="@string/desc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.395"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pointer"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/oktopus" />
 
 

@@ -2,6 +2,7 @@ package com.example.lostc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -67,6 +68,12 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         if(kategorie.equals("8"))
         {
             tv_Kapitel.setText("Präprozessor");
+        }
+        if(kategorie.equals("9")) {
+            tv_Kapitel.setText("Pointer");
+        }
+        if(kategorie.equals("10")) {
+            tv_Kapitel.setText("Dateizugriff");
         }
     }
 

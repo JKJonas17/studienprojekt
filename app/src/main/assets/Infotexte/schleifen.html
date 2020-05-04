@@ -1,10 +1,47 @@
-<p>C kennt die drei Iterationen<em><strong> for</strong></em>, <em><strong>while</strong></em> und <em><strong>do.</strong></em></p>
-<p>Die <em><strong>for-</strong></em>Anweisung legt fest, wie oft ein Programmteil zu wiederholen ist.</p>
-<p>Sie benutzt dazu eine <em><strong>Variable</strong></em>, die die <em><strong>Anzahl der Durchl&auml;ufe</strong></em> z&auml;hlt.</p>
-<p>Bei der <em><strong>while-</strong></em>Schleife wird ein logischer Ausdruck bewertet, der entscheidet, ob die Schleife nochmals zu durchlaufen ist.</p>
-<p>Diese Pr&uuml;fung findet zu <em><strong>Beginn</strong></em> statt, so dass es vorkommen kann, dass die Schleife gar nicht durchlaufen wird.</p>
-<p>Diese Schleife wir auch <em><strong>kopfgesteuerte</strong></em> bzw. <em><strong>abweisende</strong></em> Schleife genannt.</p>
-<p>Auch bei der <em><strong>do-</strong></em>Schleife wird eine Bedingung getestet. Allerdings erfolgt dieser Test erst nach dem Abarbeiten der Schleife; sie wird also mindestens einmal durchlaufen.</p>
-<p>Diese Art der Schleife nennt man<em><strong> fu&szlig;gesteuert.</strong></em></p>
-<p>Schleifen k&ouml;nnen (fast) beliebig <em><strong>verschachtelt</strong></em> werden.</p>
-<p>Achten Sie darauf, dass eine <em><strong>for-</strong></em> und eine <em><strong>while-</strong></em>Anweisung nicht mit einem Semikolon abgeschlossen werden.</p>
+<p style="text-align: justify;">Zur Kontrolle des Programmflusses gibt es in C folgende Anweisungen:</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Schleifen mit <em><strong>while</strong></em>, <em><strong>do</strong> <strong>while</strong> </em>und <em><strong>for.</strong></em></span></p>
+<p style="text-align: justify;">Diese Anweisungen f&uuml;hren eine Gruppe von Anweisungen mehrfach aus. Die Anzahl der Schleifendurchl&auml;ufe bestimmt eine Laufbedingung, die in <strong><em>while</em>-</strong>und <em><strong>for</strong></em>-Schleifen zu Beginn eines Durchlaufes gepr&uuml;ft wird.</p>
+<table border="black" width="340">
+    <tbody>
+    <tr>
+        <td>int n = 0;<br />while( n &lt; 10) { printf("%d ", n); ++n; }</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Diese Schleife wird 10 Mal durchlaufen und gibt die Zahlen 0 bis 9 aus. Wie dieses Beispiel auch zeigt, werden mehrere Anweisungen in einer Schleife zu einem Block zusammengefasst. Der Schleifenkopf einer for-Schleife enth&auml;lt auch notwendige Initialisierungen und Reinitialisierungen. So ist die vorstehende <em><strong>while</strong><strong>-Schleife</strong></em> &auml;quivalent zu folgender <em><strong>for-Schleife</strong></em>:</p>
+<table border="black" width="340">
+    <tbody>
+    <tr>
+        <td>for( int n = 0; n &lt; 10; ++n) printf("%d ", n);</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Die <em><strong>do-while</strong></em>-Schleife ist &raquo;fu&szlig;gesteuert&laquo;, das hei&szlig;t, die Laufbedingung steht am Ende der Schleife, so dass die Schleife mindestens einmal durchlaufen wird.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Verzweigungen mit <em><strong>if</strong> <strong>else</strong></em>, <em><strong>switch</strong> </em>und dem Auswahloperator</span></p>
+<p style="text-align: justify;">Abh&auml;ngig von einer Bedingung f&uuml;hrt die <em><strong>if-else</strong></em> Anweisung entweder die Anweisung im <em><strong>if</strong></em>- oder im <em><strong>else-</strong></em>Zweig aus. So ermittelt die Anweisung</p>
+<table border="black" width="340">
+    <tbody>
+    <tr>
+        <td>if( a &gt;= b) max = a;<br />else max = b;</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">das Maximum von a und b. Mehrere Anweisungen im <em><strong>if</strong></em>- oder <em><strong>else</strong></em>-Zweig werden zu einem Block zusammengefasst. Falls im else-Zweig keine Anweisungen auszuf&uuml;hren sind, kann er auch fehlen. Eine Alternative zu <em><strong>if-else-</strong></em>Anweisungen ist oft der Auswahloperator <em><strong>?</strong></em>:.</p>
+<p style="text-align: justify;">Beispielsweise liefert auch&nbsp;<em><strong>max = (a &gt;= b)? a : b;</strong></em> das Maximum von a und b.<br />Durch Schachteln von <em><strong>if-else</strong></em>-Anweisungen kann die Auswahl einer von mehreren Alternativen programmiert werden. &Uuml;bersichtlicher als eine solche <em><strong>else-if</strong></em>-Kette ist jedoch die <em><strong>switch</strong></em>-Anweisung. Sie ist aber nur anwendbar, wenn ein ganzzahliger Ausdruck mit Konstanten verglichen werden soll.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Bedingungsfreie Spr&uuml;nge mit <em><strong>goto</strong></em>, <em><strong>break</strong> </em>und <em><strong>continue</strong></em></span></p>
+<p style="text-align: justify;">Die <em><strong>goto</strong></em>-Anweisung bewirkt einen Sprung zur angegebenen Marke, die sich<br />innerhalb derselben Funktion befinden muss. Mit break wird eine Schleife<br />oder eine <em><strong>switch</strong></em>-Anweisung sofort verlassen. Dagegen kann mit <em><strong>continue</strong></em><br />in einer Schleife unmittelbar der n&auml;chste Durchlauf gestartet werden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zusammenfassung:</strong></p>
+<p style="text-align: justify;">C kennt die drei Iterationen<em><strong> for</strong></em>, <em><strong>while</strong></em> und <em><strong>do.</strong></em></p>
+<p style="text-align: justify;">Die <em><strong>for-</strong></em>Anweisung legt fest, wie oft ein Programmteil zu wiederholen ist.</p>
+<p style="text-align: justify;">Sie benutzt dazu eine <em><strong>Variable</strong></em>, die die <em><strong>Anzahl der Durchl&auml;ufe</strong></em> z&auml;hlt.</p>
+<p style="text-align: justify;">Bei der <em><strong>while-</strong></em>Schleife wird ein logischer Ausdruck bewertet, der entscheidet, ob die Schleife nochmals zu durchlaufen ist.</p>
+<p style="text-align: justify;">Diese Pr&uuml;fung findet zu <em><strong>Beginn</strong></em> statt, so dass es vorkommen kann, dass die Schleife gar nicht durchlaufen wird.</p>
+<p style="text-align: justify;">Diese Schleife wir auch <em><strong>kopfgesteuerte</strong></em> bzw. <em><strong>abweisende</strong></em> Schleife genannt.</p>
+<p style="text-align: justify;">Auch bei der <em><strong>do-</strong></em>Schleife wird eine Bedingung getestet. Allerdings erfolgt dieser Test erst nach dem Abarbeiten der Schleife; sie wird also mindestens einmal durchlaufen.</p>
+<p style="text-align: justify;">Diese Art der Schleife nennt man<em><strong> fu&szlig;gesteuert.</strong></em></p>
+<p style="text-align: justify;">Schleifen k&ouml;nnen (fast) beliebig <em><strong>verschachtelt</strong></em> werden.</p>
+<p style="text-align: justify;">Achten Sie darauf, dass eine <em><strong>for-</strong></em> und eine <em><strong>while-</strong></em>Anweisung nicht mit einem Semikolon abgeschlossen werden.</p>

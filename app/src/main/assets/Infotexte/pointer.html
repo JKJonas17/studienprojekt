@@ -1,0 +1,42 @@
+<p style="text-align: justify;">Ein effektiver Umgang mit Daten erfordert es oft, mit Verweisen auf die Daten zu arbeiten. Beispielsweise ist es bei gr&ouml;&szlig;eren Datenmengen sinnvoll, an eine Funktion nicht eine Kopie der Daten zu &uuml;bergeben, sondern lediglich ihre Adresse. So hat die Funktion auch die M&ouml;glichkeit, die Daten zu ver&auml;ndern.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Pointer definieren</span></p>
+<p style="text-align: justify;">Ein Pointer (engl. Pointer) repr&auml;sentiert die Adresse und den Typ eines Objekts oder einer Funktion. Hat ein Objekt den Typ T, so hat ein Pointer auf das Objekt den abgeleiteten Typ Pointer auf T, oder kurz T-Pointer. Beispielsweise ist der Name eines Arrays ein Pointer auf das erste Arrayelement, also ein Pointer&nbsp;auf <em><strong>int</strong></em>, wenn die Elemente den Typ <em><strong>int</strong> </em>haben. Ebenso ist f&uuml;r eine int-Variable <em><strong>var</strong> </em>der Ausdruck <em><strong>&amp;var</strong></em> ein Pointer auf int. Arraynamen und Ausdr&uuml;cke wie <em><strong>&amp;var</strong></em> sind konstante Pointer. In C k&ouml;nnen aber auch <em>Pointervariablen</em> definiert werden, d.h. Variablen, die die Adresse eines anderen Objekts speichern k&ouml;nnen.</p>
+<p style="text-align: justify;">Ein Beispiel:</p>
+<table style="width: 400px;" border="black">
+    <tbody>
+    <tr>
+        <td>float *fPtr;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Variablen vom Typ Pointer auf float.</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Die Variable <em><strong>fPtr</strong> </em>hat den Typ <em><strong>float *</strong></em>, wobei der Stern in einem Typ f&uuml;r <em><strong>&raquo;Pointer auf&laquo;</strong></em> steht. Ein Pointer auf <em><strong>float</strong> </em>kann die Adresse einer <em><strong>float</strong></em>-Variablen speichern. Ist x eine float-Variable, so zeigt <em><strong>fPtr</strong> </em>nach folgender Zuweisung auf x:</p>
+<table style="height: 26px; width: 400px;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 383px;">fPtr = &amp;x; // Den Pointer fptr auf x zeigen lassen.</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Ein Pointer, der auf ein Objekt zeigt, ist immer verschieden von <em><strong>NULL</strong></em>. Diese Konstante ist in <em><strong>s</strong><strong>tdio.h</strong></em> (und anderen) als Pointer mit dem Wert <em><strong>0</strong></em> definiert.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Pointer verwenden</span></p>
+<p style="text-align: justify;">Der Zugriff auf das referenzierte Objekt erfolgt mit dem Verweisoperator <em><strong>*</strong></em>.</p>
+<p style="text-align: justify;">Ist ptr ein Pointer, so ist <em><strong>*ptr</strong></em> das Objekt, auf das <em><strong>ptr</strong> </em>zeigt. Im obigen Beispiel zeigt <em><strong>fPtr</strong></em> auf die Variable x, so dass mit <em><strong>*fPtr = 7</strong></em>; der Variablen x der Wert 7 zugewiesen wird. Es ist auch m&ouml;glich, mit Pointern Speicherbereiche zu durchlaufen und Pointer zu vergleichen. Bei der Addition (oder Subtraktion) einer ganzen Zahl zu einem Pointer wird automatisch die Objektgr&ouml;&szlig;e ber&uuml;cksichtigt! Ist beispielsweise <em><strong>arr</strong> </em>ein Array mit 10 Elementen vom Typ float, so sind <em><strong>arr</strong></em>, <em><strong>arr+1</strong></em>, ..., <em><strong>arr+9</strong></em> Pointer auf die einzelnen Elemente <em><strong>arr[0]</strong></em>, <em><strong>arr[1]</strong></em>, ..., <em><strong>arr[9]</strong></em>. Und nach folgenden Anweisungen</p>
+<table border="black">
+    <tbody>
+    <tr>
+        <td>fPtr = arr;&nbsp; &nbsp; &nbsp; &nbsp; // &auml;quivalent mit fPtr = &amp;arr[0].<br />++fPtr;</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">zeigt fPtr auf <em><strong>arr[1]</strong></em>. In einer Schleife kann fPtr so den gesamten Array durchlaufen, solange die Bedingung <em><strong>fPtr &lt; arr+10</strong></em> erf&uuml;llt ist.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zusammenfassung:</strong></p>
+<p style="text-align: justify;">Variablen haben einen Wert, einen Namen und einen Speicherplatz.</p>
+<p style="text-align: justify;">Der Speicherplatz wird durch den Adressoperator <em><strong>&amp;</strong></em> geliefert.</p>
+<p style="text-align: justify;">In Deklarationen wird durch einen Stern (<em><strong>*</strong></em>) vor dem Variablennamen eine Pointervariable deklariert. In einer Programmanweisung dient das Sternchen (<em><strong>*</strong></em>) als Operator.</p>
+<p style="text-align: justify;">Dieser Operator bewirkt, dass der Wert der Variablen benutzt wird, auf den die so gekennzeichnete Pointervariable zeigt.</p>
+<p style="text-align: justify;">Eine der wichtigsten Aufgaben der Pointer ist es, duch <em><strong>call by reference</strong></em> den Zugriff auf die Originale f&uuml;r die aufrufende Funktion bereitzustellen.</p>
+<p style="text-align: justify;">Pointer k&ouml;nnen erh&ouml;ht und reduziert werden. Nach jeder Erh&ouml;hung zeigt der Pointer auf das n&auml;chste Element seines Datentyps, nach jeder Reduzierung auf das vorhergehende Element.</p>
+<p style="text-align: justify;">In C ist der Name eines Feldes ein Pointer auf das erste Element dieses Feldes.</p>

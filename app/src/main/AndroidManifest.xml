@@ -14,6 +14,7 @@
         <activity android:name=".Bordbuch" />
         <activity android:name=".Quiz" />
         <activity android:name=".Logbuch" />
+        <activity android:name=".Quellen" />
         <activity android:name=".Crew" />
         <activity android:name=".Team_kontaktieren" />
         <activity android:name=".ExampleDialog" />
