@@ -5,22 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="@color/color_start_schwarz">
+    android:orientation="vertical">
+
 
     <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="406dp"
-        android:layout_height="386dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginBottom="52dp"
-        android:contentDescription="@string/desc"
-        android:src="@drawable/logo_lostatc"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        android:id="@+id/iv_MainBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/karte_startbildschirm2" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -28,11 +27,11 @@
         android:layout_width="81dp"
         android:layout_height="81dp"
         android:layout_marginTop="52dp"
-        android:layout_marginBottom="123dp"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

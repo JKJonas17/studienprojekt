@@ -59,14 +59,20 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ib_Praeprozessor.setOnClickListener(this);
         ib_BackSeekarte.setOnClickListener(this);
 
-
+        ib_Datentypen_grau.setVisibility(View.GONE);
+        ib_Entscheidungen_grau.setVisibility(View.GONE);
+        ib_Schleifen_grau.setVisibility(View.GONE);
+        ib_Funktionen_grau.setVisibility(View.GONE);
+        ib_Arrays_grau.setVisibility(View.GONE);
+        ib_Variablen_grau.setVisibility(View.GONE);
+        ib_Praeprozessor_grau.setVisibility(View.GONE);
 
         //Level abfrage durch if
 
         int level;
         level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
         //bei gewonnen um 1s erhöhen
-
+/*
         switch(level){
             case(1):
                 //alle weg bis auf level 1
@@ -159,20 +165,7 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
             default:
         }
 
-
-
-        //hier muss eine Funktion zur Levelabfrage rein
-
-
-        /**
-         * nur das Schiff des aktuellen Levels soll angezeigt werden
-         *
-         * **/
-
-        //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
-        // ImageView iv_boot1 = findViewById(R.id.iv_boot1);
-        //  iv_boot1.setVisibility(View.INVISIBLE);
-
+*/
 
     }
 
@@ -185,12 +178,12 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        /**
+        /*
          * Abfrage ob Richtiger Button geklickt wurde
          **/
         if (v.getId() == R.id.ib_insel_grundlagen) {
             Toast.makeText(this, "Grundlagen gedückt", Toast.LENGTH_SHORT).show();
-            /**
+            /*
              * öffnen der neuen Aktivität "Logbucheintrag_Grundlagen"
              **/
             openLogbuch("1"); // Value zum Identifizieren der Katogarie

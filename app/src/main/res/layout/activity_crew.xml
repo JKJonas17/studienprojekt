@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="50sp"
-        android:textColor="@color/colorButton"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
 
     <ImageView

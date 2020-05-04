@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class Verloren extends AppCompatActivity implements View.OnClickListener{
 
     private String kategorie;
-    Button bt_nochmalQuiz;
-    TextView tv_verloren;
+    private double avg;
+    private Button bt_nochmalQuiz;
+    private TextView tv_verloren;
+    private TextView tv_avgLost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +25,17 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
 
         bt_nochmalQuiz = findViewById(R.id.bt_nochmalQuiz);
         tv_verloren = findViewById(R.id.tv_verloren);
-
+        tv_avgLost = findViewById(R.id.tv_avgLost);
         bt_nochmalQuiz.setOnClickListener(this);
 
         Bundle bundle = getIntent().getExtras();
         kategorie = bundle.getString("Kategorie");
+        avg = bundle.getDouble("Avarage");
+        avg *= 100;
+        DecimalFormat f = new DecimalFormat("##.00");
 
         tv_verloren.setText("Arrrrrr " + User.retriveUsername(this) + "!\n" + "Beim heiligen Klabautermann!\nMan sollte dich auf dieser Insel aussetzen!");
+        tv_avgLost.setText("Du hast nur: "+f.format(avg) +" % richtig");
     }
 
     @Override
