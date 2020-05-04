@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class Einstellungen extends AppCompatActivity implements ExampleDialog.ExampleDialogListener, ExampleDialog2.ExampleDialogListener2, View.OnClickListener {
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
-    TextView tv_username;
+    TextView tv_username, tv_score;
     private Intent intent;
     private DatabaseHelper db = new DatabaseHelper(this);
 
@@ -23,6 +23,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
         tv_username = findViewById(R.id.tv_username);
+        tv_score = findViewById(R.id.tv_score3);
         bt_namen_aendern = findViewById(R.id.bt_name_aendern);
         bt_kaptain_kontaktieren = findViewById(R.id.bt_kaptain_kontaktieren);
         bt_fortschritt_zuruecksetzten = findViewById(R.id.bt_fortschritt_zuruecksetzten);
@@ -36,6 +37,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
         bt_crew.setOnClickListener(this);
         ib_back_einstellungen.setOnClickListener(this);
         tv_username.setText("Aktueller Name: " + User.retriveUsername(this));
+        tv_score.setText(User.retriveScore(this) + "");
     }
 
     @Override
