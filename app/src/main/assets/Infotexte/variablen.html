@@ -1,11 +1,37 @@
+<p style="text-align: justify;">In C d&uuml;rfen die Operanden von Operatoren einen unterschiedlichen arithmetischen Typ haben.</p>
+<p style="text-align: justify;">Ein Beispiel:</p>
+<table style="height: 18px;" border="black" width="249">
+    <tbody>
+    <tr>
+        <td style="width: 239px;">int n = 7; float var = n * 2.5;</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">Hier wird die <em><strong>int</strong></em>-Variable n mit dem <em><strong>double</strong></em>-Wert 2.5 multipliziert und das Ergebnis in der <em><strong>float</strong></em>-Variablen var gespeichert. In solchen F&auml;llen nimmt der Compiler automatisch <em>implizite</em> Typumwandlungen vor, das hei&szlig;t, die Operanden eines Operators werden in einen gemeinsamen Typ konvertiert, in dem dann die Operation durchgef&uuml;hrt wird. Dar&uuml;ber hinaus ist es m&ouml;glich und gelegentlich notwendig, dass der Programmierer selbst explizit eine Typumwandlung veranlasst.</p>
+<p style="text-align: justify;">Bei Umwandlung arithmetischer Datentypen sind folgende F&auml;lle zu unterscheiden:</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Ganzzahl-Erweiterung</span></p>
+<p style="text-align: justify;">In einem Ausdruck kann statt eines Operanden vom Typ <em><strong>int</strong> </em>oder <em><strong>unsigned&nbsp;</strong><strong>int</strong> </em>stets auch ein Operand mit einem kleineren Typ (z.B. <em><strong>char</strong> </em>oder <em><strong>short</strong></em>) eingesetzt werden. Dann erfolgt automatisch eine Erweiterung zu int oder falls notwendig zu <em><strong>unsigned</strong> <strong>int</strong></em>. Diese <strong>Ganzzahlerweiterung</strong> ist stets werterhaltend.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">&Uuml;bliche arithmetische Typumwandlungen</span></p>
+<p style="text-align: justify;">Diese Umwandlungen werden auf die beiden Operanden der bin&auml;ren arithmetischen Operatoren, der bin&auml;ren Bit-Operatoren und der Vergleichsoperatoren angewendet, sowie auf den 2. und 3. Operanden des Auswahlwahloperators ?:.<br />Dabei erfolgt die Typanpassung stets so, dass gem&auml;&szlig; der <em><strong>&raquo;Typhierarchie&laquo;</strong></em> der&nbsp;<em><strong>&raquo;kleinere&laquo;</strong></em> Typ in den<em><strong> &raquo;gr&ouml;&szlig;eren&laquo;</strong></em> umgewandelt wird, z.B. <em><strong>int</strong> </em>in <em><strong>double</strong></em>.</p>
+<p style="text-align: justify;">Haben beide Operanden einen ganzzahligen Typ, wird zun&auml;chst f&uuml;r jeden Operanden die Ganzzahl-Erweiterung durchgef&uuml;hrt. Es kann zu Datenverlust kommen, wenn ein Operand einen unsigned Typ und der andere den entsprechenden <em><strong>signed</strong> </em>Typ hat. In diesem Fall wird in den <em><strong>unsigned</strong> </em>Typ konvertiert, so dass ein negativer Wert nicht mehr darstellbar ist.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Implizite Typumwandlungen bei Zuweisungen und Funktionsaufrufen</span></p>
+<p style="text-align: justify;">In Zuweisungen wird der Wert des rechten Operanden in den Typ der Variablen auf der linken Seite konvertiert. Ist der Wert nicht mit dem Zieltyp darstellbar, werden bei Ganzzahlen die h&ouml;herwertigen Bytes abgeschnitten und bei der Umwandlung einer Gleitpunktzahl in eine Ganzzahl die Nachkommastellen. In einem Funktionsaufruf erfolgt die Konvertierung der Argumente in den entsprechenden Parametertyp wie bei der Zuweisung.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Explizite Typumwandlungen</span></p>
+<p style="text-align: justify;">Mit dem Cast-Operator (<em><strong>typ</strong></em>) kann der Programmierer den Wert eines Ausdrucks in den angegebenen Typ umwandeln. So liefert <em><strong>(int)x</strong></em> den ganzzahligen Anteil einer Gleitpunktzahl <em><strong>x</strong></em> als <em><strong>int-Wert</strong></em>, sofern dieser als <em><strong>int</strong> </em>darstellbar ist.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zusammenfassung:</strong></p>
 <p style="text-align: justify;">Die Grunddatentypen k&ouml;nnen durch die Schl&uuml;sselw&ouml;rter <em><strong>signed</strong></em>, <em><strong>unsigned</strong></em>, <em><strong>long</strong></em> und <em><strong>short</strong></em> modifiziert werden.</p>
 <p style="text-align: justify;">Lokale Variablen k&ouml;nnen wahlweise durch das Schl&uuml;sselwort <em><strong>auto</strong></em> kenntlich gemacht werden.</p>
 <p style="text-align: justify;">Globale Variablen werden dadurch deklariert, dass sie au&szlig;erhalb jeglicher Funktion stehen. &Uuml;blicherweise werden sie am Anfang des Programms zusammengefasst.</p>
 <p style="text-align: justify;">C besitzt vier Schl&uuml;sselw&ouml;rter, um die Speicherklasse einer Variablen zu definieren: <em><strong>auto</strong></em>, <em><strong>register</strong></em>, <em><strong>static</strong></em> und <em><strong>extern</strong></em>.</p>
 <p style="text-align: justify;">Der <em><strong>Cast</strong></em>-Operator erzwingt die Umwandlung in einen gew&uuml;nschten Datentyp.</p>
 <p style="text-align: justify;">&nbsp;</p>
-<p style="text-align: center;"><strong>Datentypen</strong></p>
-<table style="height: 329px; border-color: black; width: 341.8px; margin-left: auto; margin-right: auto;" border="black">
+<p style="text-align: justify;"><strong>Datentypen</strong></p>
+<table style="height: 329px; border-color: black; width: 341.8px;" border="black">
     <tbody>
     <tr style="height: 17px;">
         <td style="width: 83px; height: 17px;"><em><strong>Type</strong></em></td>
@@ -111,9 +137,9 @@
     </tr>
     </tbody>
 </table>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: center;"><strong>Flie&szlig;kommakonstanten</strong></p>
-<table style="height: 149px; border-color: black; width: 176.4px; margin-left: auto; margin-right: auto;" border="black">
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Flie&szlig;kommakonstanten</strong></p>
+<table style="height: 149px; border-color: black; width: 176.4px;" border="black">
     <tbody>
     <tr>
         <td style="width: 103px;"><em><strong>Darstellung</strong></em></td>
@@ -145,9 +171,9 @@
     </tr>
     </tbody>
 </table>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: center;"><strong>Zeichenkonstanen</strong></p>
-<table style="height: 227px; width: 342.8px; border-color: black; margin-left: auto; margin-right: auto;" border="black">
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>Zeichenkonstanen</strong></p>
+<table style="height: 227px; width: 342.8px; border-color: black;" border="black">
     <tbody>
     <tr>
         <td style="width: 78px;">'\n'</td>
@@ -195,4 +221,4 @@
     </tr>
     </tbody>
 </table>
-<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>

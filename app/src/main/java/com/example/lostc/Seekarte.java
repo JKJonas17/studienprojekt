@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class Seekarte extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,16 +26,21 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ImageButton ib_Arrays = findViewById(R.id.ib_insel_arrays);
         ImageButton ib_Variablen = findViewById(R.id.ib_insel_variablen);
         ImageButton ib_Praeprozessor = findViewById(R.id.ib_insel_praeprozessor);
+        ImageButton ib_Pointer = findViewById(R.id.ib_insel_pointer);
+        ImageButton ib_Dateizugriff = findViewById(R.id.ib_insel_dateizugriff);
         ImageButton ib_BackSeekarte = findViewById(R.id.ib_backSeekarte);
+
 
         ImageView iv_boot1 = findViewById(R.id.iv_boot1);
         ImageView iv_boot2 = findViewById(R.id.iv_boot2);
         ImageView iv_boot3 = findViewById(R.id.iv_boot3);
         ImageView iv_boot4 = findViewById(R.id.iv_boot4);
         ImageView iv_boot5 = findViewById(R.id.iv_boot5);
-        ImageView iv_boot6 = findViewById(R.id.iv_boot6);
+        ImageView iv_boot6 = findViewById(R.id.iv_boot7);
         ImageView iv_boot7 = findViewById(R.id.iv_boot7);
         ImageView iv_boot8 = findViewById(R.id.iv_boot8);
+        ImageView iv_boot9 = findViewById(R.id.iv_boot9);
+        ImageView iv_boot10 = findViewById(R.id.iv_boot10);
 
         ImageButton ib_Datentypen_grau = findViewById(R.id.ib_insel_datentypen_grau);
         ImageButton ib_Entscheidungen_grau = findViewById(R.id.ib_insel_entscheidungen_grau);
@@ -47,6 +49,8 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ImageButton ib_Arrays_grau = findViewById(R.id.ib_insel_arrays_grau);
         ImageButton ib_Variablen_grau = findViewById(R.id.ib_insel_variablen_grau);
         ImageButton ib_Praeprozessor_grau = findViewById(R.id.ib_insel_praeprozessor_grau);
+        ImageButton ib_Pointer_grau = findViewById(R.id.ib_insel_pointer_grau);
+        ImageButton ib_Dateizugriff_grau = findViewById(R.id.ib_insel_dateizugriff_grau);
 
 
         ib_Grundlagen.setOnClickListener(this);
@@ -57,6 +61,8 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ib_Arrays.setOnClickListener(this);
         ib_Variablen.setOnClickListener(this);
         ib_Praeprozessor.setOnClickListener(this);
+        ib_Pointer.setOnClickListener(this);
+        ib_Dateizugriff.setOnClickListener(this);
         ib_BackSeekarte.setOnClickListener(this);
 
         ib_Datentypen_grau.setVisibility(View.GONE);
@@ -66,13 +72,15 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ib_Arrays_grau.setVisibility(View.GONE);
         ib_Variablen_grau.setVisibility(View.GONE);
         ib_Praeprozessor_grau.setVisibility(View.GONE);
+        ib_Pointer_grau.setVisibility(View.GONE);
+        ib_Dateizugriff_grau.setVisibility(View.GONE);
 
         //Level abfrage durch if
-
+/*
         int level;
         level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
         //bei gewonnen um 1s erhöhen
-/*
+
         switch(level){
             case(1):
                 //alle weg bis auf level 1
@@ -167,6 +175,19 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
 
 */
 
+        //hier muss eine Funktion zur Levelabfrage rein
+
+
+        /**
+         * nur das Schiff des aktuellen Levels soll angezeigt werden
+         *
+         * **/
+
+        //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
+        // ImageView iv_boot1 = findViewById(R.id.iv_boot1);
+        //  iv_boot1.setVisibility(View.INVISIBLE);
+
+
     }
 
     /**
@@ -178,12 +199,12 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        /*
+        /**
          * Abfrage ob Richtiger Button geklickt wurde
          **/
         if (v.getId() == R.id.ib_insel_grundlagen) {
             Toast.makeText(this, "Grundlagen gedückt", Toast.LENGTH_SHORT).show();
-            /*
+            /**
              * öffnen der neuen Aktivität "Logbucheintrag_Grundlagen"
              **/
             openLogbuch("1"); // Value zum Identifizieren der Katogarie
@@ -217,9 +238,17 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this, "Präprozessor gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("8");
         }
+        if (v.getId() == R.id.ib_insel_pointer) {
+            Toast.makeText(this, "Pointer gedrückt", Toast.LENGTH_SHORT).show();
+            openLogbuch(("9"));
+        }
+        if (v.getId() == R.id.ib_insel_dateizugriff) {
+            Toast.makeText(this, "Dateizugriff gedrückt", Toast.LENGTH_SHORT).show();
+            openLogbuch(("10"));
+        }
 
             if (v.getId() == R.id.ib_backSeekarte) {
-                Toast.makeText(this, "Back gedrückt", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Zurück gedrückt", Toast.LENGTH_SHORT).show();
                 openMainMenue();
 
             }

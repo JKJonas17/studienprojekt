@@ -12,6 +12,7 @@
         android:id="@+id/iv_MainBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/desc"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,17 +22,18 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/karte_startbildschirm2" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@android:style/Widget.DeviceDefault.ProgressBar.Small"
-        android:layout_width="81dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="52dp"
-        android:clickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieanimation"
+        android:layout_width="197dp"
+        android:layout_height="198dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/iv_MainBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="1.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes='@raw/mship' />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
