@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class Gewonnen extends AppCompatActivity implements View.OnClickListener {
 
-    Button bt_WeiterSeekarte;
-    TextView tv_gewonnen;
+    private Button bt_WeiterSeekarte;
+    private TextView tv_gewonnen;
+    private double avg;
+    private TextView tv_avgWon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +24,17 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
 
         bt_WeiterSeekarte = findViewById(R.id.bt_weiterSeekarte);
         tv_gewonnen = findViewById(R.id.tv_gewonnen);
+        tv_avgWon = findViewById(R.id.tv_avgWon);
 
         bt_WeiterSeekarte.setOnClickListener(this);
+        Bundle bundle = getIntent().getExtras();
+        avg = bundle.getDouble("Avarage");
+        avg *= 100;
+        DecimalFormat f = new DecimalFormat("##.00");
 
-        tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!!");
+        tv_avgWon.setText("Du hast: "+f.format(avg) +" % richtig!");
+
+        tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!");
     }
 
     @Override

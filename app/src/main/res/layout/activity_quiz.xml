@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,19 +10,20 @@
     tools:context=".Quiz">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_quiz_header"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:minHeight="180dp">
+    <TextView
+        android:id="@+id/tv_FragenAnzahl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
 
-        <TextView
+    <TextView
             android:id="@+id/tv_Quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,28 +36,27 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.172" />
+            app:layout_constraintVertical_bias="0.026" />
 
-        <TextView
-            android:id="@+id/tv_QuizKapitel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="64dp"
-            android:layout_marginBottom="28dp"
-            android:text="@string/tv_kapitelüberschrift"
-            android:textColor="@android:color/background_dark"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/tv_QuizKapitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:text="@string/tv_kapitelüberschrift"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Quiz"
+        app:layout_constraintVertical_bias="0.018" />
 
-        <ImageButton
+    <ImageButton
             android:id="@+id/ib_backQuiz"
             android:layout_width="59dp"
             android:layout_height="58dp"
@@ -84,95 +84,108 @@
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.929"
-            app:layout_constraintStart_toEndOf="@+id/ib_backSeekarte"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.07" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+            app:layout_constraintVertical_bias="0.026" />
 
     <TextView
         android:id="@+id/text_view_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/radio_group"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center_horizontal"
         android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/pb_Quiz"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_confirm_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_question"
+        app:layout_constraintVertical_bias="0.236">
 
         <RadioButton
             android:id="@+id/radio_button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:layout_marginBottom="5dp"
             android:text="Option 1" />
 
         <RadioButton
             android:id="@+id/radio_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:layout_marginBottom="5dp"
             android:text="Option 2" />
 
         <RadioButton
             android:id="@+id/radio_button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:layout_marginBottom="5dp"
             android:text="Option 3" />
 
         <RadioButton
             android:id="@+id/radio_button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
             android:text="Option 4" />
 
     </RadioGroup>
+
+    <Button
+            android:id="@+id/button_confirm_next"
+            android:layout_width="175dp"
+            android:layout_height="45dp"
+            android:background="@drawable/arraybutton"
+            android:text="@string/weiter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorBackground"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.903" />
 
     <ProgressBar
         android:id="@+id/pb_Quiz"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_above="@+id/text_view_question"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="133dp"
-        android:layout_marginBottom="18dp">
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:progressTint="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_QuizKapitel">
 
     </ProgressBar>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="469dp"
-        android:layout_height="170dp"
-        android:layout_below="@+id/radio_group"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp">
-
-        <Button
-            android:id="@+id/button_confirm_next"
-            android:layout_width="187dp"
-            android:layout_height="62dp"
-            android:text="Next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.046" />
+    <TextView
+        android:id="@+id/tv_Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Beantworte 80 % der Fragen richtig!"
+        app:layout_constraintBottom_toTopOf="@+id/pb_Quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_QuizKapitel"
+        app:layout_constraintVertical_bias="0.617" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

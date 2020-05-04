@@ -18,7 +18,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -45,25 +44,28 @@ public class Quiz extends AppCompatActivity {
     private ProgressBar pb_Quiz;
     private TextView tv_Score;
     private Intent intent;
+    private TextView tv_QuizKapitel;
+    private TextView tv_FragenAnzahl;
+    private TextView tv_Info;
 
     /*Algorithmus Variablen*/
     private String kategorie;
     private static int counter = 0;
     private static int total = 0;
     private boolean counterIsRunning = false;
-    private boolean answered = false;
+    private static int anzahl = 0;
+    private static boolean answered = false;
 
     /*Datenbank Variablen*/
     private static ArrayList<Question> questions = new ArrayList<>();
     private DatabaseHelper db = new DatabaseHelper(this);
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        /*Layout Variablen */
         ib_backQuiz = findViewById(R.id.ib_backQuiz);
         tv_Frage = findViewById(R.id.text_view_question);
         rg_Group = findViewById(R.id.radio_group);
@@ -74,13 +76,29 @@ public class Quiz extends AppCompatActivity {
         pb_Quiz = findViewById(R.id.pb_Quiz);
         button_Confirm = findViewById(R.id.button_confirm_next);
         tv_Score = findViewById(R.id.tv_Score);
+        tv_QuizKapitel = findViewById(R.id.tv_QuizKapitel);
+        tv_FragenAnzahl = findViewById(R.id.tv_FragenAnzahl);
+        tv_Info = findViewById(R.id.tv_Info);
+
+        //Setzt den aktuellen Score
         tv_Score.setText("Score " + User.retriveScore(this));
+
+        //String der aus Seekarte übergeben wurde wird in String kategorie übergeben
+        Bundle bundle = getIntent().getExtras();
+        kategorie = bundle.getString("Kategorie");
+
+        tv_QuizKapitel.setText(this.getKapitelbyKat(kategorie));
+
+        // Info das Spieler über 80 % der Fragen beantworten muss, wird nur im ersten Level angezeigt
+        if(!kategorie.equals("1"))
+        {
+            tv_Info.setVisibility(View.GONE);
+        }
 
         ib_backQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLogbuch(kategorie);
-
             }
         });
 
@@ -155,25 +173,29 @@ public class Quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if ((total-1) > counter) {
-                    if (!answered) // falls User frage überspringen möchte
+                if (counter < (total - 1) ) {
+                    if(counter == (total-2))
                     {
-                        counter++;
-                        setArrayPosition(Quiz.this,counter,kategorie); // ArrayState wird an counter angepasst
+                        button_Confirm.setText("Beenden");
                     }
+                        counter++;
+                    if(!answered) {
+                        setArrayPosition(Quiz.this, counter, kategorie); // ArrayState wird an counter angepasst
+                    }
+                        int val = getArrayPosition(Quiz.this, kategorie);
+                        Log.i("counter ","counter onClick "+ counter);
+                        Log.i("counter3","state: "+val);
                     showNextQuestion();
-                } else {
+
+                }
+                else {
                     counter = 0;
-                    setArrayPosition(Quiz.this,0,kategorie);
+                    setArrayPosition(Quiz.this, 0, kategorie);
                     finishQuiz();// in dieser Methode soll die nächste Aktivität geöffnet werden
                 }
-
             }
 
         });
-        //String der aus Seekarte übergeben wurde wird in String kategorie übergeben
-        Bundle bundle = getIntent().getExtras();
-        kategorie = bundle.getString("Kategorie");
 
         //Übergibt den Pfad der Datenbank an eine Variable typ File
         File database = getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
@@ -194,11 +216,53 @@ public class Quiz extends AppCompatActivity {
         //ArrayList mit Fragen der bestimmten Kategorie, String kategorie aus Seekarte wird übergeben
         questions = db.getQuestions(kategorie);
         total = questions.size();
-        counter = getArrayPosition(this,kategorie);
-
+        counter = getArrayPosition(this, kategorie);
+        int val = getArrayPosition(this, kategorie);
         showNextQuestion();
+    }
 
+    /**
+     * gibt für die jeweiligen Kategorie den dazugehörigen String für die Kapitelüberschrift zurück
+     * @param kategorie String aus putExtra
+     * @return String der in tv_QuizKapitel verwendet wird
+     */
+    private String getKapitelbyKat(String kategorie)
+    {
+        String kapitel ="";
+        if(kategorie.equals("1"))
+        {
+            kapitel = "Grundlagen";
+        }
+       else if(kategorie.equals("2"))
+        {
+            kapitel = "Datentypen";
+        }
+      else  if(kategorie.equals("3"))
+        {
+            kapitel = "Entscheidungen";
+        }
+       else if(kategorie.equals("4"))
+        {
+            kapitel = "Schleifen";
+        }
+      else  if(kategorie.equals("5"))
+        {
+            kapitel = "Funktionen";
+        }
+       else if(kategorie.equals("6"))
+        {
+            kapitel = "Arrays";
+        }
+       else if(kategorie.equals("7"))
+        {
+            kapitel = "Variablen";
+        }
+       else if(kategorie.equals("8"))
+        {
+            kapitel = "Präprozessor";
+        }
 
+       return kapitel;
     }
 
     /**
@@ -236,12 +300,19 @@ public class Quiz extends AppCompatActivity {
     private void showNextQuestion() {
 
         answered = false;
+        anzahl = counter +1;
+        tv_FragenAnzahl.setText("Frage: "+anzahl+"/"+total);
+        rb_Option1.setVisibility(View.VISIBLE);
+        rb_Option2.setVisibility(View.VISIBLE);
+        rb_Option3.setVisibility(View.VISIBLE);
+        rb_Option4.setVisibility(View.VISIBLE);
+
         rg_Group.clearCheck();
         if (questions.get(counter).getOption4().equals("-")) {
+            rb_Option4.setVisibility(View.GONE);
             rb_Option1.setBackgroundColor(Color.TRANSPARENT);
             rb_Option2.setBackgroundColor(Color.TRANSPARENT);
             rb_Option3.setBackgroundColor(Color.TRANSPARENT);
-            rb_Option4.setVisibility(View.GONE);
 
             tv_Frage.setText(questions.get(counter).getQuestion());
             rb_Option1.setText(questions.get(counter).getOption1());
@@ -256,6 +327,7 @@ public class Quiz extends AppCompatActivity {
             tv_Frage.setText(questions.get(counter).getQuestion());
             rb_Option1.setText(questions.get(counter).getOption1());
             rb_Option2.setText(questions.get(counter).getOption2());
+
         } else {
             rb_Option1.setBackgroundColor(Color.TRANSPARENT);
             rb_Option2.setBackgroundColor(Color.TRANSPARENT);
@@ -272,21 +344,6 @@ public class Quiz extends AppCompatActivity {
 
     }
 
-
-    /**
-     * Öffnet Aktivität Gewonnen wenn User mehr als 80% der Fragen richtig hat
-     * Verloren sonst
-     */
-    private void finishQuiz() {
-
-        if (db.levelup(kategorie) > 0.8) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
-            openGewonnen();
-            //level von shared pref erhöhen um 1s
-        } else {
-            openVerloren(kategorie);
-        }
-    }
-
     /**
      * setzt die Zeit, die die Progressbar bis zum ende braucht
      * wird onFinish() aufgerufen wird showSolution() aufgerufen und die Lösungen angezeigt
@@ -299,10 +356,20 @@ public class Quiz extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 pb_Quiz.setProgress((int) millisUntilFinished);
                 button_Confirm.setVisibility(View.GONE);
+                ib_backQuiz.setOnClickListener(null); // während der Timer läuft soll der backbutton nicht clickbar sein
+
             }
+
             public void onFinish() {
                 button_Confirm.setVisibility(View.VISIBLE);
                 pb_Quiz.setProgress(0);
+                ib_backQuiz.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openLogbuch(kategorie);
+                    }
+                });
+
                 showSolution();
             }
         }.start();
@@ -376,7 +443,6 @@ public class Quiz extends AppCompatActivity {
                 rb_Option3.setBackgroundColor(Color.RED);
             }
 
-
         }
         if (rb_Option4.isChecked()) {
             if (antwort_Nr == 1) {
@@ -401,20 +467,17 @@ public class Quiz extends AppCompatActivity {
         if (correct && (questions.get(counter).getAnswered().equals("0") || questions.get(counter).getAnswered().equals("1"))) {
             setPoints();
             tv_Score.setText("Score " + User.retriveScore(this));
-
         }
+        answered = true;
+        int pos = counter +1;
+        if(getArrayPosition(this,kategorie)<(total-1)) {
+            setArrayPosition(this, pos, kategorie);
+        }
+        int val = getArrayPosition(this, kategorie);
+        Log.i("counter4","stateshow: "+val);
+
+        //Toast.makeText(this, "correct " + correct, Toast.LENGTH_SHORT).show();
         db.setAnswered(questions.get(counter).getId(), correct);
-
-        // ist die Frage beantwortet wird der counter inkrementiert und der Arraystate auf den Wert des counter gesetzt
-        if (counter < (total-1)) {
-            button_Confirm.setText("Next");
-            counter++;
-            setArrayPosition(this,counter,kategorie);
-            answered = true;
-
-        } else {
-            button_Confirm.setText("Finish");
-        }
     }
 
     /**
@@ -437,8 +500,9 @@ public class Quiz extends AppCompatActivity {
 
     /**
      * Gibt die Postion der zuletzt aufgerufenen Frage zurück
-     * @param context dieser Context
-     * @param state die Position im Array der Frage
+     *
+     * @param context   dieser Context
+     * @param state     die Position im Array der Frage
      * @param kategorie abhängig von der Kategorie in der der User sich befindet
      */
     public static void setArrayPosition(Context context, int state, String kategorie) {
@@ -481,13 +545,29 @@ public class Quiz extends AppCompatActivity {
 
     /**
      * Gibt die Aktuelle Position zurück
-     * @param context dieser context
-     * @param kategorie
+     *
+     * @param context   dieser context
+     * @param kategorie aktuelle Kategorie aus Seekarte
      * @return int Position im Array
      */
-    public static int getArrayPosition(Context context,String kategorie)
-    {
-        return getPrefs(context).getInt(kategorie,0);
+    public static int getArrayPosition(Context context, String kategorie) {
+        return getPrefs(context).getInt(kategorie, 0);
+    }
+
+    /**
+     * Öffnet Aktivität Gewonnen wenn User mehr als 80% der Fragen richtig hat
+     * Verloren sonst
+     */
+    public void finishQuiz() {
+        int val = getArrayPosition(this, kategorie);
+        double avg = db.levelup(kategorie);
+        double lvlup = 0.8;
+        if (avg >= lvlup) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
+            openGewonnen(avg);
+
+        } else {
+            openVerloren(kategorie,avg);
+        }
     }
 
     /**
@@ -505,25 +585,29 @@ public class Quiz extends AppCompatActivity {
     /**
      * wird geöffnet falls User weniger als 80% der Fragen richtig beantwortet hat
      *
-     * @param kategorie übergibt die aktuelle Kategorie aus Seekarte
+     * @param kategorie übergibt die aktuelle Kategorie aus Seekarte um das richtige Quiz wieder zu öffnen
+     * @param avg übergibt den prozentualen Anteil der Richtig beantworteten Fragen
+     *
      */
-    private void openVerloren(String kategorie) {
+    private void openVerloren(String kategorie, double avg) {
         intent = new Intent(this, Verloren.class);
         intent.putExtra("Kategorie", kategorie);
+        intent.putExtra("Avarage",avg);
         startActivity(intent);
         this.finish();
     }
 
     /**
      * wird geöffnet falls der User über 80% der Fragen richtig beantwortet hat
+     *  @param avg übergibt den prozentualen Anteil der Richtig beantworteten Fragen
      */
-    private void openGewonnen() {
+    private void openGewonnen(double avg) {
         User.insertLevel(this, User.retriveLevel(this) + 1);
         intent = new Intent(this, Gewonnen.class);
+        intent.putExtra("Avarage",avg);
         startActivity(intent);
         this.finish();
     }
-
 
 }
 
