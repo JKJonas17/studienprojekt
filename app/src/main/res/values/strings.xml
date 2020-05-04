@@ -1,26 +1,29 @@
 <resources>
-    /Ebenen/
+    /*Ebenen*/
     <string name="app_name">lost@C</string>
     <string name="headline_seekarte">Seekarte</string>
     <string name="headline_bordbuch">Bordbuch</string>
     <string name="underheadline_bordbuch_grundlagen">Grundlagen</string>
     <string name="headline_logbuch">Logbucheintrag</string>
-    <string name="bt_start">Start</string>
+    <string name="headline_Crew">Die Crew</string>
+    <string name="headline_Einstellungen">Einstellungen</string>
+    <string name="headline_Statistik">Einstellungen</string>
+    <string name="headline_Quellen">Quellen</string>
 
-    /TextViews Logbuch - Buttons/
+    /*TextViews Logbuch - Buttons*/
     <string name="tv_kapitelüberschrift">Kapitelüberschrift</string>
     <string name="bt_bordbuch">Bordbuch</string>
     <string name="bt_abfrage">Abfrage</string>
     <string name="bt_programmieren">Programmieren</string>
 
-    /TextViews Einstellungen -Buttons/
+    /*TextViews Einstellungen -Buttons*/
     <string name="bt_einstellungen">Einstellungen</string>
     <string name="bt_statistik">Statistik</string>
     <string name="bt_leinen_los">Leinen Los!</string>
     <string name="bt_beenden">Beenden</string>
     <string name="tv_willkommen">Willkommen XY!</string>
 
-    /TextViews Team_Kontaktieren/
+    /*TextViews Team_Kontaktieren*/
     <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abzuschicken!\nAuf Seemann, Tod und Teufel!</string>
     <string name="tv_flaschenpostnachricht">Flaschenpostnachricht:</string>
     <string name="et_name">Name</string>
@@ -29,23 +32,29 @@
     <string name="bt_absenden">absenden</string>
 
     /TextViews Die Crew/
-    <string name="headline_Crew">Die Crew</string>
     <string name="txt_name1">Guybrush Threewood \nJonas Jackermayer</string>
     <string name="txt_name2">Elaine Marley \nStefanie Hammerschmidth</string>
     <string name="txt_name3">Will Turner \nRaffael Hertel</string>
     <string name="txt_name4">Jack Sparrow\nJonas Kaschel</string>
     <string name="txt_name5">Elizabeth Swann \nStefanie Strohmayer</string>
+    <string name="bt_quellen">Quellen</string>
+
+    /*TextViews Quellen*/
+    <string name="tv_buchquellen">Buchquellen für Bordbuch, Abfrage und Programmieraufgaben</string>
+    <string name="tv_quelle1">Prinz, Peter, C - Das Übungsbuch: Testfragen und Aufgaben mit Lösungen, mitp, (2018)</string>
+    <string name="tv_isbn1">ISBN-13: 978-3958458963</string>
+    <string name="tv_quelle2">Erlenkötter, Helmut, C - Grundkurs: Computerpraxis, Programmieren von Anfang an, Rowohlt Taschenbuch, (1999)</string>
+    <string name="tv_isbn2">ISBN-13: 978-3499600746</string>
 
     /*TextViews Einstellungen */
-    <string name="headline_Einstellungen">Einstellungen</string>
     <string name="tv_aktueller_username">Username</string>
     <string name="bt_namen_aendern">Name ändern</string>
     <string name="bt_kaptn_kontaktieren">Kaptn kontaktieren</string>
     <string name="bt_fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
-    <string name="bt_crew">Die Crew</string>
+    <string name="bt_crew">Die Crew / Quellen</string>
+
 
     /*TextViews Statistik */
-    <string name="headline_Statistik">Einstellungen</string>
     <string name="tv_schatz">Der Schatz des Holländers!</string>
     <string name="tv_gesamtfortschritt">Hier siehst du deinen Gesamtfortschritt:</string>
 
@@ -60,6 +69,8 @@
     <string name="arrays">Arrays</string>
     <string name="variablen">Variablen</string>
     <string name="präprozessor">Präprozessor</string>
+    <string name="pointer">Pointer</string>
+    <string name="dateizugriff">Dateizugriff</string>
 
 
     <string name="tv_gewonnen">Anker lichten XY.\n Wir stechen in See!</string>
@@ -67,12 +78,10 @@
     <string name="tv_verloren">Arrrrrrrrr!\n Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!</string>
     <string name="bt_verloren">Probiers nochmal</string>
 
-    <string name="zeiger">Zeiger</string>
     <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
     <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
     <string name="crew">Crew</string>
 
-    <string name="verzweigungen">Verzweigungen</string>
     <string name="desc">desc</string>
 
     <string name="large_text">

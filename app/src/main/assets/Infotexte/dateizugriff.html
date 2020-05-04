@@ -1,0 +1,58 @@
+<p>Die folgenden Funktionen dienen zur Bearbeitung von Dateien</p>
+<table style="height: 229px; width: 285.4px; border-color: black; margin-left: auto; margin-right: auto;" border="black">
+    <tbody>
+    <tr>
+        <td style="width: 66px;">fopen</td>
+        <td style="width: 204.4px;">Datei &ouml;ffnen</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fclose</td>
+        <td style="width: 204.4px;">Datei schlie&szlig;en</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">feof</td>
+        <td style="width: 204.4px;">Pr&uuml;fung auf Dateiende</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">freopen</td>
+        <td style="width: 204.4px;">Ausgabe umlenken</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fseek</td>
+        <td style="width: 204.4px;">Dateipointer umlenken</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fgetc</td>
+        <td style="width: 204.4px;">Einzelnes Zeichen lesen</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fgets</td>
+        <td style="width: 204.4px;">Zeichenkette einlesen</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fputc</td>
+        <td style="width: 204.4px;">Einzelnes Zeichen schreiben</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">fprintf</td>
+        <td style="width: 204.4px;">Daten formatiert schreiben</td>
+    </tr>
+    <tr>
+        <td style="width: 66px;">remove</td>
+        <td style="width: 204.4px;">Datei l&ouml;schen</td>
+    </tr>
+    </tbody>
+</table>
+<p style="text-align: justify;">C stellt f&uuml;r den standardisierten Zugriff auf Dateien zahlreiche Funktionen zur Verf&uuml;gung. Sie sind unabh&auml;ngig von systemspezifischen Details und erm&ouml;glichen so das Schreiben portabler Programme.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong><span style="text-decoration: underline;">Dateien und Streams</span></strong><br />Eine Datei besteht aus einer Folge von Bytes mit den Positionen <strong><em>0, 1, 2</em></strong> usw.</p>
+<p style="text-align: justify;">Die aktuelle Position ist die Position, die als N&auml;chstes gelesen oder geschrieben wird. Ger&auml;te wie Tastaturen oder Drucker werden wie gew&ouml;hnliche Dateien behandelt. Beim &Ouml;ffnen wird die Datei mit einem neuen Stream verbunden, der f&uuml;r die &Uuml;bertragung der Daten zust&auml;ndig ist. Dabei wird eine Struktur vom Typ <em><strong>FILE</strong></em> initialisiert, die alle Informationen zur Kontrolle des Streams enth&auml;lt, beispielsweise einen Zeiger auf den verwendeten Puffer und die aktuelle Position.</p>
+<p style="text-align: justify;">Beim Start eines Programms sind bereits die drei Standard-Streams <em><strong>stdin</strong></em>, <em><strong>stdout</strong> </em>und <em><strong>stderr</strong> </em>vorhanden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Dateien &ouml;ffnen und schlie&szlig;en</strong></span><br />Die Funktion <em><strong>fopen()</strong></em> &ouml;ffnet eine Datei zum Lesen oder zum Schreiben oder<br />einer Kombination davon: Das erste Argument ist der Dateiname, der auch eine Pfadangabe enthalten kann. Das zweite Argument legt den Zugriffsmodus fest. Dieser String beginnt mit <em><strong>r</strong></em> f&uuml;r <em><strong>&raquo;read&laquo;</strong></em> (Lesen) oder mit <em><strong>w</strong></em> f&uuml;r <em><strong>&raquo;write&laquo;&nbsp;</strong></em>(Schreiben) oder mit <em><strong>a</strong></em> f&uuml;r <em><strong>&raquo;append&laquo;</strong></em> (Anh&auml;ngen). Diesem ersten Zeichen (r,w, oder a) kann das Zeichen + oder b oder auch beide folgen.</p>
+<p style="text-align: justify;">Das Zeichen <em><strong>+</strong></em> bedeutet, dass Lesen und Schreiben m&ouml;glich sind. Mit dem Zeichen <em><strong>b</strong></em> wird die Datei im Bin&auml;rmodus ge&ouml;ffnet, andernfalls im Textmodus.</p>
+<p style="text-align: justify;">Der Return-Wert von <em><strong>fopen()</strong></em> ist ein Zeiger auf den neuen, mit der Datei verbundenen Stream oder der Null-Zeiger, falls die Datei nicht ge&ouml;ffnet werden konnte. Dieser <em><strong>&raquo;FILE-Pointer&laquo;</strong></em> ist bei allen nachfolgenden Operationen anzugeben, z.B. auch beim Schlie&szlig;en der Datei mit <em><strong>fclose()</strong></em>.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong><span style="text-decoration: underline;">Operationen mit ge&ouml;ffneten Dateien</span></strong><br />F&uuml;r das Lesen und Schreiben stellt die Standardbibliothek Funktionen bereit,<br />die Daten zeichenweise (<em><strong>putc()</strong></em>, <em><strong>getc()</strong></em>), stringweise (<em><strong>fputs()</strong></em>, <em><strong>fgets()</strong></em>),<br />blockweise (<em><strong>fwrite()</strong></em>, <em><strong>fread()</strong></em>) oder formatiert (<em><strong>fprintf()</strong></em>, <em><strong>fscanf()</strong></em>) zu<br />&uuml;bertragen. Die aktuelle Position in der Datei wird dabei automatisch erh&ouml;ht.</p>
+<p style="text-align: justify;">Fehler oder das Erreichen des Dateiendes werden generell durch den Return-<br />Wert angezeigt. Die entsprechenden Flags k&ouml;nnen auch mit <em><strong>feof()</strong></em> und&nbsp;<em><strong>ferror()</strong></em> abgefragt werden. Der wahlfreie Dateizugriff erfolgt mit den Funktionen <em><strong>ftell()</strong></em> und <em><strong>fseek()</strong></em> (oder mit <em><strong>fgetpos()</strong></em> und <em><strong>fsetpos()</strong></em>), die die aktuelle Position liefern bzw. neu setzen.</p>
+<p style="text-align: justify;">Die Funktion <em><strong>rewind()</strong></em> setzt die aktuelle Position wieder auf den Anfang der Datei und l&ouml;scht ein evtl. gesetztes EOF- oder Fehler-Flag.</p>

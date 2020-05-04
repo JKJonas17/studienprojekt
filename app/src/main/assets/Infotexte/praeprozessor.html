@@ -1,8 +1,40 @@
-<!DOCTYPE html>
-        <html>
-<p style="text-align: justify;">Der Pr&auml;prozessor ist ein sehr leistungsf&auml;higer Editor, der anhand sogenannter Direktiven als erstes den Quellcode ver&auml;ndert und ihn dann an den Compiler weiterreicht .<br />Die Pr&auml;prozessorausgabe kann mittels Compileroptionen eingesehen oder gespeichert werden. Dann wird jedoch nicht &uuml;bersetzt.</p>
-<p style="text-align: justify;">Per <em><strong>#include</strong></em> werden Dateiinhalte in das Programm eingef&uuml;gt.<br />Mittels <em><strong>#define</strong></em> werden Makros festgelegt. Sie dienen der Definition und k&ouml;nnen zum bedingten Kompilieren benutzt werden.</p>
-<p style="text-align: justify;">Der Operator <em><strong>#</strong></em> setzt den Makroparameter in Anf&uuml;hrungszeichen.</p>
-<p style="text-align: justify;">Durch den Operator <em><strong>##</strong></em> werden Parameter verkettet.</p>
-<p style="text-align: justify;"><br />Die bedingte &Uuml;bersetzung wird durch <em><strong>#if</strong></em>, <em><strong>#ifdef</strong></em>, <em><strong>#ifndef</strong></em>, <em><strong>#elif</strong></em>, <em><strong>#else</strong></em> und <em><strong>#endif</strong></em> gesteuert. Dadurch wird der Code aus dem Programm entfernt, bevor er kompiliert wird.</p>
-</html>
+<p style="text-align: justify;">Mit Makros k&ouml;nnen C-Programme &uuml;bersichtlich und flexibel gestaltet werden. In diesem Kapitel werden Sie</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Makros definieren und aufrufen</span></p>
+<p style="text-align: justify;">Mit der Definition eines Makros wird einer Zeichenfolge (z.B. einem C-Ausdruck) ein Name gegeben. Die Definition erfolgt mit der <em><strong>#define</strong></em>-Direktive:</p>
+<table style="height: 34px;" border="black" width="324">
+        <tbody>
+        <tr>
+                <td style="width: 314px;">#define Makroname Zeichenfolge</td>
+        </tr>
+        </tbody>
+</table>
+<p style="text-align: justify;">Der Pr&auml;prozessor ersetzt dann &uuml;berall im nachfolgenden Quelltext den Makronamen durch die Zeichenfolge. Ausgenommen sind nur Makronamen in Stringkonstanten. Makros, die Konstanten einen Namen geben, hei&szlig;en auch <em>symbolische Konstanten</em>. Makros k&ouml;nnen mit Parametern definiert werden, so dass sie wie eine Funktion mit Argumenten aufrufbar sind. Die Parameter eines solchen <em>Funktionsmakros</em> sind Platzhalter, die beim Aufruf durch die aktuellen Argumente ersetzt werden. Die Definition eines Makros kann mit der <em><strong>#undef</strong></em>-Direktive wieder gel&ouml;scht werden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Mit Standardmakros Zeichen klassifizieren und umwandeln</span></p>
+<p style="text-align: justify;">Diese Makros testen ein einzelnes Zeichen, beispielsweise ob es sich um einen Klein- oder Gro&szlig;buchstaben (<em><strong>islower()</strong></em>, <em><strong>isupper()</strong></em>), um eine Ziffer (<em><strong>isdigit()</strong></em>) oder um ein Zwischenraumzeichen (<em><strong>isspace()</strong></em>) handelt.<br />Au&szlig;erdem k&ouml;nnen Buchstaben in Klein- oder Gro&szlig;buchstaben umgewandelt werden (<em><strong>tolower()</strong></em>, (<em><strong>toupper()</strong></em>). Die Definitionen dieser Standardmakros sind in der Header-Datei <em><strong>ctype.h</strong></em> enthalten.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Die Technik der bedingten Kompilierung einsetzen</span></p>
+<p style="text-align: justify;">Mit den Direktiven <em><strong>#ifdef</strong></em> und <em><strong>#ifndef</strong></em> kann der Pr&auml;prozessor &uuml;berpr&uuml;fen, ob ein Makro bereits definiert ist oder nicht. Dies kann z.B. dazu genutzt werden, um die Mehrfach-Inkludierung von Header-Dateien zu vermeiden:</p>
+<p style="text-align: justify;">Dazu wird in der Header-Datei ein Makro definiert, dessen Existenz abgefragt werden kann.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;">Filterprogramme schreiben</span></p>
+<p style="text-align: justify;">Ein Filterprogramm liest einen Datenstrom von der Standardeingabe und sendet die manipulierten Daten zur Standardausgabe. Da unter den g&auml;ngigen Betriebssystemen die Standardein-/ausgabe durch Umlenkung mit einer Datei verbunden werden kann, bieten Filterprogramme eine einfache M&ouml;glichkeit, Dateien zu manipulieren, So k&ouml;nnen in Textdateien z.B. bestimmte Zeichen ausgefiltert oder neue Zeichen wie Zeilennummern eingef&uuml;gt werden.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong><span style="text-align: justify;">Zusammenfassung:</span></strong></p>
+<p style="text-align: justify;"><span style="text-align: justify;">Der Pr&auml;prozessor ist ein sehr leistungsf&auml;higer Editor, der anhand sogenannter Direktiven als erstes den Quellcode ver&auml;ndert und ihn dann an den Compiler weiterreicht .</span></p>
+<div style="text-align: justify;">
+        <p style="text-align: justify;">Die Pr&auml;prozessorausgabe kann mittels Compileroptionen eingesehen oder gespeichert werden. Dann wird jedoch nicht &uuml;bersetzt.</p>
+</div>
+<div style="text-align: justify;">
+        <p style="text-align: justify;">Per <em><strong>#include</strong></em> werden Dateiinhalte in das Programm eingef&uuml;gt.<br />Mittels <em><strong>#define</strong></em> werden Makros festgelegt. Sie dienen der Definition und k&ouml;nnen zum bedingten Kompilieren benutzt werden.</p>
+</div>
+<div style="text-align: justify;">
+        <p style="text-align: justify;">Der Operator <em><strong>#</strong></em> setzt den Makroparameter in Anf&uuml;hrungszeichen.</p>
+</div>
+<div style="text-align: justify;">
+        <p style="text-align: justify;">Durch den Operator <em><strong>##</strong></em> werden Parameter verkettet.</p>
+</div>
+<div>
+        <p style="text-align: justify;"><br />Die bedingte &Uuml;bersetzung wird durch <em><strong>#if</strong></em>, <em><strong>#ifdef</strong></em>, <em><strong>#ifndef</strong></em>, <em><strong>#elif</strong></em>, <em><strong>#else</strong></em> und <em><strong>#endif</strong></em> gesteuert. Dadurch wird der Code aus dem Programm entfernt, bevor er kompiliert wird.</p>
+</div>

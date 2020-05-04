@@ -8,16 +8,19 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    public final int LOAD_TIME = 4000; //Lässt nach 4 Sekunden den Startbildschirm verschwinden
-
+    public final int LOAD_TIME = 13000; //Lässt nach 13 Sekunden den Startbildschirm verschwinden
+    LottieAnimationView lottieAnimation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        lottieAnimation = findViewById(R.id.lottieanimation);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

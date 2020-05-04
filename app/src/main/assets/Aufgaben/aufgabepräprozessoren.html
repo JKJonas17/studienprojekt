@@ -1,0 +1,62 @@
+<p><span style="text-decoration: underline;"><strong>Aufgabe 1</strong></span></p>
+<p>Welche Aufgabe hat das folgende Programm?</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>#include &lt;stdio.h&gt;</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>#define SPACE '' &nbsp;&nbsp;&nbsp;&nbsp; /* Leerstelle */</em></p>
+            <p><em>#define NL '\n'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* neue Zeile */</em></p>
+            <p><em>#define BINULL '\0'&nbsp;&nbsp; /* bin&auml;re Null */</em></p>
+            <p><em>#define MAX_LANG 80&nbsp;&nbsp; /* L&auml;nge der Zeichenkette 'text' */</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>char text[MAX_LANG];</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>void eingeben() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nText eingeben\n");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gets(text);</em></p>
+            <p><em>}</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>void tauschen() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x = 0;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while(text[x] != BINULL) {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (text[x] == SPACE)</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text [x] = NL;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x++;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>void ausgeben() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%s",text);</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>main() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eingeben();</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tauschen();</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ausgeben();</em></p>
+            <p><em>}</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p></p>
+<p><em></em></p>
+<p><span style="text-decoration: underline;"><strong>Aufgabe 2</strong></span></p>
+<p>Welche Ausgabe erzeugt folgendes Code-Fragment?</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>#define MB_RAM 4096</em></p>
+            <p><em>printf ("Arbeitsspeicher(MB): MB_RAM");</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><em>&nbsp;&nbsp;&nbsp;</em></p>
+<p><span style="text-decoration: underline;"><strong><em></em></strong></span></p>
+<p></p>
+<table style="border-collapse: collapse; width: 68.8302%;" border="1"></table>
+<p></p>
+<p></p>
+<p></p>

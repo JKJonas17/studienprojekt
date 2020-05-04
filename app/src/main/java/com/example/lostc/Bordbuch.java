@@ -32,64 +32,62 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
 
         ib_BackBordbuch.setOnClickListener(this);
 
-        if(kategorie.equals("1"))
-        {
+        if (kategorie.equals("1")) {
             tv_BordbuchKapitel.setText("Grundlagen");
-            webView.loadUrl(basePath+ "grundlagen.html");
+            webView.loadUrl(basePath + "grundlagen.html");
         }
-        if(kategorie.equals("2"))
-        {
+        if (kategorie.equals("2")) {
             tv_BordbuchKapitel.setText("Datentypen");
-            webView.loadUrl(basePath+ "datentypen.html");
+            webView.loadUrl(basePath + "datentypen.html");
         }
-        if(kategorie.equals("3"))
-        {
+        if (kategorie.equals("3")) {
             tv_BordbuchKapitel.setText("Entscheidungen");
-            webView.loadUrl(basePath+ "entscheidungen.html");
+            webView.loadUrl(basePath + "entscheidungen.html");
         }
-        if(kategorie.equals("4"))
-        {
+        if (kategorie.equals("4")) {
             tv_BordbuchKapitel.setText("Schleifen");
-            webView.loadUrl(basePath+ "schleifen.html");
+            webView.loadUrl(basePath + "schleifen.html");
         }
-        if(kategorie.equals("5"))
-        {
+        if (kategorie.equals("5")) {
             tv_BordbuchKapitel.setText("Funktionen");
-            webView.loadUrl(basePath+ "funktionen.html");
+            webView.loadUrl(basePath + "funktionen.html");
         }
-        if(kategorie.equals("6"))
-        {
+        if (kategorie.equals("6")) {
             tv_BordbuchKapitel.setText("Arrays");
-            webView.loadUrl(basePath+ "array.html");
+            webView.loadUrl(basePath + "array.html");
         }
-        if(kategorie.equals("7"))
-        {
+        if (kategorie.equals("7")) {
             tv_BordbuchKapitel.setText("Variablen");
-            webView.loadUrl(basePath+ "variablen.html");
+            webView.loadUrl(basePath + "variablen.html");
         }
-        if(kategorie.equals("8"))
-        {
+        if (kategorie.equals("8")) {
             tv_BordbuchKapitel.setText("Präprozessor");
-            webView.loadUrl(basePath+ "praeprozessor.html");
+            webView.loadUrl(basePath + "praeprozessor.html");
+        }
+        if (kategorie.equals("9")) {
+            tv_BordbuchKapitel.setText("Pointer");
+            webView.loadUrl(basePath + "pointer.html");
+        }
+        if (kategorie.equals("10")) {
+            tv_BordbuchKapitel.setText("Dateizugriff");
+            webView.loadUrl(basePath + "dateizugriff.html");
         }
     }
 
 
     @Override
-   public void onClick(View v) {
+    public void onClick(View v) {
 
-        if(v.getId()== R.id.ib_backBordbuch)
-        {
+        if (v.getId() == R.id.ib_backBordbuch) {
             openLogbuch(kategorie);
         }
 
     }
 
-    private void openLogbuch(String kategorie)
-    {
+    private void openLogbuch(String kategorie) {
 
-        Intent intent = new Intent(this,Logbuch.class);
-        intent.putExtra("Kategorie",kategorie);
+        Intent intent = new Intent(this, Logbuch.class);
+        intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
 
     }

@@ -1,0 +1,62 @@
+<p><span style="text-decoration: underline;"><strong>Aufgabe 1</strong></span></p>
+<p>Welche Aufgabe hat die folgende Funktion?</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>int umlaut (int zeichen) {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch (zeichen){</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&auml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&Auml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&ouml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&Ouml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&uuml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case '&Uuml;':</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (1);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(0);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+            <p><em>}</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p></p>
+<p><em></em></p>
+<p><span style="text-decoration: underline;"><strong>Aufgabe 2</strong></span></p>
+<p>Was gibt das folgende Programm am Bildschirm aus?</p>
+<p><em>Hinweis</em>: Die Standardfunktion <em>floor()</em> liefert die gr&ouml;&szlig;te ganze Zahl, die kleiner oder gleich ihrem Argument ist. Mit anderen Worten, <em>floor()</em> schneidet bei einer positiven Zahl den gebrochenen Anteil einer Gleitpunktzahl ab. Die Header-Datei <em>math.h</em> enth&auml;lt den Prototyp der Funktion</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>#include &lt;stdio.h&gt;</em></p>
+            <p><em>#include &lt;math.h&gt;</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>int main() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double betrag1 = 99.4, betrag2 = 99.5;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double preis1 = 1.9849, preis2 = 2.9851;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; betrag1 = floor (betrag1 + 0.5);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; betrag2 = floor (betrag2 + 0.5);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pritf("betrag1 = %f betrag2 = %f\n" </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,betrag1,betrag2);</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; preis1 = floor (preis1 * 100 + 0.5) / 100;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; preis2 = floor (preis2 * 100 + 0.5) / 100;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("preis1 = %f preis2 = %f\n" </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,preis1,preis2);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0,</em></p>
+            <p><em>}</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><em>&nbsp;&nbsp;&nbsp;</em></p>
+<p><span style="text-decoration: underline;"><strong><em></em></strong></span></p>
+<p></p>
+<table style="border-collapse: collapse; width: 68.8302%;" border="1"></table>
+<p></p>
+<p></p>
+<p></p>
