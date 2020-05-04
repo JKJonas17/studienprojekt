@@ -1,0 +1,85 @@
+<p><span style="text-decoration: underline;"><strong>Aufgabe 1</strong></span></p>
+<p>&Uuml;berlegen Sie, was das Programm macht, und erg&auml;nzen Sie die beiden printf-Anweisungen in sinnvoller Weise. Benutzen Sie zur L&ouml;sung die ASCII-Tabelle</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>#include &lt;stdio.h&gt;</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>main(){</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char bstb;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pritf("\nBitte keine Umlaute eingeben!\n);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nBuchstabe: ");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bstb=getchar();</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(bstb &lt; 'A' || bstb &gt; 'Z' &amp;&amp; bstb &lt; 'a')</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nDas ist kein Buchstabe!");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if(bstb &gt;= 'A' &amp;&amp; bstb &lt;= 'Z')</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nSie haben ... eingegeben.");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pritf("\nSie haben ... eingegeben.");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p></p>
+<p><em></em></p>
+<p><span style="text-decoration: underline;"><strong>Aufgabe 2</strong></span></p>
+<p>Das folgende Programm rechnet Temperaturen von Grad Celsius in andere Einheiten um. Warum arbeitet es nicht korrekt?</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p><em>#include &lt;stdio.h&gt;</em></p>
+            <p><em>#include &lt;ctype.h&gt;</em></p>
+            <p><em>&nbsp;</em></p>
+            <p><em>main() {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float temperatur;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char zeichen;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n\tTEMPERATURRECHNER\n");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n1 Fahrenheit\n2 Reaumur\n3 Kelvin");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(\n4 Rankine\n0 Ende");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n\n Auswahl: ");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zeichen = getchar();</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch (zeichen) {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 0;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 1: case 2: case3: case4:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nBitte Grad Celcius eingeben: ");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scanf("%f" ,&amp;temperatur);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(temperatur &gt;= -273.15)</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch (zeichen) {</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 1:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n%.2f Grad Celcius sind </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %.2f Grad Fahrenheit",</em><em>&nbsp;temperatur,</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9.0\5.0*temperatur+32.0);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 2:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n%.2f Grad Celcius sind </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %.2f Grad Reaumur",</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temperatur,4.0\5.0*temperatur);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 3:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n%.2f Grad Celcius sind </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %.2f Grad Kelvin",</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temperatur,temperatur+273.15);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 4:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n%.2f Grad Celcius sind </em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %.2f Grad Rankine",</em><em>temperatur,</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9.0\5.0*temperatur+273.15);</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nUngueltige Temperatur!");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default:</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\nUngueltige Option");</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em></p>
+            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><em>&nbsp;&nbsp;&nbsp;</em></p>
+<p><span style="text-decoration: underline;"><strong><em></em></strong></span></p>
+<p></p>
+<table style="border-collapse: collapse; width: 68.8302%;" border="1"></table>
+<p></p>
+<p></p>
+<p></p>

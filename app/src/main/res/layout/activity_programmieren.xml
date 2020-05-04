@@ -89,7 +89,9 @@ tools:context=".Programmieren">
         android:layout_marginRight="157dp"
         android:layout_marginBottom="9dp"
         android:gravity="center"
-        android:text="Button" />
+        android:text="Lösung"
+        android:background="@drawable/roundbutton"
+        android:textColor="@color/colorBackground"/>
 
 </RelativeLayout>
 
