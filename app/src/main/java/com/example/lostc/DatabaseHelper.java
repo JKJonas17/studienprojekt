@@ -147,9 +147,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor1.close();
 
         avg = ((double) correctRows / (double) answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
-        Log.i("correct","rows "+correctRows);
-        Log.i("answered","answered "+answeredRows);
-        Log.i("avg","avg "+avg);
         return avg;
     }
 
@@ -168,6 +165,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.endTransaction();
         }
         db.close();
+    }
+
+
+    public double getAvarage()
+    {
+        double avg;
+        openDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(Answered) FROM Fragen WHERE Answered = ?", new String[]{"2"});
+        Cursor cursor1 = db.rawQuery("SELECT COUNT(Answered) FROM Fragen", null);
+        cursor.moveToFirst();
+        cursor1.moveToFirst();
+        int correctRows = cursor.getInt(0);     //Alle Zeilen die den Wert 2 für richtig beantwortert
+        int answeredRows = cursor1.getInt(0);   // Wert aller Zeilen
+        closeDatabase();
+        cursor.close();
+        cursor1.close();
+
+        avg = ((double) correctRows / (double) answeredRows); // durschnitt der Entscheidet ob Spieler ein Level aufsteigt oder nicht
+        return avg;
+
     }
 
 }

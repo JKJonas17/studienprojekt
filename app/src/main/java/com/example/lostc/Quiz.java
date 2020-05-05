@@ -261,6 +261,14 @@ public class Quiz extends AppCompatActivity {
         {
             kapitel = "Präprozessor";
         }
+        else if(kategorie.equals("9"))
+        {
+            kapitel = "Pointer";
+        }
+        else if(kategorie.equals("10"))
+        {
+            kapitel = "Dateizugriff";
+        }
 
        return kapitel;
     }
@@ -496,6 +504,9 @@ public class Quiz extends AppCompatActivity {
         if (kategorie.equals("7") || kategorie.equals("8")) {
             User.insertScore(this, User.retriveScore(this) + 25);
         }
+        if (kategorie.equals("9") || kategorie.equals("10")) {
+            User.insertScore(this, User.retriveScore(this) + 30);
+        }
     }
 
     /**
@@ -540,6 +551,15 @@ public class Quiz extends AppCompatActivity {
             editor.putInt("8", state); //Präprozessor
             editor.commit();
         }
+        if (kategorie.equals("9")) { //Pointer
+            editor.putInt("9", state);
+            editor.commit();
+        }
+        if (kategorie.equals("10")) { //Dateizugriff
+            editor.putInt("10", state);
+            editor.commit();
+        }
+
 
     }
 

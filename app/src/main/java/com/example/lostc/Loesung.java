@@ -80,17 +80,16 @@ public class Loesung extends AppCompatActivity implements View.OnClickListener{
         public void onClick(View v) {
 
             if (v.getId() == R.id.ib_backloesung) {
-                openLogbuch(kategorie);
+                openProgrammieren(kategorie);
             }
 
         }
 
-        private void openLogbuch(String kategorie) {
+        private void openProgrammieren(String kategorie) {
 
-            Intent intent = new Intent(this, Logbuch.class);
+            Intent intent = new Intent(this, Programmieren.class);
             intent.putExtra("Kategorie", kategorie);
             startActivity(intent);
-
         }
 
 

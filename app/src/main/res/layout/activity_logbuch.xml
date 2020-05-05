@@ -31,7 +31,7 @@
         android:id="@+id/tv_Logbucheintrag"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="@string/headline_logbuch"
@@ -40,7 +40,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tv_Kapitel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.615" />
@@ -49,17 +49,18 @@
         android:id="@+id/tv_Kapitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="74dp"
         android:text="@string/tv_kapitelüberschrift"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_piratenboot"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ib_backLogbuch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
 
     <ImageView
         android:id="@+id/iv_piratenboot"
@@ -74,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Kapitel"
+        app:layout_constraintTop_toTopOf="@+id/tv_Kapitel"
         app:srcCompat="@drawable/piratenschiff" />
 
     <Button
@@ -87,7 +88,7 @@
         android:text="@string/bt_abfrage"
         app:layout_constraintBottom_toTopOf="@+id/bt_Bordbuch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/colorBackground"
         app:layout_constraintTop_toBottomOf="@+id/bt_Programmieren"
@@ -104,7 +105,7 @@
         android:textColor="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_Bordbuch"
         app:layout_constraintVertical_bias="1.0" />
@@ -118,7 +119,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bt_Abfrage"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/colorBackground"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_piratenboot" />
 

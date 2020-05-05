@@ -32,19 +32,19 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
         avg *= 100;
         DecimalFormat f = new DecimalFormat("##.00");
 
-        tv_avgWon.setText("Du hast: "+f.format(avg) +" % richtig!");
+        tv_avgWon.setText("Du hast: " + f.format(avg) + " % richtig!");
+
 
         tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!");
     }
 
     @Override
     public void onClick(View v) {
-             openSeekarte();
+        openSeekarte();
     }
 
-    private void openSeekarte()
-    {
-        Intent intent = new Intent(this,Seekarte.class);
+    private void openSeekarte() {
+        Intent intent = new Intent(this, Seekarte.class);
         startActivity(intent);
         this.finish();
     }

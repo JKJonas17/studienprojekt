@@ -9,7 +9,6 @@
     android:padding="0dp"
     tools:context=".Quiz">
 
-
     <TextView
         android:id="@+id/tv_FragenAnzahl"
         android:layout_width="wrap_content"
@@ -75,18 +74,6 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
-        <TextView
-            android:id="@+id/tv_Score"
-            android:layout_width="125dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.026" />
-
     <TextView
         android:id="@+id/text_view_question"
         android:layout_width="match_parent"
@@ -149,8 +136,8 @@
     <Button
             android:id="@+id/button_confirm_next"
             android:layout_width="175dp"
-            android:layout_height="45dp"
-            android:background="@drawable/arraybutton"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundbutton"
             android:text="@string/weiter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -173,6 +160,30 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_QuizKapitel">
 
     </ProgressBar>
+
+    <ImageView
+        android:id="@+id/muenzeQuiz"
+        android:layout_width="38dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_Score"
+        app:srcCompat="@drawable/muenze" />
+
+    <TextView
+        android:id="@+id/tv_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Quiz"
+        app:layout_constraintEnd_toStartOf="@+id/muenzeQuiz"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toEndOf="@+id/tv_Quiz"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/tv_Info"

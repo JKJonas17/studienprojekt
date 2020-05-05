@@ -6,8 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import static com.example.lostc.R.drawable.insel3;
+import static com.example.lostc.R.drawable.insel4;
+import static com.example.lostc.R.drawable.insel_boot_links1;
+import static com.example.lostc.R.drawable.insel_boot_rechts1;
+import static com.example.lostc.R.drawable.inselgrau_links;
+import static com.example.lostc.R.drawable.inselgrau_rechts;
 
 public class Seekarte extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,162 +36,181 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         ImageButton ib_Dateizugriff = findViewById(R.id.ib_insel_dateizugriff);
         ImageButton ib_BackSeekarte = findViewById(R.id.ib_backSeekarte);
 
-
-        ImageView iv_boot1 = findViewById(R.id.iv_boot1);
-        ImageView iv_boot2 = findViewById(R.id.iv_boot2);
-        ImageView iv_boot3 = findViewById(R.id.iv_boot3);
-        ImageView iv_boot4 = findViewById(R.id.iv_boot4);
-        ImageView iv_boot5 = findViewById(R.id.iv_boot5);
-        ImageView iv_boot6 = findViewById(R.id.iv_boot7);
-        ImageView iv_boot7 = findViewById(R.id.iv_boot7);
-        ImageView iv_boot8 = findViewById(R.id.iv_boot8);
-        ImageView iv_boot9 = findViewById(R.id.iv_boot9);
-        ImageView iv_boot10 = findViewById(R.id.iv_boot10);
-
-        ImageButton ib_Datentypen_grau = findViewById(R.id.ib_insel_datentypen_grau);
-        ImageButton ib_Entscheidungen_grau = findViewById(R.id.ib_insel_entscheidungen_grau);
-        ImageButton ib_Schleifen_grau = findViewById(R.id.ib_insel_schleifen_grau);
-        ImageButton ib_Funktionen_grau = findViewById(R.id.ib_insel_funktionen_grau);
-        ImageButton ib_Arrays_grau = findViewById(R.id.ib_insel_arrays_grau);
-        ImageButton ib_Variablen_grau = findViewById(R.id.ib_insel_variablen_grau);
-        ImageButton ib_Praeprozessor_grau = findViewById(R.id.ib_insel_praeprozessor_grau);
-        ImageButton ib_Pointer_grau = findViewById(R.id.ib_insel_pointer_grau);
-        ImageButton ib_Dateizugriff_grau = findViewById(R.id.ib_insel_dateizugriff_grau);
-
+        ib_Datentypen.setImageResource(inselgrau_links);
+        ib_Entscheidungen.setImageResource(inselgrau_rechts);
+        ib_Schleifen.setImageResource(inselgrau_links);
+        ib_Funktionen.setImageResource(inselgrau_rechts);
+        ib_Arrays.setImageResource(inselgrau_links);
+        ib_Variablen.setImageResource(inselgrau_rechts);
+        ib_Praeprozessor.setImageResource(inselgrau_links);
+        ib_Pointer.setImageResource(inselgrau_rechts);
+        ib_Dateizugriff.setImageResource(inselgrau_links);
 
         ib_Grundlagen.setOnClickListener(this);
-        ib_Datentypen.setOnClickListener(this);
-        ib_Entscheidungen.setOnClickListener(this);
-        ib_Schleifen.setOnClickListener(this);
-        ib_Funktionen.setOnClickListener(this);
-        ib_Arrays.setOnClickListener(this);
-        ib_Variablen.setOnClickListener(this);
-        ib_Praeprozessor.setOnClickListener(this);
-        ib_Pointer.setOnClickListener(this);
-        ib_Dateizugriff.setOnClickListener(this);
         ib_BackSeekarte.setOnClickListener(this);
 
-        ib_Datentypen_grau.setVisibility(View.GONE);
-        ib_Entscheidungen_grau.setVisibility(View.GONE);
-        ib_Schleifen_grau.setVisibility(View.GONE);
-        ib_Funktionen_grau.setVisibility(View.GONE);
-        ib_Arrays_grau.setVisibility(View.GONE);
-        ib_Variablen_grau.setVisibility(View.GONE);
-        ib_Praeprozessor_grau.setVisibility(View.GONE);
-        ib_Pointer_grau.setVisibility(View.GONE);
-        ib_Dateizugriff_grau.setVisibility(View.GONE);
 
-        //Level abfrage durch if
-/*
         int level;
         level = User.retriveLevel(this);//müssen wir per shared preferenc speichern und abrufen
         //bei gewonnen um 1s erhöhen
 
         switch(level){
             case(1):
-                //alle weg bis auf level 1
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                 //alle weg bis auf level 1
+
                 break;
             case(2):
-                ib_Datentypen_grau.setVisibility(View.GONE);
-                //alle weg bis auf level 2
-                iv_boot1.setVisibility(View.GONE);
 
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel_boot_rechts1);
+
             break;
             case(3):
-                ib_Entscheidungen_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
 
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel_boot_links1);
+
                 break;
             case(4):
-                ib_Schleifen_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
 
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel_boot_rechts1);
+
                 break;
             case(5):
-                ib_Funktionen_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
 
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel_boot_links1);
+
                 break;
             case(6):
-                ib_Arrays_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
+                ib_Arrays.setOnClickListener(this);
 
-                iv_boot7.setVisibility(View.GONE);
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel3);
+                ib_Arrays.setImageResource(insel_boot_rechts1);
+
                 break;
             case(7):
-                ib_Variablen_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
+                ib_Arrays.setOnClickListener(this);
+                ib_Variablen.setOnClickListener(this);
 
-                iv_boot8.setVisibility(View.GONE);
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel3);
+                ib_Arrays.setImageResource(insel4);
+                ib_Variablen.setImageResource(insel_boot_links1);
+
                 break;
             case(8):
-                ib_Praeprozessor_grau.setVisibility(View.GONE);
-                iv_boot1.setVisibility(View.GONE);
-                iv_boot2.setVisibility(View.GONE);
-                iv_boot3.setVisibility(View.GONE);
-                iv_boot4.setVisibility(View.GONE);
-                iv_boot5.setVisibility(View.GONE);
-                iv_boot6.setVisibility(View.GONE);
-                iv_boot7.setVisibility(View.GONE);
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
+                ib_Arrays.setOnClickListener(this);
+                ib_Variablen.setOnClickListener(this);
+                ib_Praeprozessor.setOnClickListener(this);
+
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel3);
+                ib_Arrays.setImageResource(insel4);
+                ib_Variablen.setImageResource(insel3);
+                ib_Praeprozessor.setImageResource(insel_boot_rechts1);
+
+                break;
+            case(9):
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
+                ib_Arrays.setOnClickListener(this);
+                ib_Variablen.setOnClickListener(this);
+                ib_Praeprozessor.setOnClickListener(this);
+                ib_Pointer.setOnClickListener(this);
+
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel3);
+                ib_Arrays.setImageResource(insel4);
+                ib_Variablen.setImageResource(insel3);
+                ib_Praeprozessor.setImageResource(insel4);
+                ib_Pointer.setImageResource(insel_boot_links1);
+
+                break;
+            case(10):
+                ib_Grundlagen.setOnClickListener(this);
+                ib_Datentypen.setOnClickListener(this);
+                ib_Entscheidungen.setOnClickListener(this);
+                ib_Schleifen.setOnClickListener(this);
+                ib_Funktionen.setOnClickListener(this);
+                ib_Arrays.setOnClickListener(this);
+                ib_Variablen.setOnClickListener(this);
+                ib_Praeprozessor.setOnClickListener(this);
+                ib_Pointer.setOnClickListener(this);
+                ib_Dateizugriff.setOnClickListener(this);
+
+                ib_Grundlagen.setImageResource(insel3);
+                ib_Datentypen.setImageResource(insel4);
+                ib_Entscheidungen.setImageResource(insel3);
+                ib_Schleifen.setImageResource(insel4);
+                ib_Funktionen.setImageResource(insel3);
+                ib_Arrays.setImageResource(insel4);
+                ib_Variablen.setImageResource(insel3);
+                ib_Praeprozessor.setImageResource(insel4);
+                ib_Pointer.setImageResource(insel3);
+                ib_Dateizugriff.setImageResource(insel_boot_rechts1);
+
 
                 break;
             default:
         }
 
-*/
 
-        //hier muss eine Funktion zur Levelabfrage rein
-
-
-        /**
-         * nur das Schiff des aktuellen Levels soll angezeigt werden
-         *
-         * **/
-
-        //evtl. alle Schiffe auf invisible und mit Variable aktuelles Schiff freischalten
-        // ImageView iv_boot1 = findViewById(R.id.iv_boot1);
-        //  iv_boot1.setVisibility(View.INVISIBLE);
 
 
     }
@@ -240,11 +265,11 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         }
         if (v.getId() == R.id.ib_insel_pointer) {
             Toast.makeText(this, "Pointer gedrückt", Toast.LENGTH_SHORT).show();
-            openLogbuch(("9"));
+            openLogbuch("9");
         }
         if (v.getId() == R.id.ib_insel_dateizugriff) {
             Toast.makeText(this, "Dateizugriff gedrückt", Toast.LENGTH_SHORT).show();
-            openLogbuch(("10"));
+            openLogbuch("10");
         }
 
             if (v.getId() == R.id.ib_backSeekarte) {
