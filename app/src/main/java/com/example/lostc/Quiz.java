@@ -81,7 +81,7 @@ public class Quiz extends AppCompatActivity {
         tv_Info = findViewById(R.id.tv_Info);
 
         //Setzt den aktuellen Score
-        tv_Score.setText("Score " + User.retriveScore(this));
+        tv_Score.setText(""+User.retriveScore(this));
 
         //String der aus Seekarte übergeben wurde wird in String kategorie übergeben
         Bundle bundle = getIntent().getExtras();
@@ -90,7 +90,7 @@ public class Quiz extends AppCompatActivity {
         tv_QuizKapitel.setText(this.getKapitelbyKat(kategorie));
 
         // Info das Spieler über 80 % der Fragen beantworten muss, wird nur im ersten Level angezeigt
-        if(!kategorie.equals("1"))
+        if(counter!=0)
         {
             tv_Info.setVisibility(View.GONE);
         }
@@ -474,7 +474,7 @@ public class Quiz extends AppCompatActivity {
         // Wenn correct true ist und der Wert in der DB für "Answered" 0(unbeantwortet) oder 1(letztes mal falsch beantwortet) beträgt
         if (correct && (questions.get(counter).getAnswered().equals("0") || questions.get(counter).getAnswered().equals("1"))) {
             setPoints();
-            tv_Score.setText("Score " + User.retriveScore(this));
+            tv_Score.setText(""+User.retriveScore(this));
         }
         answered = true;
         int pos = counter +1;
@@ -583,7 +583,7 @@ public class Quiz extends AppCompatActivity {
         double avg = db.levelup(kategorie);
         double lvlup = 0.8;
         if (avg >= lvlup) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
-            openGewonnen(avg);
+            openGewonnen(avg,kategorie);
 
         } else {
             openVerloren(kategorie,avg);
@@ -621,8 +621,12 @@ public class Quiz extends AppCompatActivity {
      * wird geöffnet falls der User über 80% der Fragen richtig beantwortet hat
      *  @param avg übergibt den prozentualen Anteil der Richtig beantworteten Fragen
      */
-    private void openGewonnen(double avg) {
-        User.insertLevel(this, User.retriveLevel(this) + 1);
+    private void openGewonnen(double avg, String kategorie) {
+        int kat = Integer.parseInt(kategorie);
+        int level = User.retriveLevel(this);
+        if(kat == level && level < 10) {
+            User.insertLevel(this, User.retriveLevel(this) + 1);
+        }
         intent = new Intent(this, Gewonnen.class);
         intent.putExtra("Avarage",avg);
         startActivity(intent);
