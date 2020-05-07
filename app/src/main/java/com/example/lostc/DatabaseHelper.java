@@ -4,10 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -26,6 +23,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
         this.context = context;
+    }
+
+    public SQLiteDatabase getDb()
+    {
+        return db;
     }
 
     @Override
@@ -126,7 +128,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Hat der Spieler mehr als 80% der Fragen beantwortet kann er ein Level-fortfahren
-     *
      * @param kategorie wird benötigt um alle Zeilen einer bestimmten Kategorie zu finden
      * @return avg double Wert der bestimmt ob ein Spieler genügend Fragen beantwortet hat um ein Level aufzusteigen
      */
@@ -167,7 +168,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
+    /**
+     * Gibt den Durschnittswert der richtig beantworteten Fragen
+     * @return avg
+     */
     public double getAvarage()
     {
         double avg;

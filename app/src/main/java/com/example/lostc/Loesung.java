@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Loesung extends AppCompatActivity implements View.OnClickListener{
 
 
-
         private String kategorie;
 
         String basePath = "file:///android_asset/Aufgabenloesung/";
@@ -22,7 +21,6 @@ public class Loesung extends AppCompatActivity implements View.OnClickListener{
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_loesung);
-
 
             TextView tv_ProgrammierAufgabe = findViewById(R.id.tv_LoesungsAufgabe);
             ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backloesung);
@@ -82,11 +80,9 @@ public class Loesung extends AppCompatActivity implements View.OnClickListener{
             if (v.getId() == R.id.ib_backloesung) {
                 openProgrammieren(kategorie);
             }
-
         }
 
         private void openProgrammieren(String kategorie) {
-
             Intent intent = new Intent(this, Programmieren.class);
             intent.putExtra("Kategorie", kategorie);
             startActivity(intent);

@@ -90,10 +90,6 @@ public class Quiz extends AppCompatActivity {
         tv_QuizKapitel.setText(this.getKapitelbyKat(kategorie));
 
         // Info das Spieler über 80 % der Fragen beantworten muss, wird nur im ersten Level angezeigt
-        if(counter!=0)
-        {
-            tv_Info.setVisibility(View.GONE);
-        }
 
         ib_backQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,8 +179,6 @@ public class Quiz extends AppCompatActivity {
                         setArrayPosition(Quiz.this, counter, kategorie); // ArrayState wird an counter angepasst
                     }
                         int val = getArrayPosition(Quiz.this, kategorie);
-                        Log.i("counter ","counter onClick "+ counter);
-                        Log.i("counter3","state: "+val);
                     showNextQuestion();
 
                 }
@@ -226,7 +220,7 @@ public class Quiz extends AppCompatActivity {
      * @param kategorie String aus putExtra
      * @return String der in tv_QuizKapitel verwendet wird
      */
-    private String getKapitelbyKat(String kategorie)
+    public String getKapitelbyKat(String kategorie)
     {
         String kapitel ="";
         if(kategorie.equals("1"))
@@ -279,7 +273,7 @@ public class Quiz extends AppCompatActivity {
      * @param context wird an DatabaseHelper übergeben um Objekt zu erstellen
      * @return true wenn Kopie der Datenbank erfolgreich erstellt wurde
      */
-    private boolean copyDatabase(Context context) {
+    public static boolean copyDatabase(Context context) {
         try {
             InputStream inputStream = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
             String file = context.getFilesDir().getParentFile().getPath() + "/databases/" + DatabaseHelper.DATABASE_NAME;
@@ -305,8 +299,12 @@ public class Quiz extends AppCompatActivity {
      * Setzt Texte aus der Liste "question" in die TextView und in die RadioButtons
      * RadioButton onClickListener rufen Methode startCounter auf um den Progressbar zu starten
      */
-    private void showNextQuestion() {
+    public void showNextQuestion() {
 
+        if(counter!=0)
+        {
+            tv_Info.setVisibility(View.GONE);
+        }
         answered = false;
         anzahl = counter +1;
         tv_FragenAnzahl.setText("Frage: "+anzahl+"/"+total);
@@ -356,7 +354,7 @@ public class Quiz extends AppCompatActivity {
      * setzt die Zeit, die die Progressbar bis zum ende braucht
      * wird onFinish() aufgerufen wird showSolution() aufgerufen und die Lösungen angezeigt
      */
-    private void startCounter() {
+    public void startCounter() {
         pb_Quiz.setMax(3000);
         pb_Quiz.setProgress(0);
         new CountDownTimer(3000, 100) {
@@ -387,7 +385,7 @@ public class Quiz extends AppCompatActivity {
      * Wenn richtige Antwort gecheckt wird => Hintergrund grün
      * sonst hintergrund rot und richtige Antwort grün
      */
-    private void showSolution() {
+    public void showSolution() {
 
         int antwort_Nr = Integer.parseInt(questions.get(counter).getAnswerNr()); // In DB steht ein String der geparset werden muss
         boolean correct = false;
@@ -491,7 +489,7 @@ public class Quiz extends AppCompatActivity {
     /**
      * setzt den Score des Users abhängig von der Kategorie
      */
-    private void setPoints() {
+    public void setPoints() {
         if (kategorie.equals("1") || kategorie.equals("2")) {
             User.insertScore(this, User.retriveScore(this) + 10);
         }
@@ -583,9 +581,14 @@ public class Quiz extends AppCompatActivity {
         double avg = db.levelup(kategorie);
         double lvlup = 0.8;
         if (avg >= lvlup) { //80% der Fragen müssen richtig beantwortet werden um ein Level auf zu steigen
-            openGewonnen(avg,kategorie);
+            if(kategorie.equals("10")) {
+               openEasterEgg();
+            }
+            else {
+                openGewonnen(avg, kategorie);
+            }
 
-        } else {
+        } else{
             openVerloren(kategorie,avg);
         }
     }
@@ -629,6 +632,16 @@ public class Quiz extends AppCompatActivity {
         }
         intent = new Intent(this, Gewonnen.class);
         intent.putExtra("Avarage",avg);
+        startActivity(intent);
+        this.finish();
+    }
+
+    /**
+     * öffnet die Ebene EasterEgg wenn der Spieler alle Level durchgespielt hat
+     */
+    private void openEasterEgg()
+    {
+        intent = new Intent(this,EasterEgg.class);
         startActivity(intent);
         this.finish();
     }

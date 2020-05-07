@@ -180,5 +180,6 @@
     <string name="Text">Text</string>
     <string name="username">Username</string>
     <string name="Quiz">Abfrage</string>
-    <string name="weiter">Weiter</string>s
+    <string name="weiter">Weiter</string>
+    <string name="level_bestanden">Herzlichen Glückwunsch du hast alle Level bestanden</string>s
 </resources>
