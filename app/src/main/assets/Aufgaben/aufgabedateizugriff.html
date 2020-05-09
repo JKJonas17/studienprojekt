@@ -1,0 +1,77 @@
+<p><span style="text-decoration: underline;"><strong>Aufgabe 1</strong></span></p>
+<p>Was gibt folgendes Programm auf dem Bildschirm aus?</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p>#include &lt;stdio.h&gt;</p>
+            <p>&nbsp;</p>
+            <p>// Murphy's laws</p>
+            <p>char *line[3] = { "If anything can go wrong,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; it will.\n",</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; "Nothing is as easy as it looks.\n",</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; "Every solution breeds new</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; problems.\n" };</p>
+            <p>long pos[3];</p>
+            <p>int n = 3;</p>
+            <p>char filename[] = "demo.txt";</p>
+            <p>&nbsp;</p>
+            <p>#define swapPos(a,b) { long c = a; a = b; b = c; }</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main(){</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i = 0;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE *fp = NULL;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buf[128];</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts("\n*Demo zur Dateiverarbeitung*\n");</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Datei zum Schreiben &ouml;ffnen:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( (fp = fopen( filename, "w+" )) == NULL)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 1; // Fehler beim &Ouml;ffnen.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; n; ++i)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pos[i] = ftell(fp);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fputs( line[i], fp) == EOF)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 2; // Fehler beim Schreiben.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; swapPos( pos[1], pos[2]);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; swapPos( pos[0], pos[1]);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; n; ++i)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fseek( fp, pos[i], SEEK_SET);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fgets( buf, sizeof(buf), fp) == NULL)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 3; // Fehler beim Lesen.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fputs( buf, stdout);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose(fp); // Datei schlie&szlig;en.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p></p>
+<p><em></em></p>
+<p><span style="text-decoration: underline;"><strong>Aufgabe 2</strong></span></p>
+<p>Was stimmt hier nicht?</p>
+<p>Hinweis: Die Datei Demo.txt enth&auml;lt einige Zeilen Text.</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 100%;">
+            <p>char zeile[100] = "";</p>
+            <p>FILE *fp = fopen("Demo.txt", w+);</p>
+            <p>if( fp != NULL)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fgets( zeile, sizeof(zeile), fp); // 1. Zeile.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><em>&nbsp;&nbsp;&nbsp;</em></p>
+<p><span style="text-decoration: underline;"><strong><em></em></strong></span></p>
+<p></p>
+<table style="border-collapse: collapse; width: 68.8302%;" border="1"></table>
+<p></p>
+<p></p>
+<p></p>

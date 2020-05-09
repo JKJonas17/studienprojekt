@@ -72,6 +72,16 @@ public class Loesung extends AppCompatActivity implements View.OnClickListener{
                 tv_ProgrammierAufgabe.setText("Präprozessor");
                 webView.loadUrl(basePath+ "loesungpräprozessor.html");
             }
+            if(kategorie.equals("9"))
+            {
+                tv_ProgrammierAufgabe.setText("Pointer");
+                webView.loadUrl(basePath+ "loesungpointer.html");
+            }
+            if(kategorie.equals("10"))
+            {
+                tv_ProgrammierAufgabe.setText("Dateizugriff");
+                webView.loadUrl(basePath+ "loesungdateizugriff.html");
+            }
         }
 
         @Override

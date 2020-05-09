@@ -74,6 +74,17 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
             tv_ProgrammierAufgabe.setText("Präprozessor");
             webView.loadUrl(basePath+ "aufgabepräprozessoren.html");
         }
+        if(kategorie.equals("9"))
+        {
+            tv_ProgrammierAufgabe.setText("Pointer");
+            webView.loadUrl(basePath+ "aufgabepointer.html");
+        }
+        if(kategorie.equals("10"))
+        {
+            tv_ProgrammierAufgabe.setText("Dateizugriff");
+            webView.loadUrl(basePath+ "aufgabedateizugriff.html");
+        }
+
     }
 
     @Override
