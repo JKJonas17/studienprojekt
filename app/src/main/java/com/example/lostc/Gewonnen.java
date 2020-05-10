@@ -30,9 +30,9 @@ public class Gewonnen extends AppCompatActivity implements View.OnClickListener 
         Bundle bundle = getIntent().getExtras();
         avg = bundle.getDouble("Avarage");
         avg *= 100;
-        DecimalFormat f = new DecimalFormat("##.00");
+        DecimalFormat f = new DecimalFormat("#0.00");
 
-        tv_avgWon.setText("Du hast: " + f.format(avg) + " % richtig!");
+        tv_avgWon.setText("Du hast: " + f.format(avg) + "% richtig!");
 
 
         tv_gewonnen.setText("Anker lichten " + User.retriveUsername(this) + ".\n" + "Wir stechen in See!");

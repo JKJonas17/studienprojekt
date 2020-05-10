@@ -191,22 +191,6 @@ public class Quiz extends AppCompatActivity {
 
         });
 
-        //Übergibt den Pfad der Datenbank an eine Variable typ File
-        File database = getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
-
-        if (!database.exists()) //wenn File nicht existiert
-        {
-            db.getReadableDatabase(); //erstellt oder öffnet eine Datenbank
-
-            if (copyDatabase(this)) //gibt einen Toast aus wenn Datenbank erfolgreich kopiert wurde
-            {
-                Toast.makeText(this, "Copy database succes", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Copy data error", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
-
         //ArrayList mit Fragen der bestimmten Kategorie, String kategorie aus Seekarte wird übergeben
         questions = db.getQuestions(kategorie);
         total = questions.size();
@@ -265,33 +249,6 @@ public class Quiz extends AppCompatActivity {
         }
 
        return kapitel;
-    }
-
-    /**
-     * Liest Datenbank aus AssetFolder und schreibt diese in den Speicherort des Gerätespeichers
-     *
-     * @param context wird an DatabaseHelper übergeben um Objekt zu erstellen
-     * @return true wenn Kopie der Datenbank erfolgreich erstellt wurde
-     */
-    public static boolean copyDatabase(Context context) {
-        try {
-            InputStream inputStream = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
-            String file = context.getFilesDir().getParentFile().getPath() + "/databases/" + DatabaseHelper.DATABASE_NAME;
-            OutputStream outputStream = new FileOutputStream(file);
-            byte[] buff = new byte[1024];
-            int length;
-
-            while ((length = inputStream.read(buff)) > 0) {
-                outputStream.write(buff, 0, length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            Log.w("Quiz", "DBCopied");
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
     /**
@@ -627,7 +584,7 @@ public class Quiz extends AppCompatActivity {
     private void openGewonnen(double avg, String kategorie) {
         int kat = Integer.parseInt(kategorie);
         int level = User.retriveLevel(this);
-        if(kat == level && level < 10) {
+       if(kat == level && level < 10) {
             User.insertLevel(this, User.retriveLevel(this) + 1);
         }
         intent = new Intent(this, Gewonnen.class);

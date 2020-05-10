@@ -30,7 +30,7 @@ public class EasterEgg extends AppCompatActivity implements View.OnClickListener
     }
 
     private void openMainMenue() {
-        Intent intent = new Intent(this, Main_menue.class);
+        Intent intent = new Intent(this, Belohnung.class);
         startActivity(intent);
         this.finish();
     }

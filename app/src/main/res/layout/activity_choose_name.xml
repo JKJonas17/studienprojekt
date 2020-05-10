@@ -19,7 +19,9 @@
         app:layout_constraintBottom_toTopOf="@+id/bt_bestaetigen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Wie_heißt_du" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Wie_heißt_du"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tv_Wie_heißt_du"
@@ -27,7 +29,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="400dp"
         app:fontFamily="@font/geschwungen"
-        android:text="Wie heißt du?"
+        android:text="@string/wie_hei_t_du"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         android:gravity="center"
@@ -43,7 +45,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="97dp"
         android:background="@drawable/roundbutton"
-        android:text="Bestätigen"
+        android:text="@string/bestaetigen"
         android:textColor="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pirat_8bit" />
+        app:srcCompat="@drawable/pirat_8bit"
+        android:contentDescription="@string/desc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
