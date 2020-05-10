@@ -21,7 +21,7 @@ public class QuizTest {
      */
   @Test
     public void copyDatabase() throws Exception{
-       assertTrue(Quiz.copyDatabase(appContext));
+       assertTrue(Main_menue.copyDatabase(appContext));
     }
 
     @Before

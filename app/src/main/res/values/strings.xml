@@ -181,5 +181,26 @@
     <string name="username">Username</string>
     <string name="Quiz">Abfrage</string>
     <string name="weiter">Weiter</string>
-    <string name="level_bestanden">Herzlichen Glückwunsch du hast alle Level bestanden</string>s
+    <string name="level_bestanden">Herzlichen Glückwunsch du hast alle Level bestanden</string>
+    <string name="zur_belohnung">Zur Belohnung</string>
+    <string name="belohnung">Belohnung</string>
+    <string name="hauptmenue">Hauptmenue</string>
+    <string name="here_will_be_the_question_text_nhere_will_be_the_question_text_nhere_will_be_the_question_text">Here will be the question text\nHere will be the question text\nHere will be the question text</string>
+    <string name="fragenanzahl">Fragenanzahl</string>
+    <string name="_0000">0000</string>
+    <string name="beantworte_80_der_fragen_richtig">Beantworte 80 % der Fragen richtig!</string>
+    <string name="option_4">Option 4</string>
+    <string name="option_3">Option 3</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_1">Option 1</string>
+    <string name="aktuelles_level_1">Aktuelles_Level: 1</string>
+    <string name="gesamtfortschritt_0">Gesamtfortschritt: 0%</string>
+    <string name="name">Name</string>
+    <string name="semester">Semester</string>
+    <string name="thema">Thema</string>
+    <string name="loesung">Lösung</string>
+    <string name="kapietel_berschrift">Kapietelüberschrift</string>
+    <string name="wie_hei_t_du">Wie heißt du?</string>
+    <string name="bestaetigen">Bestätigen</string>
+    s
 </resources>

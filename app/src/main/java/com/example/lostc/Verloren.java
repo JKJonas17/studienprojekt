@@ -32,14 +32,14 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
         kategorie = bundle.getString("Kategorie");
         avg = bundle.getDouble("Avarage");
         avg *= 100;
-        DecimalFormat f = new DecimalFormat("##.00");
+        DecimalFormat f = new DecimalFormat("#0.00");
 
         if (avg == 0) {
             tv_avgLost.setText("Du hast: 0 % richtig!");
         }
         else
         {
-            tv_avgLost.setText("Du hast nur: "+f.format(avg) +" % richtig");
+            tv_avgLost.setText("Du hast nur: "+f.format(avg) +"% richtig");
         }
         tv_verloren.setText("Arrrrrr " + User.retriveUsername(this) + "!\n" + "Beim heiligen Klabautermann!\nMan sollte dich auf dieser Insel aussetzen!");
     }

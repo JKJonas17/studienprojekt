@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context=".Belohnung">
+
+    <TextView
+        android:id="@+id/tv_belohnung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="54dp"
+        android:text="@string/belohnung"
+        android:fontFamily="@font/geschwungen"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="45sp" />
+
+    <ScrollView
+        android:id="@+id/sv_belohnung"
+        android:layout_width="match_parent"
+        android:layout_height="344dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="229dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <WebView
+                android:id="@+id/wv_belohnung"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_belohnung"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/roundbutton"
+        android:gravity="center"
+        android:text="@string/hauptmenue"
+        android:textColor="@color/colorBackground" />
+
+    <ImageView
+        android:id="@+id/plastikschatztruhe"
+        android:layout_width="214dp"
+        android:layout_height="149dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="73dp"
+        app:srcCompat="@drawable/plastik" />
+
+</RelativeLayout>
+

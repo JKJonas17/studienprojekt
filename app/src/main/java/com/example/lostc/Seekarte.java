@@ -224,56 +224,45 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        /**
+        /*
          * Abfrage ob Richtiger Button geklickt wurde
-         **/
+         */
         if (v.getId() == R.id.ib_insel_grundlagen) {
-            Toast.makeText(this, "Grundlagen gedückt", Toast.LENGTH_SHORT).show();
-            /**
+            /*
              * öffnen der neuen Aktivität "Logbucheintrag_Grundlagen"
-             **/
+             */
             openLogbuch("1"); // Value zum Identifizieren der Katogarie
 
         }
         if (v.getId() == R.id.ib_insel_datentypen) {
-            Toast.makeText(this, "Datentypen gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("2");
         }
         if (v.getId() == R.id.ib_insel_entscheidungen) {
-            Toast.makeText(this, "Entscheidungen gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("3");
         }
         if (v.getId() == R.id.ib_insel_schleifen) {
-            Toast.makeText(this, "Schleifen gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("4");
         }
         if (v.getId() == R.id.ib_insel_funktionen) {
-            Toast.makeText(this, "Funktionen gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("5");
         }
         if (v.getId() == R.id.ib_insel_arrays) {
-            Toast.makeText(this, "Arrays gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("6");
         }
         if (v.getId() == R.id.ib_insel_variablen) {
-            Toast.makeText(this, "Variablen gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("7");
         }
         if (v.getId() == R.id.ib_insel_praeprozessor) {
-            Toast.makeText(this, "Präprozessor gedückt", Toast.LENGTH_SHORT).show();
             openLogbuch("8");
         }
         if (v.getId() == R.id.ib_insel_pointer) {
-            Toast.makeText(this, "Pointer gedrückt", Toast.LENGTH_SHORT).show();
             openLogbuch("9");
         }
         if (v.getId() == R.id.ib_insel_dateizugriff) {
-            Toast.makeText(this, "Dateizugriff gedrückt", Toast.LENGTH_SHORT).show();
             openLogbuch("10");
         }
 
             if (v.getId() == R.id.ib_backSeekarte) {
-                Toast.makeText(this, "Zurück gedrückt", Toast.LENGTH_SHORT).show();
                 openMainMenue();
 
             }

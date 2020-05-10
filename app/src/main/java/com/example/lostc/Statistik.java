@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class Statistik extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton ib_back_Statitik;
@@ -29,12 +31,18 @@ public class Statistik extends AppCompatActivity implements View.OnClickListener
         TextView tv_gesamt = findViewById(R.id.tv_gesamt);
         TextView tv_level = findViewById(R.id.tv_level);
         ImageView iv_schatzkiste = findViewById(R.id.iv_schatzkiste);
-        fortschritt = User.retriveScore(this);
-        prozent_fortschritt = fortschritt/250*100;
+        avg *= 100;
+        DecimalFormat f = new DecimalFormat("#0.00");
 
         //Für die prozentuale Angabe wird noch der Wert für 100% aus der Datenbank benötigt.
 
-        tv_gesamt.setText("Gesamtfortschritt: " + prozent_fortschritt + "%");
+        if(avg!= 0) {
+            tv_gesamt.setText("Gesamtfortschritt: " + f.format(avg) + "%");
+        }
+        else
+        {
+            tv_gesamt.setText("Gesamtfortschritt: 0%");
+        }
         tv_level.setText("Aktuelles Level: " + User.retriveLevel(this));
         ib_backStatistik.setOnClickListener(this);
     }

@@ -13,7 +13,7 @@
         android:id="@+id/tv_FragenAnzahl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/fragenanzahl"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,9 +60,7 @@
             android:layout_width="59dp"
             android:layout_height="58dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_marginEnd="43dp"
-            android:layout_marginRight="43dp"
             android:layout_marginBottom="103dp"
             android:background="@null"
             android:contentDescription="@string/desc"
@@ -80,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
-        android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
+        android:text="@string/here_will_be_the_question_text_nhere_will_be_the_question_text_nhere_will_be_the_question_text"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -106,7 +104,7 @@
             android:layout_height="wrap_content"
             android:buttonTint="@color/colorPrimaryDark"
             android:layout_marginBottom="5dp"
-            android:text="Option 1" />
+            android:text="@string/option_1" />
 
         <RadioButton
             android:id="@+id/radio_button2"
@@ -114,7 +112,7 @@
             android:layout_height="wrap_content"
             android:buttonTint="@color/colorPrimaryDark"
             android:layout_marginBottom="5dp"
-            android:text="Option 2" />
+            android:text="@string/option_2" />
 
         <RadioButton
             android:id="@+id/radio_button3"
@@ -122,14 +120,14 @@
             android:layout_height="wrap_content"
             android:buttonTint="@color/colorPrimaryDark"
             android:layout_marginBottom="5dp"
-            android:text="Option 3" />
+            android:text="@string/option_3" />
 
         <RadioButton
             android:id="@+id/radio_button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/colorPrimaryDark"
-            android:text="Option 4" />
+            android:text="@string/option_4" />
 
     </RadioGroup>
 
@@ -174,7 +172,7 @@
         android:id="@+id/tv_Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0000"
+        android:text="@string/_0000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_Quiz"
@@ -189,7 +187,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Beantworte 80 % der Fragen richtig!"
+        android:text="@string/beantworte_80_der_fragen_richtig"
         app:layout_constraintBottom_toTopOf="@+id/pb_Quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
