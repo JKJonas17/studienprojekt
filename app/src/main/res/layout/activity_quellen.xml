@@ -54,7 +54,7 @@
             android:id="@+id/tv_buchquellen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
             android:text="@string/tv_buchquellen"
@@ -93,42 +93,37 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_isbn2" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="321dp"
+            app:layout_constrainedHeight="false">
+
+            <ImageView
+                android:id="@+id/iv_buch1"
+                android:layout_width="176dp"
+                android:layout_height="216dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/iv_buch2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/c_buch1" />
+
+            <ImageView
+                android:id="@+id/iv_buch2"
+                android:layout_width="161dp"
+                android:layout_height="216dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_buch1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/c_buch2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="408dp"
-        android:layout_height="285dp"
-        android:layout_marginTop="21dp"
-        app:layout_constrainedHeight="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_layout">
-
-        <ImageView
-            android:id="@+id/iv_buch1"
-            android:layout_width="176dp"
-            android:layout_height="216dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/iv_buch2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/c_buch1" />
-
-        <ImageView
-            android:id="@+id/iv_buch2"
-            android:layout_width="161dp"
-            android:layout_height="216dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_buch1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/c_buch2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@
     <string name="headline_Einstellungen">Einstellungen</string>
     <string name="headline_Statistik">Einstellungen</string>
     <string name="headline_Quellen">Quellen</string>
+    <string name="headline_Programmieren">Programmieren</string>
 
     /*TextViews Logbuch - Buttons*/
     <string name="tv_kapitelüberschrift">Kapitelüberschrift</string>
@@ -77,6 +78,7 @@
     <string name="bt_gewonnen">In See stechen</string>
     <string name="tv_verloren">Arrrrrrrrr!\n Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!</string>
     <string name="bt_verloren">Probiers nochmal</string>
+    <string name="bt_loesung">Lösung</string>
 
     <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
     <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>

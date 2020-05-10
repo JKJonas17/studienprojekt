@@ -22,8 +22,8 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_programmieren);
 
 
-        TextView tv_ProgrammierAufgabe = findViewById(R.id.tv_ProgrammierAufgabe);
-        ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backprogrammieren);
+        TextView tv_ProgrammierenKapitel = findViewById(R.id.tv_ProgrammierenKapitel);
+        ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backProgrammieren);
         Button bt_loesung = findViewById(R.id.bt_loesung);
 
         Bundle bundle = getIntent().getExtras();
@@ -36,52 +36,52 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
         bt_loesung.setOnClickListener(this);
 
         if (kategorie.equals("1")) {
-            tv_ProgrammierAufgabe.setText("Grundlagen");
+            tv_ProgrammierenKapitel.setText("Grundlagen");
             webView.loadUrl(basePath + "aufgabegrundlagen.html");
         }
         if(kategorie.equals("2"))
         {
-            tv_ProgrammierAufgabe.setText("Datentypen");
+            tv_ProgrammierenKapitel.setText("Datentypen");
             webView.loadUrl(basePath+ "aufgabedatentypen.html");
         }
         if(kategorie.equals("3"))
         {
-            tv_ProgrammierAufgabe.setText("Entscheidungen");
+            tv_ProgrammierenKapitel.setText("Entscheidungen");
             webView.loadUrl(basePath+ "aufgabeentscheidungen.html");
         }
         if(kategorie.equals("4"))
         {
-            tv_ProgrammierAufgabe.setText("Schleifen");
+            tv_ProgrammierenKapitel.setText("Schleifen");
             webView.loadUrl(basePath+ "aufgabeschleifen.html");
         }
         if(kategorie.equals("5"))
         {
-            tv_ProgrammierAufgabe.setText("Funktionen");
+            tv_ProgrammierenKapitel.setText("Funktionen");
             webView.loadUrl(basePath+ "aufgabefunktionen.html");
         }
         if(kategorie.equals("6"))
         {
-            tv_ProgrammierAufgabe.setText("Arrays");
+            tv_ProgrammierenKapitel.setText("Arrays");
             webView.loadUrl(basePath+ "aufgabearrays.html");
         }
         if(kategorie.equals("7"))
         {
-            tv_ProgrammierAufgabe.setText("Variablen");
+            tv_ProgrammierenKapitel.setText("Variablen");
             webView.loadUrl(basePath+ "aufgabevariablen.html");
         }
         if(kategorie.equals("8"))
         {
-            tv_ProgrammierAufgabe.setText("Präprozessor");
+            tv_ProgrammierenKapitel.setText("Präprozessor");
             webView.loadUrl(basePath+ "aufgabepräprozessoren.html");
         }
         if(kategorie.equals("9"))
         {
-            tv_ProgrammierAufgabe.setText("Pointer");
+            tv_ProgrammierenKapitel.setText("Pointer");
             webView.loadUrl(basePath+ "aufgabepointer.html");
         }
         if(kategorie.equals("10"))
         {
-            tv_ProgrammierAufgabe.setText("Dateizugriff");
+            tv_ProgrammierenKapitel.setText("Dateizugriff");
             webView.loadUrl(basePath+ "aufgabedateizugriff.html");
         }
 
@@ -90,7 +90,7 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.ib_backprogrammieren) {
+        if (v.getId() == R.id.ib_backProgrammieren) {
             openLogbuch(kategorie);
         }
         if (v.getId() == R.id.bt_loesung) {
