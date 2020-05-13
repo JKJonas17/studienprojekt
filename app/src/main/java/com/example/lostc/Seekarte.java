@@ -15,7 +15,7 @@ import static com.example.lostc.R.drawable.insel_boot_rechts1;
 import static com.example.lostc.R.drawable.inselgrau_links;
 import static com.example.lostc.R.drawable.inselgrau_rechts;
 
-public class Seekarte extends AppCompatActivity implements View.OnClickListener {
+public class Seekarte extends AppCompatActivity implements View.OnClickListener,HideNavigationBar {
 
     private Intent intent;
 
@@ -23,6 +23,7 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seekarte);
+        hideNavigationBar();
 
         ImageButton ib_Grundlagen = findViewById(R.id.ib_insel_grundlagen);
         ImageButton ib_Datentypen = findViewById(R.id.ib_insel_datentypen);
@@ -289,5 +290,22 @@ public class Seekarte extends AppCompatActivity implements View.OnClickListener 
         }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
+    }
 }
 

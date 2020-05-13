@@ -22,7 +22,7 @@ import java.io.OutputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Main_menue extends AppCompatActivity implements View.OnClickListener {
+public class Main_menue extends AppCompatActivity implements View.OnClickListener, HideNavigationBar {
 
     Button bt_leinen_los, bt_statistik, bt_einstellungen, bt_beenden;
     TextView tv_willkommen, tv_score;
@@ -33,6 +33,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menue);
+        hideNavigationBar();
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
         bt_leinen_los = findViewById(R.id.bt_leinen_los);
@@ -132,6 +133,24 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         intent = new Intent (this, Einstellungen.class);
         startActivity(intent);
         this.finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }
 

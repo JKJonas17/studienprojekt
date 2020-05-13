@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
-public class Verloren extends AppCompatActivity implements View.OnClickListener{
+public class Verloren extends AppCompatActivity implements View.OnClickListener,HideNavigationBar{
 
     private String kategorie;
     private double avg;
@@ -21,6 +21,7 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideNavigationBar();
         setContentView(R.layout.activity_verloren);
 
         bt_nochmalQuiz = findViewById(R.id.bt_nochmalQuiz);
@@ -55,5 +56,23 @@ public class Verloren extends AppCompatActivity implements View.OnClickListener{
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
         this.finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }

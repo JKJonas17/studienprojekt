@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Bordbuch extends AppCompatActivity implements View.OnClickListener {
+public class Bordbuch extends AppCompatActivity implements View.OnClickListener,HideNavigationBar {
 
     private String kategorie;
 
@@ -20,6 +20,7 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bordbuch);
+        hideNavigationBar();
 
         TextView tv_BordbuchKapitel = findViewById(R.id.tv_BordbuchKapitel);
         ImageButton ib_BackBordbuch = findViewById(R.id.ib_backBordbuch);
@@ -93,4 +94,21 @@ public class Bordbuch extends AppCompatActivity implements View.OnClickListener 
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
+    }
 }

@@ -11,13 +11,14 @@ import android.widget.Button;
 import com.airbnb.lottie.LottieAnimationView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements HideNavigationBar{
 
     public final int LOAD_TIME = 13000; //Lässt nach 13 Sekunden den Startbildschirm verschwinden
     LottieAnimationView lottieAnimation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideNavigationBar();
         setContentView(R.layout.activity_main);
 
         lottieAnimation = findViewById(R.id.lottieanimation);
@@ -29,5 +30,23 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         },LOAD_TIME);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }

@@ -8,11 +8,12 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Crew extends AppCompatActivity implements View.OnClickListener {
+public class Crew extends AppCompatActivity implements View.OnClickListener,HideNavigationBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideNavigationBar();
         setContentView(R.layout.activity_crew);
 
         ImageButton ib_backCrew = findViewById(R.id.ib_backCrew);
@@ -42,5 +43,23 @@ public class Crew extends AppCompatActivity implements View.OnClickListener {
         Intent intent = new Intent(this, Einstellungen.class);
         startActivity(intent);
         this.finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }

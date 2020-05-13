@@ -24,7 +24,7 @@ import static com.example.lostc.User.getPrefs;
  * diese Klasse beinhaltet den Quiz Algorithmus
  */
 
-public class Quiz extends AppCompatActivity {
+public class Quiz extends AppCompatActivity implements HideNavigationBar {
 
     /*Layout Variablen*/
     private RadioGroup rg_Group;
@@ -57,6 +57,7 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        hideNavigationBar();
 
         /*Layout Variablen */
         ib_backQuiz = findViewById(R.id.ib_backQuiz);
@@ -596,6 +597,23 @@ public class Quiz extends AppCompatActivity {
         this.finish();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
+    }
 }
 
 

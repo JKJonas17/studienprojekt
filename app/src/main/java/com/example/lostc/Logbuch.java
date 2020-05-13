@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Logbuch extends AppCompatActivity implements View.OnClickListener, DialogLogbuchinfo.ExampleDialogListener3 {
+public class Logbuch extends AppCompatActivity implements View.OnClickListener, DialogLogbuchinfo.ExampleDialogListener3,HideNavigationBar {
 
 
     private TextView tv_Kapitel;
@@ -21,6 +21,7 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbuch);
+        hideNavigationBar();
 
         SharedPreferences prefs = getSharedPreferences("sp_firststart",MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firststart",true);
@@ -88,6 +89,11 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
         }
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        hideNavigationBar();
+    }
 
     @Override
     public void onClick(View v) {
@@ -150,5 +156,22 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void onYesClicked() {
         return;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 }

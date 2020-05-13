@@ -5,16 +5,16 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogFortschritt extends AppCompatDialogFragment {
     private ExampleDialogListener2 listener2;
 
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Vorsicht!")
                 .setMessage("Willst du wirklich deinen Spielfortschritt zurücksetzen? Dadurch gehen deine ganzen, gesammelten Punkte dauerhaft verloren.")
                 .setNegativeButton("Zurück", new DialogInterface.OnClickListener() {

@@ -21,7 +21,7 @@
         <activity android:name=".Quellen" />
         <activity android:name=".Crew" />
         <activity android:name=".Team_kontaktieren" />
-        <activity android:name=".DialogName" />
+        <activity android:name=".DialogName"/>
         <activity android:name=".DialogFortschritt" />
         <activity android:name=".Einstellungen" />
         <activity android:name=".Statistik" />

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Einstellungen extends AppCompatActivity implements DialogName.ExampleDialogListener, DialogFortschritt.ExampleDialogListener2, View.OnClickListener {
+public class Einstellungen extends AppCompatActivity implements DialogName.ExampleDialogListener, DialogFortschritt.ExampleDialogListener2, View.OnClickListener,HideNavigationBar {
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
     TextView tv_username, tv_score;
@@ -20,6 +20,7 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_einstellungen);
+        hideNavigationBar();
 
         //Den hier erstellten Variablen werden die Button aus dem layout activity_main_menue zugeordnet
         tv_username = findViewById(R.id.tv_username);
@@ -113,6 +114,27 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
         this.finish();
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        hideNavigationBar();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
 
+    @Override
+    public void hideNavigationBar() {
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
+    }
 }
