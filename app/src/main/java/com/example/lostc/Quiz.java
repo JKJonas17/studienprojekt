@@ -314,7 +314,6 @@ public class Quiz extends AppCompatActivity implements HideNavigationBar {
                 pb_Quiz.setProgress((int) millisUntilFinished);
                 button_Confirm.setVisibility(View.GONE);
                 ib_backQuiz.setOnClickListener(null); // während der Timer läuft soll der backbutton nicht clickbar sein
-
             }
 
             public void onFinish() {

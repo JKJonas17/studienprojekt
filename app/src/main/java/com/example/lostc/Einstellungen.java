@@ -73,14 +73,12 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
     @Override
     public void onYesClicked() {
 
-        if(User.retriveScore(this)!=0) {
-            db.resetAnswered();
+        db.resetAnswered();
             User.insertScore(this, 0);
             tv_score.setText(User.retriveScore(this) + "");
             User.insertLevel(this, 1);
             for(int i=1; i<=10; i++) {
                 Quiz.setArrayPosition(this, 0, String.valueOf(i));
-            }
             User.insertLevel(this,1);
         }
         return;
