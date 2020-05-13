@@ -13,6 +13,7 @@
         android:id="@+id/ib_backQuellen"
         android:layout_width="59dp"
         android:layout_height="58dp"
+        android:layout_marginEnd="43dp"
         android:layout_marginBottom="103dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/headline_Quellen"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorButton"
         android:textSize="50sp"
         app:fontFamily="@font/geschwungen"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,13 +42,16 @@
         android:id="@+id/ll_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="11dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_crew">
+        app:layout_constraintTop_toBottomOf="@+id/tv_crew"
+        app:layout_constraintVertical_bias="0.04">
 
         <TextView
             android:id="@+id/tv_buchquellen"
@@ -67,7 +71,7 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_quelle1"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="italic" />
 
         <TextView
@@ -83,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_quelle2"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="italic" />
 
         <TextView
@@ -94,16 +98,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="321dp"
+            android:layout_height="171dp"
             app:layout_constrainedHeight="false">
 
             <ImageView
                 android:id="@+id/iv_buch1"
-                android:layout_width="176dp"
-                android:layout_height="216dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="109dp"
+                android:layout_height="159dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/iv_buch2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -111,11 +113,9 @@
 
             <ImageView
                 android:id="@+id/iv_buch2"
-                android:layout_width="161dp"
-                android:layout_height="216dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_width="102dp"
+                android:layout_height="157dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_buch1"
                 app:layout_constraintTop_toTopOf="parent"

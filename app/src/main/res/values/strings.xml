@@ -25,7 +25,7 @@
     <string name="tv_willkommen">Willkommen XY!</string>
 
     /*TextViews Team_Kontaktieren*/
-    <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abzuschicken!\nAuf Seemann, Tod und Teufel!</string>
+    <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abschicken!\nAuf Seemann, Tod und Teufel!</string>
     <string name="tv_flaschenpostnachricht">Flaschenpostnachricht:</string>
     <string name="et_name">Name</string>
     <string name="et_thema">Thema</string>

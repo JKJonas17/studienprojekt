@@ -26,18 +26,19 @@
             android:id="@+id/tv_Quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:text="@string/Quiz"
             android:textColor="@android:color/background_dark"
             android:textSize="35sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_Kapitel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 
     <TextView
         android:id="@+id/tv_QuizKapitel"
@@ -188,6 +189,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/beantworte_80_der_fragen_richtig"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/pb_Quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
