@@ -112,7 +112,7 @@
         android:contentDescription="TODO" />
 
     <TextView
-        android:id="@+id/tv_crew"
+        android:id="@+id/tv_quellen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

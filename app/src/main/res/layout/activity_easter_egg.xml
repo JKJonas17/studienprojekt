@@ -18,16 +18,16 @@
         app:fontFamily="@font/geschwungen"
         app:layout_constraintBottom_toTopOf="@+id/vv_EasterEgg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.262" />
 
     <VideoView
         android:id="@+id/vv_EasterEgg"
         android:layout_width="match_parent"
         android:layout_height="407dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_EasterEgg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,8 +35,8 @@
 
     <Button
         android:id="@+id/bt_EasterEgg"
-        android:layout_width="228dp"
-        android:layout_height="61dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/roundbutton"
         android:text="@string/zur_belohnung"
         android:textColor="@color/colorBackground"

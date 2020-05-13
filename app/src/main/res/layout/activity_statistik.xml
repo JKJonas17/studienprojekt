@@ -13,13 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aktuelles_Level: 1"
-        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_gesamt"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <ImageButton
         android:id="@+id/ib_backStatistik"
@@ -63,6 +64,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_schatzkiste" />
 
+    <ProgressBar
+        android:id="@+id/pb_Statistik"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progressDrawable="@drawable/customprogressbar"
+        android:secondaryProgress="100"
+        app:layout_constraintBottom_toTopOf="@+id/tv_gesamt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gesamtfortschritt"
+        app:layout_constraintVertical_bias="0.64"></ProgressBar>
+
     <TextView
         android:id="@+id/tv_gesamtfortschritt"
         android:layout_width="254dp"
@@ -80,11 +97,12 @@
         android:id="@+id/tv_gesamt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="304dp"
         android:text="Gesamtfortschritt: 0%"
-        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_gesamtfortschritt" />
 

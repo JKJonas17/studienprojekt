@@ -24,8 +24,9 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_programmieren);
         hideNavigationBar();
 
-        TextView tv_ProgrammierAufgabe = findViewById(R.id.tv_ProgrammierAufgabe);
-        ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backprogrammieren);
+        TextView tv_ProgrammierAufgabe = findViewById(R.id.tv_ProgrammierenKapitel);
+        ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backProgrammieren);
+        LottieAnimationView lottieAnimation2;
 
         lottieAnimation2 = findViewById(R.id.lottieanimation);
         Button bt_loesung = findViewById(R.id.bt_loesung);
@@ -94,7 +95,7 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.ib_backprogrammieren) {
+        if (v.getId() == R.id.ib_backProgrammieren) {
             openLogbuch(kategorie);
         }
         if (v.getId() == R.id.bt_loesung) {

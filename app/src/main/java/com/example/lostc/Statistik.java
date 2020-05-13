@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,9 +32,14 @@ public class Statistik extends AppCompatActivity implements View.OnClickListener
         TextView tv_gesamtfortschritt = findViewById(R.id.tv_gesamtfortschritt);
         TextView tv_gesamt = findViewById(R.id.tv_gesamt);
         TextView tv_level = findViewById(R.id.tv_level);
+        ProgressBar pb_Statistik = findViewById(R.id.pb_Statistik);
         ImageView iv_schatzkiste = findViewById(R.id.iv_schatzkiste);
         avg *= 100;
         DecimalFormat f = new DecimalFormat("#0.00");
+
+        pb_Statistik.setMax(100);
+        int avginint = (int) avg;
+        pb_Statistik.setProgress(avginint);
 
         //Für die prozentuale Angabe wird noch der Wert für 100% aus der Datenbank benötigt.
 

@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/bt_nochmalQuiz"
-        android:layout_width="162dp"
-        android:layout_height="45dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/roundbutton"
         android:text="@string/bt_verloren"
         android:textColor="@color/colorBackground"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Avarage"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/bt_nochmalQuiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

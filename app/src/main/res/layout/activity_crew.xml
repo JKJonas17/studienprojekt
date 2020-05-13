@@ -34,21 +34,20 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
-
     <TextView
-        android:id="@+id/tv_crew"
-        android:layout_width="175dp"
+        android:id="@+id/tv_quellen"
+        android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:text="@string/headline_Crew"
-        android:textColor="@color/colorButton"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="50sp"
         app:fontFamily="@font/geschwungen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <ImageView
         android:id="@+id/iv_bild1"
@@ -145,7 +144,7 @@
         app:layout_constraintEnd_toStartOf="@+id/iv_bild2"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_crew" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_quellen" />
 
     <TextView
         android:id="@+id/tv_name3"

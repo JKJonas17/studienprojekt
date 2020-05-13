@@ -76,6 +76,7 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
         if(User.retriveScore(this)!=0) {
             db.resetAnswered();
             User.insertScore(this, 0);
+            tv_score.setText(User.retriveScore(this) + "");
             User.insertLevel(this, 1);
             for(int i=1; i<=10; i++) {
                 Quiz.setArrayPosition(this, 0, String.valueOf(i));
@@ -83,7 +84,6 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
             User.insertLevel(this,1);
         }
         return;
-
     }
     @Override
     public void applyText(String username) {

@@ -97,6 +97,12 @@ public class Team_kontaktieren extends AppCompatActivity implements View.OnClick
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        hideNavigationBar();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         hideNavigationBar();

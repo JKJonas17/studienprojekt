@@ -25,15 +25,16 @@
         app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
     <TextView
-        android:id="@+id/tv_crew"
+        android:id="@+id/tv_quellen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/headline_Quellen"
-        android:textColor="@color/colorButton"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="50sp"
         app:fontFamily="@font/geschwungen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
@@ -50,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_crew"
+        app:layout_constraintTop_toBottomOf="@+id/tv_quellen"
         app:layout_constraintVertical_bias="0.04">
 
         <TextView
@@ -98,27 +99,29 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="171dp"
+            android:layout_height="328dp"
             app:layout_constrainedHeight="false">
 
             <ImageView
                 android:id="@+id/iv_buch1"
-                android:layout_width="109dp"
-                android:layout_height="159dp"
+                android:layout_width="174dp"
+                android:layout_height="234dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/iv_buch2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.414"
                 app:srcCompat="@drawable/c_buch1" />
 
             <ImageView
                 android:id="@+id/iv_buch2"
-                android:layout_width="102dp"
-                android:layout_height="157dp"
+                android:layout_width="174dp"
+                android:layout_height="234dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_buch1"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.419"
                 app:srcCompat="@drawable/c_buch2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
