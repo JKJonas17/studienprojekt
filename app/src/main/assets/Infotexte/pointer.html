@@ -3,18 +3,18 @@
 <p style="text-align: justify;"><span style="text-decoration: underline;">Pointer definieren</span></p>
 <p style="text-align: justify;">Ein Pointer (engl. Pointer) repr&auml;sentiert die Adresse und den Typ eines Objekts oder einer Funktion. Hat ein Objekt den Typ T, so hat ein Pointer auf das Objekt den abgeleiteten Typ Pointer auf T, oder kurz T-Pointer. Beispielsweise ist der Name eines Arrays ein Pointer auf das erste Arrayelement, also ein Pointer&nbsp;auf <em><strong>int</strong></em>, wenn die Elemente den Typ <em><strong>int</strong> </em>haben. Ebenso ist f&uuml;r eine int-Variable <em><strong>var</strong> </em>der Ausdruck <em><strong>&amp;var</strong></em> ein Pointer auf int. Arraynamen und Ausdr&uuml;cke wie <em><strong>&amp;var</strong></em> sind konstante Pointer. In C k&ouml;nnen aber auch <em>Pointervariablen</em> definiert werden, d.h. Variablen, die die Adresse eines anderen Objekts speichern k&ouml;nnen.</p>
 <p style="text-align: justify;">Ein Beispiel:</p>
-<table style="width: 400px;" border="black">
+<table style="width: 361px;" border="black">
     <tbody>
     <tr>
-        <td>float *fPtr;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Variablen vom Typ Pointer auf float.</td>
+        <td style="width: 351px;">float *fPtr; // Variablen vom Typ Pointer auf float.</td>
     </tr>
     </tbody>
 </table>
 <p style="text-align: justify;">Die Variable <em><strong>fPtr</strong> </em>hat den Typ <em><strong>float *</strong></em>, wobei der Stern in einem Typ f&uuml;r <em><strong>&raquo;Pointer auf&laquo;</strong></em> steht. Ein Pointer auf <em><strong>float</strong> </em>kann die Adresse einer <em><strong>float</strong></em>-Variablen speichern. Ist x eine float-Variable, so zeigt <em><strong>fPtr</strong> </em>nach folgender Zuweisung auf x:</p>
-<table style="height: 26px; width: 400px;" border="black">
+<table style="height: 26px; width: 361px;" border="black">
     <tbody>
     <tr>
-        <td style="width: 383px;">fPtr = &amp;x; // Den Pointer fptr auf x zeigen lassen.</td>
+        <td style="width: 346px;">fPtr = &amp;x; // Den Pointer fptr auf x zeigen lassen.</td>
     </tr>
     </tbody>
 </table>

@@ -12,6 +12,7 @@
         android:id="@+id/ib_backloesung"
         android:layout_width="59dp"
         android:layout_height="58dp"
+        android:layout_alignParentStart="true"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="103dp"
         android:background="@null"
@@ -31,8 +32,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="45dp"
         android:gravity="center_horizontal"
-        android:text="@string/loesung"
+        android:text="@string/bt_loesung"
         android:textColor="@android:color/background_dark"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -43,8 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="@string/kapietel_berschrift"
+        android:layout_marginTop="65dp"
+        android:text="Kapietelüberschrift"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         app:layout_constraintTop_toTopOf="@id/tv_loesung" />
@@ -53,22 +55,16 @@
     <ScrollView
         android:id="@+id/sv_loesung"
         android:layout_width="match_parent"
-        android:layout_height="608dp"
+        android:layout_height="600dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="123dp">
+        android:layout_marginTop="132dp">
 
-        <RelativeLayout
+        <WebView
+            android:id="@+id/wv_Aufgabenloesung"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <WebView
-                android:id="@+id/wv_Aufgabenloesung"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
     </ScrollView>
 
 </RelativeLayout>

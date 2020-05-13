@@ -1,97 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:background="@color/colorBackground"
-tools:context=".Programmieren">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".Programmieren">
 
-<ImageButton
-    android:id="@+id/ib_backprogrammieren"
-    android:layout_width="59dp"
-    android:layout_height="58dp"
-    android:layout_alignParentLeft="true"
-    android:layout_marginLeft="0dp"
-    android:layout_marginEnd="43dp"
-    android:layout_marginRight="43dp"
-    android:layout_marginBottom="103dp"
-    android:background="@null"
-    android:contentDescription="@string/desc"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0"
-    app:srcCompat="@mipmap/ic_backbutton_foreground" />
-
-<TextView
-    android:id="@+id/tv_programmieren"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="16dp"
-    android:gravity="center_horizontal"
-    android:text="Programmieren"
-    android:textColor="@android:color/background_dark"
-    android:textSize="35sp"
-    android:textStyle="bold" />
+    <ImageButton
+        android:id="@+id/ib_backProgrammieren"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="103dp"
+        android:background="@null"
+        android:contentDescription="@string/desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/ic_backbutton_foreground" />
 
     <TextView
-        android:id="@+id/tv_ProgrammierAufgabe"
+        android:id="@+id/tv_programmieren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_ProgrammierenKapitel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center_horizontal"
+        android:text="@string/headline_Programmieren"
+        android:textColor="@android:color/background_dark"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_ProgrammierenKapitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="Kapietelüberschrift"
+        android:layout_marginTop="65dp"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_kapitelüberschrift"
         android:textColor="@android:color/background_dark"
-        android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="@id/tv_programmieren" />
+        android:textSize="25sp" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieanimation2"
+        android:layout_width="362dp"
+        android:layout_height="361dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-86dp"
+        android:layout_marginEnd="-119dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sv_programmieren"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes='@raw/mhardatwork' />
 
     <ScrollView
         android:id="@+id/sv_programmieren"
         android:layout_width="match_parent"
-        android:layout_height="472dp"
+        android:layout_height="534dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="116dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="65dp">
 
-        <RelativeLayout
+        <WebView
+            android:id="@+id/wv_Aufgaben"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <WebView
-                android:id="@+id/wv_Aufgaben"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
     </ScrollView>
 
-    <Button
-        android:id="@+id/bt_loesung"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginLeft="157dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginRight="157dp"
-        android:layout_marginBottom="9dp"
-        android:gravity="center"
-        android:text="Lösung"
-        android:background="@drawable/roundbutton"
-        android:textColor="@color/colorBackground"/>
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:id="@+id/bt_loesung"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundbutton"
+            android:text="@string/bt_loesung"
+            android:textColor="@color/colorBackground"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </RelativeLayout>
 

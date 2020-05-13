@@ -11,19 +11,15 @@
     <TextView
         android:id="@+id/tv_level"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="216dp"
-        android:text="@string/aktuelles_level_1"
+        android:layout_height="wrap_content"
+        android:text="Aktuelles_Level: 1"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gesamt" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_gesamt"
+        app:layout_constraintVertical_bias="0.079" />
 
     <ImageButton
         android:id="@+id/ib_backStatistik"
@@ -45,43 +41,38 @@
         android:id="@+id/iv_schatzkiste"
         android:layout_width="155dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:contentDescription="@string/desc"
         app:layout_constraintBottom_toTopOf="@+id/tv_schatz_des_hollaenders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/schatz3" />
 
     <TextView
         android:id="@+id/tv_schatz_des_hollaenders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
         android:text="@string/tv_schatz"
         android:textColor="@android:color/background_dark"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:fontFamily="@font/geschwungen"
         app:layout_constraintBottom_toTopOf="@+id/tv_gesamtfortschritt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_schatzkiste" />
 
     <TextView
         android:id="@+id/tv_gesamtfortschritt"
-        android:layout_width="400dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="254dp"
+        android:layout_height="61dp"
         android:gravity="center"
         android:text="@string/tv_gesamtfortschritt"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_schatz_des_hollaenders" />
 
@@ -89,18 +80,12 @@
         android:id="@+id/tv_gesamt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/gesamtfortschritt_0"
+        android:layout_marginTop="168dp"
+        android:text="Gesamtfortschritt: 0%"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gesamtfortschritt"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_gesamtfortschritt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

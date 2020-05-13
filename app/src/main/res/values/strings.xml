@@ -1,6 +1,6 @@
 <resources>
     /*Ebenen*/
-    <string name="app_name">lost@C</string>
+    <string name="app_name">Lost@C</string>
     <string name="headline_seekarte">Seekarte</string>
     <string name="headline_bordbuch">Bordbuch</string>
     <string name="underheadline_bordbuch_grundlagen">Grundlagen</string>
@@ -9,6 +9,7 @@
     <string name="headline_Einstellungen">Einstellungen</string>
     <string name="headline_Statistik">Einstellungen</string>
     <string name="headline_Quellen">Quellen</string>
+    <string name="headline_Programmieren">Programmieren</string>
 
     /*TextViews Logbuch - Buttons*/
     <string name="tv_kapitelüberschrift">Kapitelüberschrift</string>
@@ -24,7 +25,7 @@
     <string name="tv_willkommen">Willkommen XY!</string>
 
     /*TextViews Team_Kontaktieren*/
-    <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abzuschicken!\nAuf Seemann, Tod und Teufel!</string>
+    <string name="tv_ahoi_piraten">Ahoi mutiger Pirat!\n\nHier kannst du eine Flaschenpost\nfür uns abschicken!\nAuf Seemann, Tod und Teufel!</string>
     <string name="tv_flaschenpostnachricht">Flaschenpostnachricht:</string>
     <string name="et_name">Name</string>
     <string name="et_thema">Thema</string>
@@ -77,6 +78,7 @@
     <string name="bt_gewonnen">In See stechen</string>
     <string name="tv_verloren">Arrrrrrrrr!\n Beim heiligen Klabautermann!\n Man sollte dich auf dieser Insel aussetzen!</string>
     <string name="bt_verloren">Probiers nochmal</string>
+    <string name="bt_loesung">Lösung</string>
 
     <string name="kaptn_kontaktieren">Käpt\'n kontaktieren</string>
     <string name="fortschritt_zuruecksetzten">Fortschritt zurücksetzten</string>
@@ -181,10 +183,10 @@
     <string name="username">Username</string>
     <string name="Quiz">Abfrage</string>
     <string name="weiter">Weiter</string>
-    <string name="level_bestanden">Herzlichen Glückwunsch du hast alle Level bestanden</string>
+    <string name="level_bestanden">Herzlichen Glückwunsch du hast alle Level bestanden!</string>
     <string name="zur_belohnung">Zur Belohnung</string>
     <string name="belohnung">Belohnung</string>
-    <string name="hauptmenue">Hauptmenue</string>
+    <string name="hauptmenue">Hauptmenü</string>
     <string name="here_will_be_the_question_text_nhere_will_be_the_question_text_nhere_will_be_the_question_text">Here will be the question text\nHere will be the question text\nHere will be the question text</string>
     <string name="fragenanzahl">Fragenanzahl</string>
     <string name="_0000">0000</string>

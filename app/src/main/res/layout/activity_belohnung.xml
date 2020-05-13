@@ -6,71 +6,78 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorBackground"
+    tools:ignore="ContentDescription"
     tools:context=".Belohnung">
 
     <TextView
         android:id="@+id/tv_belohnung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="54dp"
-        android:text="@string/belohnung"
-        android:fontFamily="@font/geschwungen"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_dark"
-        android:textSize="45sp" />
-
-    <ScrollView
-        android:id="@+id/sv_belohnung"
         android:layout_width="match_parent"
-        android:layout_height="344dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="229dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <WebView
-                android:id="@+id/wv_belohnung"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
-        </RelativeLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/bt_belohnung"
-        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="9dp"
-        android:background="@drawable/roundbutton"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/geschwungen"
         android:gravity="center"
-        android:text="@string/hauptmenue"
-        android:textColor="@color/colorBackground" />
+        android:text="@string/belohnung"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="50sp" />
 
     <ImageView
-        android:id="@+id/plastikschatztruhe"
-        android:layout_width="214dp"
+        android:id="@+id/iv_plastikschatztruhe"
+        android:layout_width="match_parent"
         android:layout_height="149dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="73dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="73dp"
+        android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/plastik" />
+
+    <ScrollView
+        android:id="@+id/sv_belohnung"
+        android:layout_width="match_parent"
+        android:layout_height="436dp"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="230dp">
+
+        <WebView
+            android:id="@+id/wv_belohnung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp">
+
+        <Button
+            android:id="@+id/bt_belohnung"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/roundbutton"
+            android:gravity="center"
+            android:text="@string/hauptmenue"
+            android:textColor="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
 

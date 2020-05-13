@@ -12,10 +12,12 @@
         android:id="@+id/ib_backBordbuch"
         android:layout_width="59dp"
         android:layout_height="58dp"
-        android:layout_alignBottom="@+id/tv_BordbuchKapitel"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="50dp"
-        android:layout_toStartOf="@+id/tv_bordbuch"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="43dp"
         android:background="@null"
         android:contentDescription="@string/desc"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,11 +36,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="36dp"
         android:gravity="center_horizontal"
         android:text="@string/headline_bordbuch"
         android:textColor="@android:color/background_dark"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <TextView
@@ -47,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="64dp"
         android:text="@string/tv_kapitelüberschrift"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
@@ -56,23 +58,19 @@
     <ScrollView
         android:id="@+id/sv_bordbuch"
         android:layout_width="match_parent"
-        android:layout_height="608dp"
+        android:layout_height="600dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="123dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="131dp"
+        android:layout_marginBottom="1dp">
 
-        <RelativeLayout
+        <WebView
+            android:id="@+id/wv_infotext"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <WebView
-                android:id="@+id/wv_infotext"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
-
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
     </ScrollView>
 
 </RelativeLayout>

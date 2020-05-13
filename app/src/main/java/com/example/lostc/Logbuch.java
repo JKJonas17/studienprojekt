@@ -3,7 +3,6 @@ package com.example.lostc;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -49,42 +48,34 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
         /**
          * von der gedrückten Kategorie wird der entsprechende Text in die XML Datei geschrieben
          */
-        if(kategorie.equals("1")) //Kapitel müssen noch erweitert werden, Seekarte ebenfalls erweitern Kapitel 9-12
-        {
+        if (kategorie.equals("1")) {
             tv_Kapitel.setText("Grundlagen");
         }
-        if(kategorie.equals("2"))
-        {
+        if (kategorie.equals("2")) {
             tv_Kapitel.setText("Datentypen");
         }
-        if(kategorie.equals("3"))
-        {
+        if (kategorie.equals("3")) {
             tv_Kapitel.setText("Entscheidungen");
         }
-        if(kategorie.equals("4"))
-        {
+        if (kategorie.equals("4")) {
             tv_Kapitel.setText("Schleifen");
         }
-        if(kategorie.equals("5"))
-        {
+        if (kategorie.equals("5")) {
             tv_Kapitel.setText("Funktionen");
         }
-        if(kategorie.equals("6"))
-        {
+        if (kategorie.equals("6")) {
             tv_Kapitel.setText("Arrays");
         }
-        if(kategorie.equals("7"))
-        {
+        if (kategorie.equals("7")) {
             tv_Kapitel.setText("Variablen");
         }
-        if(kategorie.equals("8"))
-        {
+        if (kategorie.equals("8")) {
             tv_Kapitel.setText("Präprozessor");
         }
-        if(kategorie.equals("9")) {
+        if (kategorie.equals("9")) {
             tv_Kapitel.setText("Pointer");
         }
-        if(kategorie.equals("10")) {
+        if (kategorie.equals("10")) {
             tv_Kapitel.setText("Dateizugriff");
         }
     }
@@ -98,18 +89,18 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void onClick(View v) {
 
-        if(v.getId() == R.id.bt_Bordbuch) {
-            openBordbuch (kategorie);
+        if (v.getId() == R.id.bt_Bordbuch) {
+            openBordbuch(kategorie);
             this.finish();
         }
-        if(v.getId() == R.id.bt_Abfrage) {
+        if (v.getId() == R.id.bt_Abfrage) {
             openQuiz(kategorie);
             this.finish();
         }
-        if(v.getId() == R.id.bt_Programmieren) {
+        if (v.getId() == R.id.bt_Programmieren) {
             openProgrammieren(kategorie);
         }
-        if(v.getId() == R.id.ib_backLogbuch) {
+        if (v.getId() == R.id.ib_backLogbuch) {
             openSeekarte();
             this.finish();
         }
@@ -117,8 +108,8 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
 
     }
 
-    private void openBordbuch (String kategorie) {
-        Intent intent = new Intent (this, Bordbuch.class);
+    private void openBordbuch(String kategorie) {
+        Intent intent = new Intent(this, Bordbuch.class);
         intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
         this.finish();
@@ -126,18 +117,19 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener, 
 
     private void openQuiz(String kategorie) {
         Intent intent = new Intent(this, Quiz.class);
-        intent.putExtra("Kategorie",kategorie);
-        startActivity(intent);
-        this.finish();
-    }
-    private void openProgrammieren(String kategorie) {
-        Intent intent = new Intent (this, Programmieren.class);
-        intent.putExtra("Kategorie",kategorie);
+        intent.putExtra("Kategorie", kategorie);
         startActivity(intent);
         this.finish();
     }
 
-    private void openSeekarte () {
+    private void openProgrammieren(String kategorie) {
+        Intent intent = new Intent(this, Programmieren.class);
+        intent.putExtra("Kategorie", kategorie);
+        startActivity(intent);
+        this.finish();
+    }
+
+    private void openSeekarte() {
         Intent intent = new Intent(this, Seekarte.class);
         startActivity(intent);
         this.finish();

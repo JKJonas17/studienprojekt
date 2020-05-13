@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class Programmieren extends AppCompatActivity implements View.OnClickListener,HideNavigationBar {
 
     private String kategorie;
@@ -24,6 +26,8 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
 
         TextView tv_ProgrammierAufgabe = findViewById(R.id.tv_ProgrammierAufgabe);
         ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backprogrammieren);
+
+        lottieAnimation2 = findViewById(R.id.lottieanimation);
         Button bt_loesung = findViewById(R.id.bt_loesung);
 
         Bundle bundle = getIntent().getExtras();
