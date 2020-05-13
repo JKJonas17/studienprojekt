@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class ExampleDialog2 extends AppCompatDialogFragment {
+public class DialogFortschritt extends AppCompatDialogFragment {
     private ExampleDialogListener2 listener2;
 
     @Override

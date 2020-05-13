@@ -1,6 +1,7 @@
 package com.example.lostc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Logbuch extends AppCompatActivity implements View.OnClickListener {
+public class Logbuch extends AppCompatActivity implements View.OnClickListener, DialogLogbuchinfo.ExampleDialogListener3 {
 
 
     private TextView tv_Kapitel;
@@ -20,6 +21,15 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbuch);
+
+        SharedPreferences prefs = getSharedPreferences("sp_firststart",MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firststart",true);
+
+        if(firstStart)
+        {
+            openDialog();
+        }
+
 
         tv_Kapitel = findViewById(R.id.tv_Kapitel);
         Button bt_Bordbuch = findViewById(R.id.bt_Bordbuch);
@@ -34,7 +44,6 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
 
         Bundle bundle = getIntent().getExtras();
         kategorie = bundle.getString("Kategorie");
-
 
         /**
          * von der gedrückten Kategorie wird der entsprechende Text in die XML Datei geschrieben
@@ -126,5 +135,20 @@ public class Logbuch extends AppCompatActivity implements View.OnClickListener {
         Intent intent = new Intent(this, Seekarte.class);
         startActivity(intent);
         this.finish();
+    }
+
+
+    private void openDialog() {
+        DialogLogbuchinfo exampleDialog = new DialogLogbuchinfo();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+        SharedPreferences prefs = getSharedPreferences("sp_firststart",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firststart",false);
+        editor.apply();
+    }
+
+    @Override
+    public void onYesClicked() {
+        return;
     }
 }

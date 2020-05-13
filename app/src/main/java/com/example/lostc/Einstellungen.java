@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Einstellungen extends AppCompatActivity implements ExampleDialog.ExampleDialogListener, ExampleDialog2.ExampleDialogListener2, View.OnClickListener {
+public class Einstellungen extends AppCompatActivity implements DialogName.ExampleDialogListener, DialogFortschritt.ExampleDialogListener2, View.OnClickListener {
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
     TextView tv_username, tv_score;
@@ -62,10 +62,13 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
     }
 
     private void openDialog2() {
-        ExampleDialog2 exampleDialog2 = new ExampleDialog2();
+        DialogFortschritt exampleDialog2 = new DialogFortschritt();
         exampleDialog2.show(getSupportFragmentManager(), "example dialog");
     }
 
+    /**
+     *
+     */
     @Override
     public void onYesClicked() {
 
@@ -73,9 +76,10 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
             db.resetAnswered();
             User.insertScore(this, 0);
             User.insertLevel(this, 1);
-            for(int i=1; i<=9; i++) {
+            for(int i=1; i<=10; i++) {
                 Quiz.setArrayPosition(this, 0, String.valueOf(i));
             }
+            User.insertLevel(this,1);
         }
         return;
 
@@ -87,7 +91,7 @@ public class Einstellungen extends AppCompatActivity implements ExampleDialog.Ex
     }
 
     public void openDialog() {
-        ExampleDialog exampleDialog = new ExampleDialog();
+        DialogName exampleDialog = new DialogName();
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 

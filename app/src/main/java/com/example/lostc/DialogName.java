@@ -12,7 +12,7 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class ExampleDialog extends AppCompatDialogFragment {
+public class DialogName extends AppCompatDialogFragment {
 
     private EditText et_Username;
     private ExampleDialogListener listener;
