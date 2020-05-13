@@ -26,28 +26,20 @@
 <p></p>
 <p><em></em></p>
 <p><span style="text-decoration: underline;"><strong>Aufgabe 2</strong></span></p>
-<p>Was gibt folgendes Programm auf dem Bildschirm aus?</p>
+<p>Welchen Wert hat die Variable x am Ende des Programms?</p>
 <table style="border-collapse: collapse; width: 100%;" border="1">
     <tbody>
     <tr>
         <td style="width: 100%;">
             <p>#include &lt;stdio.h&gt;</p>
             <p>&nbsp;</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int arr[] = { -20, -10, 0, 10, 20 };</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int main(){</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *p, i;</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts("*Demo mit Zeigern und Vektoren*\n");</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = arr;</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while( p &lt; arr+5)</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%6d", *p++);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putchar('\n');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while( p-- &gt; arr)</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%6d", *p);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putchar('\n');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( p=arr+2, i=0; i &lt; 3; ++i)</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%6d%6d\n", p[-i], p[i]);</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putchar('\n');</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</p>
+            <p>main() {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *zeiger;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = 9;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zeiger = &amp;x;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *zeiger = 10;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Die Variable 'x' hat den Wert %i", x);</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
         </td>
     </tr>
