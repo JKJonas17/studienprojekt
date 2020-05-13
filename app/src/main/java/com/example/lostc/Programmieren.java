@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class Programmieren extends AppCompatActivity implements View.OnClickListener {
 
     private String kategorie;
-
+    LottieAnimationView lottieAnimation2;
     String basePath = "file:///android_asset/Aufgaben/";
 
     @Override
@@ -21,7 +23,7 @@ public class Programmieren extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programmieren);
 
-
+        lottieAnimation2 = findViewById(R.id.lottieanimation);
         TextView tv_ProgrammierenKapitel = findViewById(R.id.tv_ProgrammierenKapitel);
         ImageButton ib_BackProgrammieren = findViewById(R.id.ib_backProgrammieren);
         Button bt_loesung = findViewById(R.id.bt_loesung);
