@@ -16,12 +16,6 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 import static com.example.lostc.User.getPrefs;
@@ -53,7 +47,6 @@ public class Quiz extends AppCompatActivity {
     private static int counter = 0;
     private static int total = 0;
     private boolean counterIsRunning = false;
-    private static int anzahl = 0;
     private static boolean answered = false;
 
     /*Datenbank Variablen*/
@@ -172,7 +165,7 @@ public class Quiz extends AppCompatActivity {
                 if (counter < (total - 1) ) {
                     if(counter == (total-2))
                     {
-                        button_Confirm.setText("Beenden");
+                        button_Confirm.setText(R.string.beenden);
                     }
                         counter++;
                     if(!answered) {
@@ -263,7 +256,7 @@ public class Quiz extends AppCompatActivity {
             tv_Info.setVisibility(View.GONE);
         }
         answered = false;
-        anzahl = counter +1;
+        int anzahl = counter +1;
         tv_FragenAnzahl.setText("Frage: "+anzahl+"/"+total);
         rb_Option1.setVisibility(View.VISIBLE);
         rb_Option2.setVisibility(View.VISIBLE);
