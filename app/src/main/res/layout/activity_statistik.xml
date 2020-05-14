@@ -17,10 +17,9 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_gesamt"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <ImageButton
         android:id="@+id/ib_backStatistik"
@@ -69,6 +68,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="190dp"
+        android:layout_marginBottom="44dp"
         android:indeterminate="false"
         android:max="100"
         android:progressDrawable="@drawable/customprogressbar"
@@ -76,20 +76,21 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_gesamt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gesamtfortschritt"
-        app:layout_constraintVertical_bias="0.64"></ProgressBar>
+        app:layout_constraintStart_toStartOf="parent"></ProgressBar>
 
     <TextView
         android:id="@+id/tv_gesamtfortschritt"
         android:layout_width="254dp"
-        android:layout_height="61dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
         android:gravity="center"
         android:text="@string/tv_gesamtfortschritt"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/pb_Statistik"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_schatz_des_hollaenders" />
 
@@ -97,7 +98,7 @@
         android:id="@+id/tv_gesamt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="300dp"
         android:text="Gesamtfortschritt: 0%"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25sp"

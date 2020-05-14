@@ -28,7 +28,6 @@ public class DialogName extends AppCompatDialogFragment {
                 .setNegativeButton("Zurück", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        User.insertScore(getContext(),0);
                     }
                 })
                 .setPositiveButton("Bestätigen", new DialogInterface.OnClickListener() {
@@ -41,8 +40,6 @@ public class DialogName extends AppCompatDialogFragment {
         et_Username = view.findViewById(R.id.et_username);
 
         return builder.create();
-
-
     }
 
     @Override
