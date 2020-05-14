@@ -86,7 +86,7 @@ public class Main_menue extends AppCompatActivity implements View.OnClickListene
         }
         if(v.getId() == R.id.bt_beenden) {
             finish();
-            android.os.Process.killProcess(android.os.Process.myPid());
+            moveTaskToBack(true);
         }
     }
 

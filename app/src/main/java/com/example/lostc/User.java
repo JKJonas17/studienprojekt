@@ -3,8 +3,6 @@ package com.example.lostc;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
-
 public class User {
     /**
      * Die Methode muss erstellt werden, damit man SharedPreferences als "static" verwenden kann.
@@ -26,7 +24,7 @@ public class User {
     public static void insertUserData(Context context,String key, String value){
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putString(key, value);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -37,7 +35,7 @@ public class User {
     public static void insertUsername(Context context, String username_value){
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putString("username", username_value);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -48,16 +46,14 @@ public class User {
     public static void insertScore(Context context, int score_value){
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putInt("score", score_value);
-        editor.commit();
+        editor.apply();
     }
 
     public static void insertLevel(Context context, int level_value){
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.putInt("current_level", level_value);
-        editor.commit();
+        editor.apply();
     }
-
-
 
     /**
      * Gibt den Wert der "Spalte" username aus.
@@ -89,9 +85,8 @@ public class User {
     public static void resetScore(Context context){
         SharedPreferences.Editor editor = getPrefs(context).edit();
         editor.remove("score");
-        editor.commit();
+        editor.apply();
     }
-
 
 
     /*Gibt true zurück, wenn es bereits einen eintrag bei user_config gibt

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Einstellungen extends AppCompatActivity implements DialogName.ExampleDialogListener, DialogFortschritt.ExampleDialogListener2, View.OnClickListener,HideNavigationBar {
+public class Einstellungen extends AppCompatActivity implements DialogName.ExampleDialogListener, DialogFortschritt.ExampleDialogListener2, View.OnClickListener, HideNavigationBar {
 
     Button bt_namen_aendern, bt_kaptain_kontaktieren, bt_fortschritt_zuruecksetzten, bt_crew;
     TextView tv_username, tv_score;
@@ -56,8 +56,7 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
         if (v.getId() == R.id.bt_crew) {
             openCrew();
         }
-        if(v.getId()== R.id.ib_back_einstellungen)
-        {
+        if (v.getId() == R.id.ib_back_einstellungen) {
             openMainMenue();
         }
     }
@@ -68,21 +67,25 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
     }
 
     /**
-     *
+     * Methode die nach bestätigen des Buttons im Dialogfenster "Fortschritt zurücksetzen":
+     * 1. die Werte in der Datenbank zurücksetzt
+     * 2. den User-Score auf 0 setzt
+     * 3. das User-Level auf 1 zurücksetzt
+     * 4. die gespeicherten Array-Positionen in der Abfrage auf 0 setzt
      */
     @Override
     public void onYesClicked() {
 
         db.resetAnswered();
-            User.insertScore(this, 0);
-            tv_score.setText(User.retriveScore(this) + "");
-            User.insertLevel(this, 1);
-            for(int i=1; i<=10; i++) {
-                Quiz.setArrayPosition(this, 0, String.valueOf(i));
-            User.insertLevel(this,1);
+        User.insertScore(this, 0);
+        tv_score.setText(User.retriveScore(this) + "");
+        User.insertLevel(this, 1);
+        for (int i = 1; i <= 10; i++) {
+            Quiz.setArrayPosition(this, 0, String.valueOf(i));
         }
         return;
     }
+
     @Override
     public void applyText(String username) {
         User.insertUsername(this, username);
@@ -106,7 +109,7 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
         this.finish();
     }
 
-    private void openMainMenue () {
+    private void openMainMenue() {
         intent = new Intent(this, Main_menue.class);
         startActivity(intent);
         this.finish();
@@ -127,11 +130,11 @@ public class Einstellungen extends AppCompatActivity implements DialogName.Examp
     @Override
     public void hideNavigationBar() {
         this.getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_FULLSCREEN|
+                View.SYSTEM_UI_FLAG_FULLSCREEN |
                         View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
                         View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         );
     }

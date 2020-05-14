@@ -96,6 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
 
     public void setAnswered(String id, boolean correct) {
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         //ist die Antwort richtig wird der Wert in Answered auf 2 gesetzt die Frage kann somit nicht mehr bepunktet werden

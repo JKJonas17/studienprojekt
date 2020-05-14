@@ -32,6 +32,8 @@ public class DatabaseHelperTest {
     @Before
     public void SetUp()
     {
+        Main_menue.copyDatabase(appContext);
+
         databaseHelper.setAnswered("1",true);
         databaseHelper.setAnswered("2",true);
         databaseHelper.setAnswered("3",true);

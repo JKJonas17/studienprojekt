@@ -469,43 +469,43 @@ public class Quiz extends AppCompatActivity implements HideNavigationBar {
 
         if (kategorie.equals("1")) {
             editor.putInt("1", state); //Grundlagen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("2")) {
             editor.putInt("2", state); //Datentypen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("3")) {
             editor.putInt("3", state); //Entscheidungen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("4")) {
             editor.putInt("4", state); //Schleifen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("5")) {
             editor.putInt("5", state); //Funktionen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("6")) {
             editor.putInt("6", state); //Arrays
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("7")) {
             editor.putInt("7", state); //Variablen
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("8")) {
             editor.putInt("8", state); //Präprozessor
-            editor.commit();
+            editor.apply();
         }
         if (kategorie.equals("9")) { //Pointer
             editor.putInt("9", state);
-            editor.commit();
+            editor.apply();;
         }
         if (kategorie.equals("10")) { //Dateizugriff
             editor.putInt("10", state);
-            editor.commit();
+            editor.apply();
         }
 
 
